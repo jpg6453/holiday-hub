@@ -26,55 +26,57 @@
 			<img src="assets/img/navlogo.png" height="70" alt="Sunrise logo" title="Sunrise logo">
         </a>
 
-		<!--Burger Menu-->
-		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<!--Burger Menu-->
+			<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
 
-		<!--Nav Links-->
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto text-uppercase">
-				<li class="nav-item">
-					<a class="nav-link" href="#">TBC</a>
-				</li>
-				<li class="nav-item">
-				    <a class="nav-link" href="#">TBC</a>
-				</li>
+			<!--Nav Links-->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav ml-auto text-uppercase">
 					<li class="nav-item">
-					<a class="nav-link" href="#">TBC</a>
-				</li>
-			</ul>
-			<a class="btn btn-primary text-uppercase ml-md-2" href="#">Send Enquiry</a>
-		</div>
+						<a class="nav-link" href="#">TBC</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">TBC</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">TBC</a>
+					</li>
+				</ul>
+				<a class="btn btn-primary text-uppercase ml-md-2" href="#">Send Enquiry</a>
+			</div>
 	</nav>
 
 	<!--END Navigation-->
-    
-    <!--Hero Image-->
+
+	<!--Hero Image-->
 	<header>
 		<div class="container-fluid hero-img"></div>
 	</header>
 
-    <!--Intro Section-->
+	<!--Intro Section-->
 	<section>
 		<div class="container">
 			<div class="row">
 				<div class="intro jumbotron">
 					<h1 class="display-4">Ready to discover your next holiday?</h1>
-					<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis non, illum vel eos sed atque. Repellendus tenetur optio harum reiciendis numquam corporis quo? Eligendi et harum veniam iste culpa quidem?</p>
+					<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis non, illum vel eos
+						sed atque. Repellendus tenetur optio harum reiciendis numquam corporis quo? Eligendi et harum
+						veniam iste culpa quidem?</p>
 					<hr class="my-4">
 				</div>
 			</div>
 		</div>
-    </section>
+	</section>
 
-    <!--Map Section--> 
-    <section>
-        <div class="container-fluid map-container">
-		<div class="row">
-			<div class="col-sm-10 col-lg-4 search-box pt-4">
-				<div>
-                <select class="custom-select">
+	<!--Map Section-->
+	<section>
+		<div class="container-fluid map-container">
+			<div class="row">
+				<div class="col-sm-10 col-lg-4 search-box pt-4">
+					<div>
+						<select class="custom-select">
                     <option selected>Country</option>
                     <option value="1">France</option>
                     <option value="2">Spain</option>
@@ -82,20 +84,57 @@
                     <option value="4">Croatia</option>
                     <option value="5">Netherlands</option>
                 </select>
-                </div>
-                <div class="mx-auto">
-		        <button class="btn btn-map"><i class="fas fa-bed"></i></button>
-				<button class="btn btn-map"><i class="fas fa-campground"></i></button>
-				<button class="btn btn-map"><i class="fas fa-utensils"></i></button>
-				<button class="btn btn-map"><i class="fas fa-glass-martini-alt"></i></button>
-				<button class="btn btn-map"><i class="fa fa-info"></i></button>
-			    </div>
-            </div>    
-            <div class="col-sm-10 col-lg-8 gmap">
-            </div>
-        </div> 
-      </div>     
-    </section>
+					</div>
+					<div class="mx-auto">
+						<button class="btn btn-map"><i class="fas fa-bed"></i></button>
+						<button class="btn btn-map"><i class="fas fa-campground"></i></button>
+						<button class="btn btn-map"><i class="fas fa-utensils"></i></button>
+						<button class="btn btn-map"><i class="fas fa-glass-martini-alt"></i></button>
+						<button class="btn btn-map"><i class="fa fa-info"></i></button>
+					</div>
+				</div>
+				<div class="col-sm-10 col-lg-8 gmap">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Booking Section-->
+
+	<section>
+		<div class="container-fluid contact">
+			<div class="row justify-content-end">
+				<div class="col-sm-8 col-md-5">
+					<form class="needs-validation">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control text-muted" id="name" aria-describedby="name" placeholder="Name" required>
+                        </div>
+							<div class="form-group">
+								<label for="phone">Phone</label>
+								<input type="number" class="form-control text-muted" id="phone" aria-describedby="phone" placeholder="Phone" required>
+                            </div>
+							<div class="form-group">
+								<label for="email">Email Address</label>
+								<input type="email" class="form-control text-muted" id="email" aria-describedby="email" placeholder="example@example.com" required>
+								<small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+							</div>
+							<div class="form-group">
+								<label for="textarea">Tell us More...</label>
+								<textarea class="form-control" id="textarea" rows="6" placeholder="Enter your message here" required></textarea>
+								</div>
+							<div class="container text-right">
+							<div class="col">
+								<button type="submit" class="btn btn-success text-right mb-2">Send</button>
+								</div>
+							</div>
+					</form>
+				</div>
+			</div>  
+        </div>      
+	</section>
+
+
 
 
 

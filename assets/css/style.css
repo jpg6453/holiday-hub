@@ -39,9 +39,7 @@ height: 800px;
 
 /*--------------------------------------------------------------------Map Section*/
 
-.map-container {
-        margin-bottom: 5rem;
-}
+
 
 .search-box {
 
@@ -58,4 +56,15 @@ height: 800px;
 .gmap {
     background-color: #d0d0d0;
     min-height: 500px;
+}
+
+/*--------------------------------------------------------------------Booking Section*/
+
+.contact {
+background:url('../../assets/img/cone.jpg') no-repeat right;
+background-size: cover;
+padding-right:7rem;
+padding-top:3rem;
+padding-bottom: 2rem;
+
 }
