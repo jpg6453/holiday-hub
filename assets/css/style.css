@@ -27,3 +27,12 @@ background-size: cover;
 background-attachment: fixed;
 height: 800px;
 }
+
+/*--------------------------------------------------------------------Intro Section*/
+
+.intro {
+    text-align:center;
+    padding-top: 3rem;
+    font-family:"Merriweather",serif;
+   
+}
