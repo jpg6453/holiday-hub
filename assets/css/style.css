@@ -68,3 +68,24 @@ padding-top:3rem;
 padding-bottom: 2rem;
 
 }
+
+/*-------------------------------------------------------------------------CTA*/
+.call-to-action {
+background-color:#2d2d30;
+background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url('../../assets/img/hero.jpg') no-repeat center  ;
+background-size: cover;
+height: 15rem;
+
+}
+
+
+h6 {
+    font-size: 3rem;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: "Open Sans", serif;
+    font-weight:400;
+    letter-spacing: 5px;
+    
+
+}
