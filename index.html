@@ -110,29 +110,78 @@
 							<label for="name">Name</label>
 							<input type="text" class="form-control text-muted" id="name" aria-describedby="name" placeholder="Name" required>
                         </div>
-						<div class="form-group">
-							<label for="phone">Phone</label>
-							<input type="number" class="form-control text-muted" id="phone" aria-describedby="phone" placeholder="Phone" required>
+							<div class="form-group">
+								<label for="phone">Phone</label>
+								<input type="number" class="form-control text-muted" id="phone" aria-describedby="phone" placeholder="Phone" required>
                         </div>
-						<div class="form-group">
-							<label for="email">Email Address</label>
-							<input type="email" class="form-control text-muted" id="email" aria-describedby="email" placeholder="example@example.com" required>
-							<small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
-							</div>
-						<div class="form-group">
-							<label for="textarea">Tell us More...</label>
-							<textarea class="form-control" id="textarea" rows="6" placeholder="Enter your message here" required></textarea>
-						</div>
-						<div class="container text-right">
-						    <div class="col">
-								<button type="submit" class="btn btn-success text-right mb-2">Send</button>
-							</div>
-						</div>
+								<div class="form-group">
+									<label for="email">Email Address</label>
+									<input type="email" class="form-control text-muted" id="email" aria-describedby="email" placeholder="example@example.com" required>
+									<small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+								</div>
+								<div class="form-group">
+									<label for="textarea">Tell us More...</label>
+									<textarea class="form-control" id="textarea" rows="6" placeholder="Enter your message here" required></textarea>
+								</div>
+								<div class="container text-right">
+									<div class="col">
+										<button type="submit" class="btn btn-success text-right mb-2">Send</button>
+									</div>
+								</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!--Popular Destinations-->
+	<section class="dest-section">
+		<div class="container dest-container">
+            <h2>Trending this Week</h2>
+			<h5>Popular Destinations</h5>
+			
+			<div class="row cards-row">
+				<div class="col-md-12">
+					<div class="card-deck">
+						<div class="card dest-card">
+							<img src="assets/img/cone.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">This is a wider card with supporting text below as a natural
+									lead-in to additional content. This content is a little bit longer.</p>
+							</div>
+							
+						</div>
+						<div class="card dest-card">
+							<img src="assets/img/cone.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">This card has supporting text below as a natural lead-in to
+									additional content.</p>
+							</div>
+							
+						</div>
+						<div class="card dest-card">
+							<img src="assets/img/cone.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">This is a wider card with supporting text below as a natural
+									lead-in to additional content. This card has even longer content than the first to
+									show that equal height action.</p>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
 
 	<!--Call to action-->
 	<section>
@@ -154,7 +203,7 @@
 		</div>
 	</section>
 
-    <!--Footer-->
+	<!--Footer-->
 
 	<footer class="container-fluid footer bg-dark">
 		<div class="row">
@@ -222,16 +271,17 @@
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 	</script>
 
-    <!--Google Maps API-->
+	<!--Google Maps API-->
 
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
+	<script
+		src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+	</script>
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB80hipp0XUZzfCKS41m6RI3aDA2jUrmYE&callback=initMap">
-    </script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB80hipp0XUZzfCKS41m6RI3aDA2jUrmYE&callback=initMap">
+	</script>
 
-    <!--maps.js-->
+	<!--maps.js-->
 	<script src="assets/js/maps.js"></script>
 </body>
 

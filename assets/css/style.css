@@ -69,6 +69,42 @@ padding-bottom: 2rem;
 
 }
 
+/*--------------------------------------------------------------------Popular Destinations*/
+
+.dest-section {
+    background-color: #f0f0f0;
+    padding-top: 6rem;
+    padding-bottom:6rem;
+}
+
+
+.dest-section h2,h5{
+    font-family:"Merriweather", serif;
+    letter-spacing: 1.5px;
+    color:#202124;
+}
+
+.cards-row {
+    margin-top: 2rem;
+}
+
+.dest-card {
+    border:none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+
+
+
+
 /*-------------------------------------------------------------------------CTA*/
 .call-to-action {
 background-color:#2d2d30;
