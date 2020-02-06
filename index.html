@@ -73,27 +73,39 @@
 	<!--Map Section-->
 	<section>
 		<div class="container-fluid map-container">
-			<div class="row">
-				<div class="col-sm-10 col-lg-4 search-box pt-4">
-					<div>
-						<select class="custom-select">
-                    <option selected>Country</option>
-                    <option value="1">France</option>
-                    <option value="2">Spain</option>
-                    <option value="3">Italy</option>
-                    <option value="4">Croatia</option>
-                    <option value="5">Netherlands</option>
-                </select>
-					</div>
-					<div class="mx-auto">
-						<button class="btn btn-map"><i class="fas fa-bed"></i></button>
-						<button class="btn btn-map"><i class="fas fa-campground"></i></button>
-						<button class="btn btn-map"><i class="fas fa-utensils"></i></button>
-						<button class="btn btn-map"><i class="fas fa-glass-martini-alt"></i></button>
-						<button class="btn btn-map"><i class="fa fa-info"></i></button>
-					</div>
+            
+			<div class="row justify-content-center">
+				<div class="col-xl-4 search-box">
+					
+				    <select class="custom-select text-center">
+                        <option selected>Country</option>
+                        <option value="1">France</option>
+                        <option value="2">Spain</option>
+                        <option value="3">Italy</option>
+                        <option value="4">Croatia</option>
+                        <option value="5">Netherlands</option>
+                    </select>
+                    <h4 class="icon-heading">Explore Nearby...</h4>
+                    <div class="row justify-content-center icon-row">
+				        <div class="col icons text-center">
+				            <ul class="list-inline map-icons">
+					            <li class="list-inline-item">
+						        <button id="hotel" class="btn btn-map"><i class="fas fa-bed"></i></button>
+					            </li>
+                                <li class="list-inline-item rest">
+						        <button id="restaurant" class="btn btn-map"><i id="rest"class="fas fa-utensils"></i></button>
+					            </li>
+                                <li class="list-inline-item">
+						        <button class="btn btn-map"><i id="glass" class="fas fa-glass-martini-alt"></i></button>
+					            </li>
+                                <li class="list-inline-item">
+						        <button class="btn btn-map"><i id="info" class="fas fa-info"></i></button>
+					            </li>
+				            </ul>
+			            </div>
+                    </div>    
 				</div>
-				<div id="map" class="col-sm-10 col-lg-8 gmap">
+				<div id="map" class="col-xl-8 gmap">
 				</div>
 			</div>
 		</div>

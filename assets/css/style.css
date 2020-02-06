@@ -34,6 +34,8 @@ height: 800px;
     text-align:center;
     padding-top: 3rem;
     font-family:"Merriweather",serif; 
+    background-color: #fff;
+    margin-top:-100px;
 }
 
 /*--------------------------------------------------------------------Map Section*/
@@ -41,20 +43,80 @@ height: 800px;
 
 
 .search-box {
-
-    background-color:#d0d0d0;
+    text-align:center;
+    background-color: #f0f0f0;
     border:none;
-    padding-top:4rem;   
+    padding-top:1rem;
+   
+ 
+       
 }
 .custom-select {
+   
     font-family: "Open Sans", serif;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
-    border:none;
+    border:3px;
+    width:90%;
 }
 
 .gmap {
     background-color: #d0d0d0;
     min-height: 500px;
+    
+   
+}
+
+.map-icons li button i {
+    width: 56px;
+    height: 56px;
+    padding: 24px 0;
+    border-radius: 10%;
+    font-size:30px;
+    line-height: 12px;
+    text-align: center;
+    color: #2d2d30;
+    background: rgb(255, 0, 0);
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.3);
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.map-icons li button i:hover {
+    
+    color: #000000;
+    transform:scale(1.05);
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.4);
+    
+}
+
+.icon-row {
+    background-color: #62626294;
+    margin-top: 2rem;
+    
+}
+
+.icon-heading {
+    padding-top: 3rem;
+    font-family: "Open Sans", sans-serif;
+    color: #626262;
+    
+}
+.icons {
+    padding:0;
+}
+
+#rest {
+   background-color: rgb(6, 252, 6);
+   margin-right: 0;
+}
+
+#glass {
+   background-color: rgb(0, 110, 255);;
+}
+#info {
+   background-color: rgb(255, 255, 0);
 }
 
 /*--------------------------------------------------------------------Booking Section*/
