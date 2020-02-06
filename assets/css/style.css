@@ -33,8 +33,7 @@ height: 800px;
 .intro {
     text-align:center;
     padding-top: 3rem;
-    font-family:"Merriweather",serif;
-   
+    font-family:"Merriweather",serif; 
 }
 
 /*--------------------------------------------------------------------Map Section*/
@@ -45,7 +44,7 @@ height: 800px;
 
     background-color:#d0d0d0;
     border:none;
-    padding-top:4rem;
+    padding-top:4rem;   
 }
 .custom-select {
     font-family: "Open Sans", serif;
@@ -61,12 +60,19 @@ height: 800px;
 /*--------------------------------------------------------------------Booking Section*/
 
 .contact {
-background:url('../../assets/img/cone.jpg') no-repeat right;
-background-size: cover;
 padding-right:7rem;
-padding-top:3rem;
+padding-top:6rem;
 padding-bottom: 2rem;
+}
 
+.form-col {
+    background-color: #4285f4;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.45);
+    border-radius:10px;
+}
+
+#send {
+    background-color: #f0f0f0;
 }
 
 /*--------------------------------------------------------------------Popular Destinations*/
