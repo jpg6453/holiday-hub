@@ -70,11 +70,11 @@ height: 800px;
     width: 56px;
     height: 56px;
     padding: 24px 0;
-    border-radius: 10%;
+    border-radius: 50%;
     font-size:30px;
     line-height: 12px;
     text-align: center;
-    color: #2d2d30;
+    color: #fafafa;
     background: rgb(255, 0, 0);
     box-shadow: 2px 2px 2px 1px rgba(0,0,0,.3);
     transition: all 0.35s ease-in-out;
@@ -85,14 +85,14 @@ height: 800px;
 
 .map-icons li button i:hover {
     
-    color: #000000;
+    
     transform:scale(1.05);
     box-shadow: 2px 2px 2px 1px rgba(0,0,0,.4);
     
 }
 
 .icon-row {
-    background-color: #62626294;
+   
     margin-top: 2rem;
     
 }
@@ -107,8 +107,16 @@ height: 800px;
     padding:0;
 }
 
+.icon-label {
+    display:block;
+    margin-top:5px;
+    letter-spacing:0px;
+    font-size: 14px;
+    font-weight:500;
+}
+
 #rest {
-   background-color: rgb(6, 252, 6);
+   background-color: #008000;
    margin-right: 0;
 }
 
@@ -116,7 +124,7 @@ height: 800px;
    background-color: rgb(0, 110, 255);;
 }
 #info {
-   background-color: rgb(255, 255, 0);
+   background-color: rgb(174, 0, 255);
 }
 
 /*--------------------------------------------------------------------Booking Section*/
