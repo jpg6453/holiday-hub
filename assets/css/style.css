@@ -25,7 +25,7 @@
 background:url('../../assets/img/hero.jpg') no-repeat center;
 background-size: cover;
 background-attachment: fixed;
-height: 800px;
+height: 50rem;
 }
 
 /*--------------------------------------------------------------------Intro Section*/
@@ -149,8 +149,8 @@ padding-bottom: 2rem;
 
 .dest-section {
     background-color: #f0f0f0;
-    padding-top: 6rem;
-    padding-bottom:6rem;
+    padding-top: 3rem;
+    padding-bottom:3rem;
 }
 
 
@@ -162,12 +162,14 @@ padding-bottom: 2rem;
 
 .cards-row {
     margin-top: 2rem;
+    
 }
 
 .dest-card {
     border:none;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+    margin-bottom:1rem;
 
 }
 
