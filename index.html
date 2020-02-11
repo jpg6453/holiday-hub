@@ -75,7 +75,7 @@
 		<div class="container map-container">
             
 			<div class="row">
-				<div class="col-md-8 col-xl-3 search-box">
+				<div class="col-md-8 col-xl-2 search-box">
 					<div id="controls">
 				        <select id="country" class="custom-select">
                             <option value="all">All</option>
@@ -125,14 +125,14 @@
 			            </div>
                     </div>
                 </div>    
-			    <div id="map" class=" col-md-8 col-xl-6 gmap">
+			    <div id="map" class=" col-md-8 col-xl-5 gmap">
                 </div> 
-                <div class=" col-md-6 col-xl-3">
+                <div class=" col-md-6 col-xl-5">
                     <div id="listing">
                         <table id="resultsTable">
-                            <td id="results"></td>
+                            <tbody id="results"></tbody>
                         </table>
-                    </div>
+    </div>
                 </div>
             </div> 
         </div>    
@@ -285,7 +285,7 @@
 
 
 		<div id="listing">
-			<table id="resultsTable">
+			<div id="resultsTable">
 				<tbody id="results"></tbody>
 			</table>
 		</div>
@@ -319,6 +319,19 @@
 	</section>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="assets/img/cone.jpg" alt="Avatar" style="width:300px;height:300px;">
+            </div>
+            <div class="flip-card-back">
+                <h1>John Doe</h1>
+                <p>Architect & Engineer</p>
+                <p>We love that guy</p>
+            </div>
+        </div>
+    </div>
 
 	<!--Footer-->
 
