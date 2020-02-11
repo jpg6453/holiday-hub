@@ -73,13 +73,13 @@
 	<!--Map Section-->
 	<section>
 		<div class="container-fluid map-container">
-            
+
 			<div class="row justify-content-center">
 				<div class="col-xl-4 search-box">
-                    <form>
-                        <div class="form-row">
-                            <div class="col-md-6">
-                                <select id="country" class="custom-select">
+					<form>
+						<div class="form-row">
+							<div class="col-md-6">
+								<select id="country" class="custom-select">
                                     <option value="all"selected>Choose a country</option>
                                     <option value="au">Australia</option>
                                     <option value="br">Brazil</option>
@@ -95,43 +95,77 @@
                                     <option value="us">U.S.A.</option>
                                     <option value="uk">UK</option>
                                 </select>
+							</div>
+							<div id="locationField" class="col-md-6">
+								<input id="autocomplete" placeholder="Enter a city" type="text" />
                             </div>
-                            <div id="locationField" class="col-md-6">
-                                <input id="autocomplete" placeholder="Enter a city" type="text" />
-                            </div>
-                        </div>
-                    </form>
-					
-				    
-                    <h4 class="icon-heading">Explore Nearby...</h4>
-                    <div class="row justify-content-center icon-row">
-				        <div class="col icons text-center">
-				            <ul class="list-inline map-icons">
-					            <li class="list-inline-item">
-						        <button id="hotel" class="btn btn-map"><i class="fas fa-bed"></i>
+							</div>
+					</form>
+
+
+					<h4 class="icon-heading">Explore Nearby...</h4>
+					<div class="row justify-content-center icon-row">
+						<div class="col icons text-center">
+							<ul class="list-inline map-icons">
+								<li class="list-inline-item">
+									<button id="hotel" class="btn btn-map"><i class="fas fa-bed"></i>
                                     <span class="icon-label">Hotels</span>
                                 </button>
-					            </li>
-                                <li class="list-inline-item rest">
-						        <button id="restaurant" class="btn btn-map"><i id="rest"class="fas fa-utensils"></i>
+								</li>
+								<li class="list-inline-item rest">
+									<button id="restaurant" class="btn btn-map"><i id="rest"class="fas fa-utensils"></i>
 					                <span class="icon-label">Restaurants</span>
                                 </button>
-                                </li>
-                                <li class="list-inline-item">
-						        <button class="btn btn-map"><i id="glass" class="fas fa-glass-martini-alt"></i>
+								</li>
+								<li class="list-inline-item">
+									<button class="btn btn-map"><i id="glass" class="fas fa-glass-martini-alt"></i>
                                     <span class="icon-label">Bars</span>
                                 </button>
-                                </li>
-                                <li class="list-inline-item">
-						        <button class="btn btn-map"><i id="info" class="fas fa-info"></i>
+								</li>
+								<li class="list-inline-item">
+									<button class="btn btn-map"><i id="info" class="fas fa-info"></i>
                                     <span class="icon-label">Attractions</span>
                                 </button>
-                                </li>
-				            </ul>
-			            </div>
-                    </div>    
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 				<div id="map" class="col-xl-8 gmap">
+				</div>
+
+				<!-- Search Results-->
+				<div id="listing">
+					<table id="resultsTable">
+						<tbody id="results"></tbody>
+					</table>
+				</div>
+                <!-- Info Window Content-->
+				<div style="display: none">
+					<div id="info-content">
+						<table>
+							<tr id="iw-url-row" class="iw_table_row">
+								<td id="iw-icon" class="iw_table_icon"></td>
+								<td id="iw-url"></td>
+							</tr>
+							<tr id="iw-address-row" class="iw_table_row">
+								<td class="iw_attribute_name">Address:</td>
+								<td id="iw-address"></td>
+							</tr>
+							<tr id="iw-phone-row" class="iw_table_row">
+								<td class="iw_attribute_name">Telephone:</td>
+								<td id="iw-phone"></td>
+							</tr>
+							<tr id="iw-rating-row" class="iw_table_row">
+								<td class="iw_attribute_name">Rating:</td>
+								<td id="iw-rating"></td>
+							</tr>
+							<tr id="iw-website-row" class="iw_table_row">
+								<td class="iw_attribute_name">Website:</td>
+								<td id="iw-website"></td>
+							</tr>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -142,10 +176,12 @@
 	<section>
 		<div class="container contact">
 			<div class="row justify-content-around">
-                <div class="col-12 col-md-5 mx-auto">
-                 <h1>Book with us</h1>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, obcaecati ipsam nisi porro tempore tenetur non. Perferendis maxime quaerat quisquam doloremque esse beatae, possimus, odit nostrum doloribus, eos minus tempora?</p>
-                </div>
+				<div class="col-12 col-md-5 mx-auto">
+					<h1>Book with us</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, obcaecati ipsam nisi porro
+						tempore tenetur non. Perferendis maxime quaerat quisquam doloremque esse beatae, possimus, odit
+						nostrum doloribus, eos minus tempora?</p>
+				</div>
 
 
 				<div class="col-12 col-md-5 form-col mx-auto">
@@ -181,38 +217,43 @@
 	<!--Popular Destinations-->
 	<section class="dest-section">
 		<div class="container dest-container">
-            <h2>Trending this Week</h2>
+			<h2>Trending this Week</h2>
 			<h5>Popular Destinations</h5>
-			
+
 			<div class="row cards-row">
 				<div class="col-md-4 mx-auto col-lg-">
 					<div class="card dest-card">
 						<img src="assets/img/maldives.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">The Maldives</h5>
-							<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid pariatur</p>
+							<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
+								pariatur</p>
 						</div>
 					</div>
-                </div>
-                <div class="col-md-4 col-lg-"">
-					<div class="card dest-card">
-						<img src="assets/img/africa.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">African Safari</h5>
-							<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore iusto ab iste distinctio, eum reiciendis, sint quisquam perspiciatis, magnam quos aliquam. Doloremque corrupti rerum odio esse debitis? Repudiandae, ipsum similique..</p>
-						</div>
-					</div>		
 				</div>
-                <div class="col-md-4 col-lg-"">		
-					<div class="card dest-card">
-						<img src="assets/img/sydney.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">Sydney</h5>
-							<p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui libero cumque praesentium eaque maxime sed dicta animi distinctio magnam itaque temporibus est voluptate a, dolorem quis! Quod autem accusamus nulla?</p>
-						</div>		
+				<div class="col-md-4 col-lg-"">
+					<div class=" card dest-card">
+					<img src="assets/img/africa.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">African Safari</h5>
+						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore iusto
+							ab iste distinctio, eum reiciendis, sint quisquam perspiciatis, magnam quos aliquam.
+							Doloremque corrupti rerum odio esse debitis? Repudiandae, ipsum similique..</p>
 					</div>
 				</div>
 			</div>
+			<div class="col-md-4 col-lg-"">		
+					<div class=" card dest-card">
+				<img src="assets/img/sydney.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Sydney</h5>
+					<p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui libero cumque
+						praesentium eaque maxime sed dicta animi distinctio magnam itaque temporibus est voluptate a,
+						dolorem quis! Quod autem accusamus nulla?</p>
+				</div>
+			</div>
+		</div>
+		</div>
 		</div>
 	</section>
 
