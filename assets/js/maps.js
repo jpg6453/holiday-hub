@@ -59,3 +59,37 @@ var countries = {
         zoom: 5
     }
 };
+
+//Function to render google map
+
+function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: countries['us'].zoom,
+          center: countries['us'].center,
+          mapTypeControl: false,
+          panControl: false,
+          zoomControl: false,
+          streetViewControl: false
+        });
+
+        infoWindow = new google.maps.InfoWindow({
+          content: document.getElementById('info-content')
+        });
+
+        // Creates autocomplete object and associates it with the Search box controls
+        // Restricts the search to the selected country and to place type "cities".
+        
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */ (
+                document.getElementById('autocomplete')), {
+              types: ['(cities)'],
+              componentRestrictions: countryRestrict
+            });
+        places = new google.maps.places.PlacesService(map);
+
+        autocomplete.addListener('place_changed', onPlaceChanged);
+
+        // DOM event listener to react when the user selects a country.
+        document.getElementById('country').addEventListener(
+            'change', setAutocompleteCountry);
+      }
