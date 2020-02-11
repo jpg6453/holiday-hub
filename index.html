@@ -76,15 +76,33 @@
             
 			<div class="row justify-content-center">
 				<div class="col-xl-4 search-box">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <select id="country" class="custom-select">
+                                    <option value="all"selected>Choose a country</option>
+                                    <option value="au">Australia</option>
+                                    <option value="br">Brazil</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="fr">France</option>
+                                    <option value="de">Germany</option>
+                                    <option value="mx">Mexico</option>
+                                    <option value="nz">New Zealand</option>
+                                    <option value="it">Italy</option>
+                                    <option value="za">South Africa</option>
+                                    <option value="es">Spain</option>
+                                    <option value="pt">Portugal</option>
+                                    <option value="us">U.S.A.</option>
+                                    <option value="uk">UK</option>
+                                </select>
+                            </div>
+                            <div id="locationField" class="col-md-6">
+                                <input id="autocomplete" placeholder="Enter a city" type="text" />
+                            </div>
+                        </div>
+                    </form>
 					
-				    <select class="custom-select text-center">
-                        <option selected>Country</option>
-                        <option value="1">France</option>
-                        <option value="2">Spain</option>
-                        <option value="3">Italy</option>
-                        <option value="4">Croatia</option>
-                        <option value="5">Netherlands</option>
-                    </select>
+				    
                     <h4 class="icon-heading">Explore Nearby...</h4>
                     <div class="row justify-content-center icon-row">
 				        <div class="col icons text-center">
