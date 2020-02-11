@@ -106,3 +106,68 @@ function initMap() {
           document.getElementById('autocomplete').placeholder = 'Enter a city';
         }
       }
+
+       // Search for hotels in the selected city, within the viewport of the map.
+      function search() {
+        var search = {
+          bounds: map.getBounds(),
+          types: ['lodging']
+        };
+
+        places.nearbySearch(search, function(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            clearResults();
+            clearMarkers();
+            // Create a marker for each hotel found, and
+            // assign a letter of the alphabetic to each marker icon.
+            for (var i = 0; i < results.length; i++) {
+              var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+              var markerIcon = MARKER_PATH + markerLetter + '.png';
+              // Use marker animation to drop the icons incrementally on the map.
+              markers[i] = new google.maps.Marker({
+                position: results[i].geometry.location,
+                animation: google.maps.Animation.DROP,
+                icon: markerIcon
+              });
+              // If the user clicks a hotel marker, show the details of that hotel
+              // in an info window.
+              markers[i].placeResult = results[i];
+              google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+              setTimeout(dropMarker(i), i * 100);
+              addResult(results[i], i);
+            }
+          }
+        });
+      }
+
+      function clearMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+          if (markers[i]) {
+            markers[i].setMap(null);
+          }
+        }
+        markers = [];
+      }
+
+      // Set the country restriction based on user input.
+      // Also center and zoom the map on the given country.
+      function setAutocompleteCountry() {
+        var country = document.getElementById('country').value;
+        if (country == 'all') {
+          autocomplete.setComponentRestrictions({'country': []});
+          map.setCenter({lat: 15, lng: 0});
+          map.setZoom(2);
+        } else {
+          autocomplete.setComponentRestrictions({'country': country});
+          map.setCenter(countries[country].center);
+          map.setZoom(countries[country].zoom);
+        }
+        clearResults();
+        clearMarkers();
+      }
+
+      function dropMarker(i) {
+        return function() {
+          markers[i].setMap(map);
+        };
+      }
