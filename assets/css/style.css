@@ -40,6 +40,17 @@ height: 50rem;
 
 /*--------------------------------------------------------------------Map Section*/
 
+#listing {
+        position: relative;
+        width: 80%;
+        min-height: 500px;
+        overflow: auto;
+        left: 3rem;
+        top: 0px;
+        cursor: pointer;
+        overflow-x: hidden;
+        scr
+}
 
 
 .search-box {
