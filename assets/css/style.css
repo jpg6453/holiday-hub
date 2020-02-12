@@ -59,6 +59,17 @@ height: 50rem;
     width:90%;
 }
 
+#autocomplete {
+    padding-top: 6px;
+    padding-bottom :6px;
+    padding-left:6px;
+    width:100%;
+    height: 38px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+    border:none;
+    border-radius: 2px;
+}
+
 .gmap {
     background-color: #d0d0d0;
     min-height: 500px;
@@ -125,6 +136,15 @@ height: 50rem;
 }
 #info {
    background-color: rgb(174, 0, 255);
+}
+#coffee {
+    background-color: #332900;
+}
+#atm {
+    background-color: #000000;
+}
+#taxi {
+    background-color: #e6b800;
 }
 
 /*--------------------------------------------------------------------Booking Section*/
