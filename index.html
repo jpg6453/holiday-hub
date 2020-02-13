@@ -73,9 +73,8 @@
 	<!--Map Section-->
 	<section>
 		<div class="container-fluid map-container">
-
 			<div class="row justify-content-center">
-				<div class="col-xl-3 search-box">
+				<div class="col search-box">
 					<form>
 						<div class="form-row">
 							<div class="col-md-6">
@@ -101,9 +100,11 @@
                             </div>
 							</div>
 					</form>
+				</div>
+			</div>
 
 
-					<h4 class="icon-heading">Explore Nearby</h4>
+			<!--h4 class="icon-heading">Explore Nearby</h4>
 					<div class="row justify-content-center icon-row">
 						<div class="col icons text-center">
 							<ul class="list-inline map-icons">
@@ -153,46 +154,51 @@
 							</ul>
 						</div>
 					</div>
-				</div>
-				<div id="map" class="col-xl-6 gmap">
-				</div>
-
-				<!-- Search Results-->
-				<div class="col-xl-3">
-					<div id="listing">
-						<table id="resultsTable">
-							<tbody id="results"></tbody>
-						</table>
-					</div>
-				</div>
-				<!-- Info Window Content-->
-				<div style="display: none">
-					<div id="info-content">
-						<table>
-							<tr id="iw-url-row" class="iw_table_row">
-								<td id="iw-icon" class="iw_table_icon"></td>
-								<td id="iw-url"></td>
-							</tr>
-							<tr id="iw-address-row" class="iw_table_row">
-								<td class="iw_attribute_name">Address:</td>
-								<td id="iw-address"></td>
-							</tr>
-							<tr id="iw-phone-row" class="iw_table_row">
-								<td class="iw_attribute_name">Telephone:</td>
-								<td id="iw-phone"></td>
-							</tr>
-							<tr id="iw-rating-row" class="iw_table_row">
-								<td class="iw_attribute_name">Rating:</td>
-								<td id="iw-rating"></td>
-							</tr>
-							<tr id="iw-website-row" class="iw_table_row">
-								<td class="iw_attribute_name">Website:</td>
-								<td id="iw-website"></td>
-							</tr>
-						</table>
+		</div-->
+			<div class="row justify-content-center">
+				<div class="col-xl-6 map-card">
+					<div id="map" class="gmap">
 					</div>
 				</div>
 			</div>
+
+
+			<!-- Search Results-->
+			<div class="col-xl-3">
+				<div id="listing">
+					<table id="resultsTable">
+						<tbody id="results"></tbody>
+					</table>
+				</div>
+			</div>
+			<!-- Info Window Content-->
+			<div style="display: none">
+				<div id="info-content">
+					<table>
+						<tr id="iw-url-row" class="iw_table_row">
+							<td id="iw-icon" class="iw_table_icon"></td>
+							<td id="iw-url"></td>
+						</tr>
+						<tr id="iw-address-row" class="iw_table_row">
+							<td class="iw_attribute_name">Address:</td>
+							<td id="iw-address"></td>
+						</tr>
+						<tr id="iw-phone-row" class="iw_table_row">
+							<td class="iw_attribute_name">Telephone:</td>
+							<td id="iw-phone"></td>
+						</tr>
+						<tr id="iw-rating-row" class="iw_table_row">
+							<td class="iw_attribute_name">Rating:</td>
+							<td id="iw-rating"></td>
+						</tr>
+						<tr id="iw-website-row" class="iw_table_row">
+							<td class="iw_attribute_name">Website:</td>
+							<td id="iw-website"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
 		</div>
 	</section>
 
