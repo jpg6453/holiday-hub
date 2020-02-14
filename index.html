@@ -1,348 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #map {
+      height: 100%;
+      background-color: grey;
+    }
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!--Bootstrap-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<!--Fontawesome-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-	<!--Styles-->
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-	<title>Holiday Hub</title>
+    /* TODO: Step 4A1: Make a generic sidebar */
+    /* Styling for an info pane that slides out from the left. 
+     * Hidden by default. */
+    #panel {
+      height: 100%;
+      width: null;
+      background-color: white;
+      position: fixed;
+      z-index: 1;
+      overflow-x: hidden;
+      transition: all .2s ease-out;
+    }
+
+    .open {
+      width: 250px;
+    }
+
+    /* Styling for place details */
+    .hero {
+      width: 100%;
+      height: auto;
+      max-height: 166px;
+      display: block;
+    }
+
+    .place,
+    p {
+      font-family: 'open sans', arial, sans-serif;
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .details {
+      color: darkslategrey;
+    }
+
+    a {
+      text-decoration: none;
+      color: cadetblue;
+    }
+  </style>
 </head>
 
 <body>
-	<!--START Navigation-->
-	<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+  <!-- TODO: Step 4A2: Add a generic sidebar -->
+  <!-- The slide-out panel for showing place details -->
+  <div id="panel"></div>
 
-		<!--Logo-->
-		<a class="navbar-brand mr-1" href="index.html">
-			<img src="assets/img/navlogo.png" height="40" alt="Sunrise logo" title="Sunrise logo">
-        </a>
+  <!-- Map appears here -->
+  <div id="map"></div>
 
-			<!--Burger Menu-->
-			<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+  <script>
+    /* Note: This example requires that you consent to location sharing when
+     * prompted by your browser. If you see the error "Geolocation permission
+     * denied.", it means you probably did not give permission for the browser * to locate you. */
+    let pos;
+    let map;
+    let bounds;
+    let infoWindow;
+    let currentInfoWindow;
+    let service;
+    let infoPane;
+    function initMap() {
+      // Initialize variables
+      bounds = new google.maps.LatLngBounds();
+      infoWindow = new google.maps.InfoWindow;
+      currentInfoWindow = infoWindow;
+      /* TODO: Step 4A3: Add a generic sidebar */
+      infoPane = document.getElementById('panel');
 
-			<!--Nav Links-->
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav ml-auto text-uppercase">
-					<li class="nav-item">
-						<a class="nav-link" href="#">TBC</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">TBC</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">TBC</a>
-					</li>
-				</ul>
-				<a class="btn btn-primary text-uppercase ml-md-2" href="#">Send Enquiry</a>
-			</div>
-	</nav>
+      // Try HTML5 geolocation
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: pos,
+            zoom: 15
+          });
+          bounds.extend(pos);
 
-	<!--END Navigation-->
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          infoWindow.open(map);
+          map.setCenter(pos);
 
-	<!--Hero Image-->
-	<header>
-		<div class="container-fluid hero-img"></div>
-	</header>
+          // Call Places Nearby Search on user's location
+          getNearbyPlaces(pos);
+        }, () => {
+          // Browser supports geolocation, but user has denied permission
+          handleLocationError(true, infoWindow);
+        });
+      } else {
+        // Browser doesn't support geolocation
+        handleLocationError(false, infoWindow);
+      }
+    }
 
-	<!--Intro Section-->
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="intro jumbotron">
-					<h1 class="display-4">Ready to discover your next holiday?</h1>
-					<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis non, illum vel eos
-						sed atque. Repellendus tenetur optio harum reiciendis numquam corporis quo? Eligendi et harum
-						veniam iste culpa quidem?</p>
-					<hr class="my-4">
-				</div>
-			</div>
-		</div>
-	</section>
+    // Handle a geolocation error
+    function handleLocationError(browserHasGeolocation, infoWindow) {
+      // Set default location to Sydney, Australia
+      pos = { lat: -33.856, lng: 151.215 };
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        zoom: 15
+      });
 
-	<!--Map Section-->
-	<section>
-		<div class="container-fluid map-container">
-			<div class="row justify-content-center">
-				<div class="col search-box">
-					<form>
-						<div class="form-row">
-							<div class="col-md-6">
-								<select id="country" class="custom-select">
-                                    <option value="all">All</option>
-                                    <option value="au">Australia</option>
-                                    <option value="br">Brazil</option>
-                                    <option value="ca">Canada</option>
-                                    <option value="fr">France</option>
-                                    <option value="de">Germany</option>
-                                    <option value="mx">Mexico</option>
-                                    <option value="nz">New Zealand</option>
-                                    <option value="it">Italy</option>
-                                    <option value="za">South Africa</option>
-                                    <option value="es">Spain</option>
-                                    <option value="pt">Portugal</option>
-                                    <option value="us">U.S.A.</option>
-                                    <option value="uk"selected>UK</option>
-                                </select>
-							</div>
-							<div id="locationField" class="col-md-6">
-								<input id="autocomplete" placeholder="Enter a city" type="text" />
-                            </div>
-							</div>
-					</form>
-				</div>
-			</div>
+      // Display an InfoWindow at the map center
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+        'Geolocation permissions denied. Using default location.' :
+        'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(map);
+      currentInfoWindow = infoWindow;
 
+      // Call Places Nearby Search on the default location
+      getNearbyPlaces(pos);
+    }
 
-			<!--h4 class="icon-heading">Explore Nearby</h4>
-					<div class="row justify-content-center icon-row">
-						<div class="col icons text-center">
-							<ul class="list-inline map-icons">
-								<li class="list-inline-item">
-									<button id="hotel" class="btn btn-map"><i class="fas fa-bed"></i>
-                                    <span class="icon-label">Hotels</span>
-                                </button>
-								</li>
-								<li class="list-inline-item rest">
-									<button id="restaurant" class="btn btn-map"><i id="rest"class="fas fa-utensils"></i>
-					                <span class="icon-label">Restaurants</span>
-                                </button>
-								</li>
-								<li class="list-inline-item">
-									<button class="btn btn-map"><i id="glass" class="fas fa-glass-martini-alt"></i>
-                                    <span class="icon-label">Bars</span>
-                                </button>
-								</li>
-								<li class="list-inline-item">
-									<button class="btn btn-map"><i id="coffee" class="fas fa-coffee"></i>
-                                    <span class="icon-label">Coffee</span>
-                                </button>
-								</li>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<hr>
-					<div class="row justify-content-center icon-row">
-						<div class="col icons text-center">
-							<ul class="list-inline map-icons">
-								<li class="list-inline-item">
-									<button class="btn btn-map"><i id="info" class="fas fa-info"></i>
-                                    <span class="icon-label">Attractions</span>
-                                </button>
-								</li>
-								<li class="list-inline-item rest">
-									<button class="btn btn-map"><i id="atm" class="far fa-credit-card"></i>
-					                <span class="icon-label">ATM</span>
-                                </button>
-								</li>
-								<li class="list-inline-item">
-									<button class="btn btn-map"><i id="taxi" class="fas fa-taxi"></i>
-                                    <span class="icon-label">Taxi</span>
-                                </button>
-								</li>
-							</ul>
-						</div>
-					</div>
-		</div-->
-			<div class="row justify-content-center">
-				<div class="col-xl-6 map-card">
-					<div id="map" class="gmap">
-					</div>
-				</div>
-			</div>
+    // Perform a Places Nearby Search Request
+    function getNearbyPlaces(position) {
+      let venue = ['school','atm','bar']; 
+      let request = {
+        location: position,
+        rankBy: google.maps.places.RankBy.DISTANCE,
+        types:[venue[1]]
+      };
 
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, nearbyCallback);
+    }
 
-			<!-- Search Results-->
-			<div class="col-xl-3">
-				<div id="listing">
-					<table id="resultsTable">
-						<tbody id="results"></tbody>
-					</table>
-				</div>
-			</div>
-			<!-- Info Window Content-->
-			<div style="display: none">
-				<div id="info-content">
-					<table>
-						<tr id="iw-url-row" class="iw_table_row">
-							<td id="iw-icon" class="iw_table_icon"></td>
-							<td id="iw-url"></td>
-						</tr>
-						<tr id="iw-address-row" class="iw_table_row">
-							<td class="iw_attribute_name">Address:</td>
-							<td id="iw-address"></td>
-						</tr>
-						<tr id="iw-phone-row" class="iw_table_row">
-							<td class="iw_attribute_name">Telephone:</td>
-							<td id="iw-phone"></td>
-						</tr>
-						<tr id="iw-rating-row" class="iw_table_row">
-							<td class="iw_attribute_name">Rating:</td>
-							<td id="iw-rating"></td>
-						</tr>
-						<tr id="iw-website-row" class="iw_table_row">
-							<td class="iw_attribute_name">Website:</td>
-							<td id="iw-website"></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-		</div>
-	</section>
+    // Handle the results (up to 20) of the Nearby Search
+    function nearbyCallback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        createMarkers(results);
+      }
+    }
 
-	<!-- Booking Section-->
+    // Set markers at the location of each place result
+    function createMarkers(places) {
+      places.forEach(function(place){
+        let marker = new google.maps.Marker({
+          position: place.geometry.location,
+          map: map,
+          title: place.name
+        });
 
-	<section>
-		<div class="container contact">
-			<div class="row justify-content-around">
-				<div class="col-12 col-md-5 mx-auto">
-					<h1>Book with us</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, obcaecati ipsam nisi porro
-						tempore tenetur non. Perferendis maxime quaerat quisquam doloremque esse beatae, possimus, odit
-						nostrum doloribus, eos minus tempora?</p>
-				</div>
+    
 
+        /* TODO: Step 4B: Add click listeners to the markers */
+        // Add click listener to each marker
+        google.maps.event.addListener(marker, 'click', function(){
+          let request = {
+            placeId: place.place_id,
+            fields: ['name', 'formatted_address', 'geometry', 'rating',
+              'website', 'photos'],
+           
+        
+          };
 
-				<div class="col-12 col-md-5 form-col mx-auto">
-					<form class="needs-validation">
-						<div class="form-group">
-							<label for="name">Name</label>
-							<input type="text" class="form-control text-muted" id="name" aria-describedby="name" placeholder="Name" required>
-                        </div>
-							<div class="form-group">
-								<label for="phone">Phone</label>
-								<input type="number" class="form-control text-muted" id="phone" aria-describedby="phone" placeholder="Phone" required>
-                        </div>
-								<div class="form-group">
-									<label for="email">Email Address</label>
-									<input type="email" class="form-control text-muted" id="email" aria-describedby="email" placeholder="example@example.com" required>
-									<small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
-								</div>
-								<div class="form-group">
-									<label for="textarea">Tell us More...</label>
-									<textarea class="form-control" id="textarea" rows="6" placeholder="Enter your message here" required></textarea>
-								</div>
-								<div class="container text-right">
-									<div class="col">
-										<button id="send" type="submit" class="btn text-right mb-2">Send</button>
-									</div>
-								</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
+          
 
-	<!--Popular Destinations-->
-	<section class="dest-section">
-		<div class="container dest-container">
-			<h2>Trending this Week</h2>
-			<h5>Popular Destinations</h5>
+          /* Only fetch the details of a place when the user clicks on a marker.
+           * If we fetch the details for all place results as soon as we get
+           * the search response, we will hit API rate limits. */
+          service.getDetails(request, function(placeResult, status){
+            showDetails(placeResult, marker, status)
+          });
+        });
 
-			<div class="row cards-row">
-				<div class="col-md-4 mx-auto col-lg-">
-					<div class="card dest-card">
-						<img src="assets/img/maldives.jpg" class="card-img-top" alt="...">
-						<div class="card-body">
-							<h5 class="card-title">The Maldives</h5>
-							<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-								pariatur</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-lg-"">
-					<div class=" card dest-card">
-					<img src="assets/img/africa.jpg" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">African Safari</h5>
-						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore iusto
-							ab iste distinctio, eum reiciendis, sint quisquam perspiciatis, magnam quos aliquam.
-							Doloremque corrupti rerum odio esse debitis? Repudiandae, ipsum similique..</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-lg-"">		
-					<div class=" card dest-card">
-				<img src="assets/img/sydney.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Sydney</h5>
-					<p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui libero cumque
-						praesentium eaque maxime sed dicta animi distinctio magnam itaque temporibus est voluptate a,
-						dolorem quis! Quod autem accusamus nulla?</p>
-				</div>
-			</div>
-		</div>
-		</div>
-		</div>
-	</section>
+        // Adjust the map bounds to include the location of this marker
+        bounds.extend(place.geometry.location);
+      });
+      /* Once all the markers have been placed, adjust the bounds of the map to
+       * show all the markers within the visible area. */
+      map.fitBounds(bounds);
+    }
 
-	<!--Call to action-->
-	<section>
-		<div class="container-fluid call-to-action">
-			<div class="row text-white justify-content-end">
-				<h6 class="wish">Wish You Were Here?</h6>
+    /* TODO: Step 4C: Show place details in an info window */
+    // Builds an InfoWindow to display details above the marker
+    function showDetails(placeResult, marker, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        let placeInfowindow = new google.maps.InfoWindow();
+        let rating = "None";
+        if (placeResult.rating) rating = placeResult.rating;
+        placeInfowindow.setContent('<div><strong>' + placeResult.name +
+          '</strong><br>' + 'Rating: ' + rating + '<button class="btn-primary>'+'book'+ '</button>' + '</div>');
+        placeInfowindow.open(marker.map, marker);
+        currentInfoWindow.close();
+        currentInfoWindow = placeInfowindow;
+        showPanel(placeResult);
+      } else {
+        console.log('showDetails failed: ' + status);
+      }
+    }
 
-			</div>
-			<div class="offset-md-9 col-md-3 justify-content-right">
-				<select class="custom-select">
-                    <option selected>Country</option>
-                    <option value="1">France</option>
-                    <option value="2">Spain</option>
-                    <option value="3">Italy</option>
-                    <option value="4">Croatia</option>
-                    <option value="5">Netherlands</option>
-                </select>
-			</div>
-		</div>
-	</section>
+    /* TODO: Step 4D: Load place details in a sidebar */
+    // Displays place details in a sidebar
+    function showPanel(placeResult) {
+      // If infoPane is already open, close it
+      if (infoPane.classList.contains("open")) {
+        infoPane.classList.remove("open");
+      }
 
-	<!--Footer-->
+      // Clear the previous details
+      while (infoPane.lastChild) {
+        infoPane.removeChild(infoPane.lastChild);
+      }
 
-	<footer class="container-fluid footer bg-dark">
-		<div class="row">
-			<div class="col text-center">
-				<ul class="list-inline social-links">
-					<li class="list-inline-item">
-						<a target="_blank" href="https://www.instagram.com">
-							<i class="fab fa-instagram" aria-hidden="true"></i>
-							<span class="sr-only">Instagram</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank" href="https://www.facebook.com">
-							<i class="fab fa-facebook-square" aria-hidden="true"></i>
-							<span class="sr-only">Facebook</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank" href="https://twitter.com">
-							<i class="fab fa-twitter" aria-hidden="true"></i>
-							<span class="sr-only">Twitter</span>
-						</a>
-					</li>
-					<li class="list-inline-item">
-						<a target="_blank" href="https://www.youtube.com">
-							<i class="fab fa-youtube" aria-hidden="true"></i>
-							<span class="sr-only">Youtube</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</footer>
+      /* TODO: Step 4E: Display a Place Photo with the Place Details */
+      // Add the primary photo, if there is one
+      if (placeResult.photos) {
+        let firstPhoto = placeResult.photos[0];
+        let photo = document.createElement('img');
+        photo.classList.add('hero');
+        photo.src = firstPhoto.getUrl();
+        infoPane.appendChild(photo);
+      }
 
+      // Add place details with text formatting
+      let name = document.createElement('h1');
+      name.classList.add('place');
+      name.textContent = placeResult.name;
+      infoPane.appendChild(name);
+      if (placeResult.rating) {
+        let rating = document.createElement('p');
+        rating.classList.add('details');
+        rating.textContent = `Rating: ${placeResult.rating} \u272e`;
+        infoPane.appendChild(rating);
+      }
+      let address = document.createElement('p');
+      address.classList.add('details');
+      address.textContent = placeResult.formatted_address;
+      infoPane.appendChild(address);
+      if (placeResult.website) {
+        let websitePara = document.createElement('p');
+        let websiteLink = document.createElement('a');
+        let websiteUrl = document.createTextNode(placeResult.website);
+        websiteLink.appendChild(websiteUrl);
+        websiteLink.title = placeResult.website;
+        websiteLink.href = placeResult.website;
+        websitePara.appendChild(websiteLink);
+        infoPane.appendChild(websitePara);
+      }
+
+      // Open the infoPane
+      infoPane.classList.add("open");
+      
+    }
+  </script>
 	<!--js scripts-->
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
