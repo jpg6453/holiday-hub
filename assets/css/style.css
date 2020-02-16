@@ -25,7 +25,7 @@
 background:url('../../assets/img/hero.jpg') no-repeat center;
 background-size: cover;
 background-attachment: fixed;
-height: 50rem;
+height: 100vh;
 }
 
 /*--------------------------------------------------------------------Intro Section*/
@@ -33,9 +33,22 @@ height: 50rem;
 .intro {
     text-align:center;
     padding-top: 3rem;
-    font-family:"Merriweather",serif; 
-    background-color: #fff;
-    margin-top:-100px;
+    font-family:"Open Sans", sans-serif; 
+    background-color: transparent;
+    margin-bottom: 0;
+    padding-bottom: 0;
+   
+}
+.intro h1 {
+    font-weight:300;
+    letter-spacing:3.5px;
+    font-size: 4.5rem;
+    color: #ffffff;
+}
+
+.search-section{
+    background-color: #00a0fd;
+    
 }
 
 /*--------------------------------------------------------------------Map Section*/
@@ -67,7 +80,7 @@ results {
    
     border-radius:55px;
     box-shadow: 1.5px 1px 1px 1px rgba(0,0,0,.2);
-    background-color:#f0f0f0;
+    background-color: #ffffff;
     padding:6px;
     margin-bottom:3rem;
 
