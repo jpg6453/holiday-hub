@@ -185,6 +185,10 @@ results {
 #taxi {
     background-color: #e6b800;
 }
+#near {
+    background-color: #626262;
+    color: #fafafa;
+}
 
 /*--------------------------------------------------------------------Booking Section*/
 
