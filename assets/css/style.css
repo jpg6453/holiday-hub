@@ -91,6 +91,10 @@ results {
    
 }
 
+.search-bar {
+    background-color: #f0f0f0;
+}
+
 #country {
     border:none;
     background-color:transparent;
