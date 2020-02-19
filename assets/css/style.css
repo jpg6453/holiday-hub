@@ -42,14 +42,11 @@ height: 100vh;
 .intro h1 {
     font-weight:300;
     letter-spacing:3.5px;
-    font-size: 4.5rem;
-    color: #ffffff;
+    font-size: 3.5rem;
+    color: #000000;
 }
 
-.search-section{
-    background-color: #00a0fd;
-    
-}
+
 
 /*--------------------------------------------------------------------Map Section*/
 
