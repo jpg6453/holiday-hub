@@ -25,7 +25,7 @@
 background:url('../../assets/img/hero.jpg') no-repeat center;
 background-size: cover;
 background-attachment: fixed;
-height: 100vh;
+height: 50rem;
 }
 
 /*--------------------------------------------------------------------Intro Section*/
@@ -40,7 +40,7 @@ height: 100vh;
    
 }
 .intro h1 {
-    font-weight:300;
+    font-weight:700;
     letter-spacing:3.5px;
     font-size: 3.5rem;
     color: #000000;
