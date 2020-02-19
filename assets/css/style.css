@@ -230,8 +230,8 @@ img.bg-luggage {
 
 .dest-section {
     background-color: #f0f0f0;
-    padding-top: 3rem;
-    padding-bottom:3rem;
+    padding:6rem 0;
+    
 }
 
 
@@ -242,27 +242,16 @@ img.bg-luggage {
 }
 
 .cards-row {
-    margin-top: 2rem;
+    margin: 3rem 0;
     
 }
 
 .dest-card {
     border:none;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
-    margin-bottom:1rem;
-
+    border-radius: 10px;
+    margin-bottom:1.5rem;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.35);
 }
-
-
-
-
-
-
-
-
-
-
 
 /*-------------------------------------------------------------------------CTA*/
 .call-to-action {
