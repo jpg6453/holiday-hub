@@ -71,11 +71,12 @@ results {
 
 
 /*-------------------------------------------------------------Single Search field*/
+.search-bar {
+    background-color: #f0f0f0;
+}
 
-.search-row {
-  
-   
-   
+
+.search-row {   
     border-radius:55px;
     box-shadow: 1.5px 1px 1px 1px rgba(0,0,0,.2);
     background-color: #ffffff;
