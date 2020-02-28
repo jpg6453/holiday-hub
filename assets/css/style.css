@@ -51,23 +51,34 @@ height: 50rem;
 /*--------------------------------------------------------------------Map Section*/
 
 .hotelIcon {
-    height:100px;
-    width:150px;
+    height:50px;
+    width:80px;
+}
+
+.placephoto {
+    height:36px;
+    width:24px;
 }
 #listing {
         position: relative;
-        width: 80%;
-        min-height: 360px;
+        width:75%;
+        max-height: 470px;
         overflow: auto;
-        left: 3rem;
-        top: 0px;
+        top:2rem;
         cursor: pointer;
         overflow-x: hidden;
+       
 }
         
-results {
+.card.result-card {
+  margin-bottom: 1rem;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+  border:none;
+  background-color: hsl(0, 0%, 94%);
+  padding-top: 5px;
+ } 
 
- }       
+     
 
 
 /*-------------------------------------------------------------Single Search field*/
@@ -303,4 +314,26 @@ h6 {
     transform:scale(1.5);
    
     
+}
+
+/*-------------------------------------------------------------------------footer*/
+
+#toTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 20px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  
+  background-color:rgba(0,0,0,.45); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 12px; /* Some padding */
+  border-radius: 40%; /* Rounded corners */
+  font-size: 20px; /* Increase font size */
+}
+
+#toTopBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
 }
