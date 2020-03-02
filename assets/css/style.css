@@ -13,9 +13,10 @@
     letter-spacing: 3px;
 }
 
-.btn {
+.book-now-btn {
     font-family: "Open Sans", sans-serif;
     letter-spacing:3px;
+    border-radius:25px;   
 }
 
 .brand-text {
