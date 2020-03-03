@@ -39,6 +39,10 @@
     background-size: cover;
     background-attachment: fixed;
     height: 50rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .opaque-overlay {
@@ -50,25 +54,21 @@
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-/*--------------------------------------------------------------------Intro Section*/
+/*--------------------------------------------------------------------Hero Text*/
 
-.intro {
-    text-align:center;
-    padding-top: 3rem;
+.hero-text-row {
+    padding-top:20rem;
+}
+
+.hero-text{
     font-family:"Open Sans", sans-serif; 
-    background-color: transparent;
     margin-bottom: 0;
-    padding-bottom: 0;
-   
-}
-.intro h1 {
     font-weight:700;
-    letter-spacing:3.5px;
-    font-size: 3.5rem;
-    color: #000000;
+    letter-spacing:4px;
+    font-size: 4.25rem;
+    color: #000;
+    text-transform: uppercase;
 }
-
-
 
 /*--------------------------------------------------------------------Map Section*/
 

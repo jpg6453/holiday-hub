@@ -25,7 +25,7 @@
 		<a class="navbar-brand mr-1" href="index.html">
 			<img src="assets/img/navlogo.png" height="40" alt="Sunrise logo" title="Sunrise logo">
         </a>
-        <span class="brand-text">Holiday Hub</span>
+			<span class="brand-text">Holiday Hub</span>
 
 			<!--Burger Menu-->
 			<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,20 +47,18 @@
 
 	<!--Hero Image-->
 	<header>
-		<div class="container-fluid hero-img"></div>
-            <div class="opaque-overlay">&nbsp;</div>
-	</header>
-
-	<!--Intro Section-->
-	<section class="search-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="intro jumbotron">
-					<h1 class="display-4">Are You Ready to<br>Discover Your Next Holiday?</h1>
-				</div>
+		<div class="container-fluid hero-img">
+            <!--Opaque Overlay-->
+			<div class="opaque-overlay">&nbsp;</div>
+			<div class="row hero-text-row justify-content-center">
+                <div class="col-md-10">
+                    <!--Hero Text-->
+					<h1 class="hero-text">Ready to Discover Your Next Holiday?</h1>	
+                </div>
 			</div>
 		</div>
-	</section>
+	</header>
+
 
 	<!--Search-->
 	<section class="search-bar">
@@ -143,22 +141,24 @@
 				<div id="map" class="col-lg-6 gmap"></div>
 				<!-- Search Results-->
 				<div class="col-lg-6 d-none my-auto">
-                    <div class="row text-center justify-content-center">
-                        <div class="col-md-6">
-                            <span class="fa-stack fa-4x">
+					<div class="row text-center justify-content-center">
+						<div class="col-md-6">
+							<span class="fa-stack fa-4x">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fas fa-binoculars fa-stack-1x fa-inverse"></i>
                             </span>
-                            <h4>Search. Discover. Explore</h4>
-                            <p class="text-muted">At Holiday Hub we have a dedicated team based in over 100 cities all over the world. They work tirelessly to seek out those hidden gems so you can enjoy your holiday to the max. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
+							<h4>Search. Discover. Explore</h4>
+							<p class="text-muted">At Holiday Hub we have a dedicated team based in over 100 cities all
+								over the world. They work tirelessly to seek out those hidden gems so you can enjoy your
+								holiday to the max. </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
 					<div id="listing" class="mx-auto">
 						<div id="results"></div>
 					</div>
-				</div >
+				</div>
 			</div>
 		</div>
 	</section>
@@ -199,39 +199,39 @@
 				<div class="col-lg-6 order-lg-2 booking-img"></div>
 				<div class="col-lg-6 order-lg-1">
 					<div class="row justify-content-center booking-row">
-						
+
 						<div class="col-sm-10 col-md-8 mx-auto booking-form">
-                            <h2>Book Now</h2>
+							<h2>Book Now</h2>
 							<form class="">
 								<div class="form-group">
 									<label for="name">Name</label>
 									<input type="text" class="form-control text-muted" id="name" aria-describedby="name" placeholder="Name" required>
                                 </div>
-								<div class="form-group">
-									<label for="phone">Phone</label>
-									<input type="number" class="form-control text-muted" id="phone" aria-describedby="phone" placeholder="Phone" required>
+									<div class="form-group">
+										<label for="phone">Phone</label>
+										<input type="number" class="form-control text-muted" id="phone" aria-describedby="phone" placeholder="Phone" required>
                                 </div>
-								<div class="form-group">
-									<label for="email">Email Address</label>
-									<input type="email" class="form-control text-muted" id="email" aria-describedby="email" placeholder="example@example.com" required>
-									<small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
-								</div>
-								<div class="form-group">
-									<label for="textarea">Tell us More...</label>
-									<textarea class="form-control" id="textarea" rows="4" placeholder="Enter your message here" required></textarea>
-								</div>
-								<div class="container text-right">
-    								<div class="col">
-										<button type="submit" class="btn btn-primary text-right mb-2">Send</button>
-									</div>
-								</div>
+										<div class="form-group">
+											<label for="email">Email Address</label>
+											<input type="email" class="form-control text-muted" id="email" aria-describedby="email" placeholder="example@example.com" required>
+											<small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+										</div>
+										<div class="form-group">
+											<label for="textarea">Tell us More...</label>
+											<textarea class="form-control" id="textarea" rows="4" placeholder="Enter your message here" required></textarea>
+										</div>
+										<div class="container text-right">
+											<div class="col">
+												<button type="submit" class="btn btn-primary text-right mb-2">Send</button>
+											</div>
+										</div>
 							</form>
 						</div>
 					</div>
 				</div>
-            </div>
-        </div>
-    </section>
+			</div>
+		</div>
+	</section>
 
 
 
@@ -240,7 +240,7 @@
 
 
 
-	
+
 	<!--Popular Destinations-->
 	<section class="dest-section">
 		<div class="container dest-container">
@@ -253,7 +253,7 @@
 						<img src="assets/img/nycab.jpg" class="card-img-top" alt="New York Cab" width="100%" height="225">
 						<div class="card-body dest-card-body">
 							<h5 class="card-title">New York</h5>
-                            <p>Get lost in the Big Apple</p>
+							<p>Get lost in the Big Apple</p>
 						</div>
 					</div>
 				</div>
@@ -262,7 +262,7 @@
 						<img src="assets/img/africa.jpg" class="card-img-top" alt="Giraffe" width="100%" height="225">
 						<div class="card-body dest-card-body">
 							<h5 class="card-title">African Safari</h5>
-                            <p>Breathtaking Scenery</p>
+							<p>Breathtaking Scenery</p>
 						</div>
 					</div>
 				</div>
@@ -271,7 +271,7 @@
 						<img src="assets/img/sydney.jpg" class="card-img-top" alt="Sydney Harbour" width="100%" height="225">
 						<div class="card-body dest-card-body">
 							<h5 class="card-title">Sydney</h5>
-                            <p>Experience the Land Downunder</p>
+							<p>Experience the Land Downunder</p>
 						</div>
 					</div>
 				</div>
@@ -288,8 +288,8 @@
 			</div>
 	</section>
 
-    <!-- Floating To Top Button-->
-     <button onclick="topFunction()" id="toTopBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+	<!-- Floating To Top Button-->
+	<button onclick="topFunction()" id="toTopBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
 	<!--Footer-->
 
@@ -345,8 +345,8 @@
 	<!--maps.js-->
 	<script src="assets/js/maps.js"></script>
 
-    <!--totop.js-->
-    <script src="assets/js/totop.js"></script>
+	<!--totop.js-->
+	<script src="assets/js/totop.js"></script>
 </body>
 
 </html>
