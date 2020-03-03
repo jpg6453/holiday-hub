@@ -260,6 +260,15 @@ img.bg-luggage {
     min-height:30rem;
 }
 
+.booking-row {
+    background-color: #f0f0f0;
+    margin-right:0;
+}
+
+.form-heading {
+    padding-bottom: 1.5rem;
+}
+
 
 
 /*--------------------------------------------------------------------Popular Destinations*/
