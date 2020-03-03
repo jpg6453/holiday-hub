@@ -196,6 +196,11 @@
     font-weight:500;
 }
 
+.map-icons {
+    margin-bottom: 3rem;
+} 
+
+
 #rest {
    background-color: #008000;
    margin-right: 0;
