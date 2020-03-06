@@ -292,11 +292,25 @@ img.bg-luggage {
 }
 
 .dest-card {
+    opacity:0.75;
     border:none;
     border-radius: 10px;
     margin-bottom:1.5rem;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,.35);
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -webkit-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
 }
+
+.dest-card:hover {
+    cursor:pointer;
+    transform:scale(1.05); 
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.6);
+    opacity:1;
+}
+
+
 
 /*-------------------------------------------------------------------------CTA*/
 .call-to-action {
