@@ -271,6 +271,11 @@ img.bg-luggage {
 
 
 /*--------------------------------------------------------------------Popular Destinations*/
+.dest-heading,
+.dest-para {
+    font-family: "Montserrat", sans-serif;
+    padding-left:15px;
+}
 
 .dest-section {
     background-color: #f0f0f0;
