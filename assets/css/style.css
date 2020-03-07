@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Open+Sans:400,400i,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 /*-------------------------------------------------------------------------Navbar*/
 
 .navbar-toggler {
@@ -61,13 +62,11 @@
 }
 
 .hero-text{
-    font-family:"Open Sans", sans-serif; 
+    font-family:"Montserrat", sans-serif; 
     margin-bottom: 0;
-    font-weight:700;
-    letter-spacing:4px;
-    font-size: 4.25rem;
+    font-weight:500;
+    font-size: 4.5rem;
     color: #000;
-    text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------------Map Section*/
