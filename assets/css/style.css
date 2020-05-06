@@ -281,6 +281,14 @@ img.bg-luggage {
     font-family: "Montserrat", sans-serif;
     padding-left:15px;
 }
+.dest-heading {
+    font-weight: 600;
+    font-size: 2.25rem;
+}
+
+.dest-para {
+    font-size: 1.25rem;
+}
 
 .dest-section {
     background-color: #f0f0f0;
@@ -317,6 +325,19 @@ img.bg-luggage {
     transform:scale(1.05); 
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,.6);
     opacity:1;
+}
+
+.dest-card-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight:500;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.dest-card-para {
+    font-family: "Open Sans", sans-serif;
+    font-weight:400;
+    letter-spacing: 1.5px;
 }
 
 
