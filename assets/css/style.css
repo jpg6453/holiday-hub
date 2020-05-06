@@ -7,6 +7,9 @@
     border: none;
 }
 
+nav {
+    height: 6rem;
+}
 .nav-item {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
@@ -17,7 +20,8 @@
 .book-now-btn {
     font-family: "Open Sans", sans-serif;
     letter-spacing:3px;
-    border-radius:25px;   
+    border-radius:25px; 
+    margin-right: 20px;  
 }
 
 .brand-text {
