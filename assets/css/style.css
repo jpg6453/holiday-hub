@@ -356,15 +356,17 @@ height: 15rem;
 }
 
 
-h6 {
-    font-size: 3rem;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-    font-family: "Open Sans", serif;
+h2 {
+    font-size: 2.75rem;
+    padding: 2rem;
+    font-family: "Montserrat", sans-serif;
     font-weight:400;
-    letter-spacing: 5px;
-    
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
 
+.btn-light {
+    margin-right: 36px;
 }
 
 /*-------------------------------------------------------------------------footer*/
