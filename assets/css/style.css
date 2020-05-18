@@ -270,6 +270,13 @@ img.bg-luggage {
 
 .form-heading {
     padding-bottom: 1.5rem;
+    padding-left: 0;
+}
+
+#emailHelp,
+::placeholder,
+.form-label {
+    font-family: "Open Sans", sans-serif;
 }
 
 .booking-container {
