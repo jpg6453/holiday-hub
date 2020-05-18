@@ -400,6 +400,14 @@ h2 {
     
 }
 
+.footer-col {
+    margin-bottom: 2rem;
+}
+
+.copyright {
+    font-family: "Open Sans", sans-serif;
+}
+
 /*-------------------------------------------------------------------------footer*/
 
 #toTopBtn {
