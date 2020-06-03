@@ -203,32 +203,31 @@
 				<div class="col-lg-6 order-lg-2 booking-img"></div>
 				<div class="col-lg-6 order-lg-1">
 					<div class="row justify-content-center booking-row">
-
 						<div class="col-sm-10 col-md-8 mx-auto booking-form">
 							<h2 class="form-heading">Book Now</h2>
-							<form class="">
+							<form onsubmit="showModal()" class="needs-validation">
 								<div class="form-group">
 									<label class="form-label" for="name">Name</label>
-									<input type="text" class="form-control text-muted" id="name" aria-describedby="name" placeholder="Name" required>
-                                </div>
-									<div class="form-group">
-										<label class="form-label" for="phone">Phone</label>
-										<input type="number" class="form-control text-muted" id="phone" aria-describedby="phone" placeholder="Phone" required>
-                                </div>
-										<div class="form-group">
-											<label class="form-label" for="email">Email Address</label>
-											<input type="email" class="form-control text-muted" id="email" aria-describedby="email" placeholder="example@example.com" required>
-											<small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
-										</div>
-										<div class="form-group">
-											<label class="form-label" for="textarea">Tell us More...</label>
-											<textarea class="form-control" id="textarea" rows="4" placeholder="Enter your message here" required></textarea>
-										</div>
-										<div class="container text-right">
-											<div class="col">
-												<button type="submit" class="btn btn-primary book-now-btn text-right mb-2">SEND</button>
-											</div>
-										</div>
+									<input type="text" class="form-control text-muted" id="name" oninput="checkForm()" aria-describedby="name" placeholder="Name" required>
+	                            </div>
+								<div class="form-group">
+									<label class="form-label" for="phone">Phone</label>
+									<input type="number" class="form-control text-muted" id="phone" oninput="checkForm()" aria-describedby="phone" placeholder="Phone" required>
+	                            </div>
+								<div class="form-group">
+									<label class="form-label" for="email">Email Address</label>
+									<input type="email" class="form-control text-muted" id="email" oninput="checkForm()" aria-describedby="email" placeholder="example@example.com" required>
+									<small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+								</div>
+								<div class="form-group">
+									<label class="form-label" for="textarea">Tell us More...</label>
+									<textarea class="form-control" id="textarea" oninput="checkForm()" rows="4" placeholder="Enter your message here" required></textarea>
+								</div>
+								<div class="container text-right">
+									<div class="col">
+									<button id="formBtn" type="button" data-toggle="modal" data-target="#bookingModal" class="btn btn-primary book-now-btn text-right mb-2" disabled>SEND</button>
+									</div>
+								</div>
 							</form>
 						</div>
 					</div>
@@ -237,13 +236,33 @@
 		</div>
 	</section>
 
+    
+    <!-- Modal to confirm form submission-->
 
-
-
-
-
-
-
+	<div class="modal fade rounded" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title">
+			        <img src="assets/img/navlogo.png" height="40" alt="Sunrise logo" title="Sunrise logo">
+                        <span class="brand-text">Holiday Hub</span>
+                    </div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+				</div>
+				<div class="modal-body">
+                    <p>Thank you for your enquiry.<br> One of our Country Experts will contact you shortly.<br> You are one step closer to your dream holiday!
+                    </p>
+                    <p><strong>The Holiday Hub Team<strong></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary modal-close book-now-btn text-uppercase" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!--Popular Destinations-->
 	<section class="dest-section">
@@ -359,6 +378,10 @@
 
 	<!--totop.js-->
 	<script src="assets/js/totop.js"></script>
+
+    <!--form.js--> 
+    <script src="assets/js/form.js"></script>
+
 </body>
 
 </html>

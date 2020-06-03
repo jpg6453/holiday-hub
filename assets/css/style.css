@@ -284,7 +284,18 @@ img.bg-luggage {
     padding-left: 0;
 }
 
+/*--------------------------------------------------------------------Modal*/
+.modal-body{
+    text-align: center;
+    line-height: 1.75;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    padding-top: 1.5rem;
+}
 
+.modal-close {
+    font-size: 12px;
+}
 
 /*--------------------------------------------------------------------Popular Destinations*/
 .dest-heading,
