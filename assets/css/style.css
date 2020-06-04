@@ -329,6 +329,15 @@ img.bg-luggage {
     padding-left: 0;
 }
 
+#book-now {
+    margin-top:-6.5rem;
+    padding-top: 6.5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 /*--------------------------------------------------------------------Modal*/
 .modal-body{
     text-align: center;
