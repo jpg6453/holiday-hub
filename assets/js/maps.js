@@ -2,7 +2,6 @@ var map, places, infoWindow;
 var markers = [];
 var autocomplete;
 var countryRestrict = { 'country': 'uk' };
-var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var hostnameRegexp = new RegExp('^https?://.+?/');
 
 var countries = {
@@ -141,16 +140,17 @@ function initMap() {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
-            // Create a marker for each hotel found, and
-            // assign a letter of the alphabetic to each marker icon.
+
+            // Iterate through serch results and add google default red marker
+            // Add a number label to each marker
+
             for (var i = 0; i < results.length; i++) {
-              var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-              var markerIcon = MARKER_PATH + markerLetter + '.png';
+              
               // Use marker animation to drop the icons incrementally on the map.
-              markers[i] = new google.maps.Marker({
+                markers[i] = new google.maps.Marker({
                 position: results[i].geometry.location,
                 animation: google.maps.Animation.DROP,
-                icon: markerIcon
+                label:[i+1].toString()
               });
               // If the user clicks a hotel marker, show the details of that hotel
               // in an info window.
@@ -182,8 +182,8 @@ function initMap() {
       //Populates results table with search results
       function addResult(result, i) {
         var results = document.getElementById('results');
-        var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-        var markerIcon = MARKER_PATH + markerLetter + '.png';
+        
+        
 
         var tr = document.createElement('tr');
         tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
@@ -194,7 +194,7 @@ function initMap() {
         var iconTd = document.createElement('td');
         var nameTd = document.createElement('td');
         var icon = document.createElement('img');
-        icon.src = markerIcon;
+        
         icon.setAttribute('class', 'placeIcon');
         icon.setAttribute('className', 'placeIcon');
         var name = document.createTextNode(result.name);
