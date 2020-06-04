@@ -179,31 +179,36 @@ function initMap() {
           markers[i].setMap(map);
         };
       }
+
       //Populates results table with search results
-      function addResult(result, i) {
-        var results = document.getElementById('results');
+
+    function addResult(result, i) {
+        let resultCard = `
+        <div class="result-list col col-md-9">
+            <div class="card flex-md-row mb-2">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <span class="result-number">${i+1}</span>
+                    <h6 class="result-name mb-1">${result.name}</h6>
+                    <span class="result-rating mb-1">${result.rating}  &#11088;</span>
+                    <span class="result-address mb-1">${result.vicinity}</span>
+                </div>
+                <img class="result-img card-img-right d-md-block p-2 flex-auto" alt="Thumbnail [200x250]" src="${result.photos[0].getUrl()}" style="width: 150px; height: 150px;">
+             </div>
+        </div>
+        `;
+            document.getElementById('results').innerHTML += resultCard;
+            document.getElementById('results').style.display = 'block';
+    }
+
         
         
 
-        var tr = document.createElement('tr');
-        tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+       
         tr.onclick = function() {
           google.maps.event.trigger(markers[i], 'click');
         };
 
-        var iconTd = document.createElement('td');
-        var nameTd = document.createElement('td');
-        var icon = document.createElement('img');
         
-        icon.setAttribute('class', 'placeIcon');
-        icon.setAttribute('className', 'placeIcon');
-        var name = document.createTextNode(result.name);
-        iconTd.appendChild(icon);
-        nameTd.appendChild(name);
-        tr.appendChild(iconTd);
-        tr.appendChild(nameTd);
-        results.appendChild(tr);
-      }
 
       function clearResults() {
         var results = document.getElementById('results');

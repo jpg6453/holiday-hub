@@ -84,14 +84,14 @@ nav {
     height:36px;
     width:24px;
 }
-#listing {
+#results {
         position: relative;
-        width:75%;
         max-height: 470px;
         overflow: auto;
-        top:2rem;
+        top:1rem;
         cursor: pointer;
         overflow-x: hidden;
+        margin-bottom: 1rem;
        
 }
         
