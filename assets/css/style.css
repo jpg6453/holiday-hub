@@ -131,13 +131,22 @@ nav {
 }
  
         
-.card.result-card {
-  margin-bottom: 1rem;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+.result-card {
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0,0,0,.35);
   border:none;
-  background-color: hsl(0, 0%, 94%);
-  padding-top: 5px;
+  background-color: #f0f0f0;
+  transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+
  } 
+
+.result-card:hover {
+    cursor:pointer;
+    transform:scale(1.015); 
+    background-color: #d0d0d0;
+}
 
      
 

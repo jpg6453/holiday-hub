@@ -185,7 +185,7 @@ function initMap() {
     function addResult(result, i) {
         let resultCard = `
         <div class="result-list col col-md-9 mx-auto">
-            <div class="card flex-md-row mb-2">
+            <div class="result-card card flex-md-row mb-3">
                 <div class="card-body d-flex flex-column align-items-start">
                     <span class="result-number">${i+1}</span>
                     <h6 class="result-name mb-1">${result.name}</h6>
