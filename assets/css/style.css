@@ -107,6 +107,23 @@ nav {
     display:flex;
     margin-bottom:2rem;
 }
+
+.result-name {
+    font-size: 1.25rem;
+    font-family:"Open Sans", sans-serif;
+    font-weight: 700;
+}
+
+.result-rating {
+    font-family:"Open Sans", sans-serif;
+    font-weight: 400;
+    color:#f34646;
+}
+
+.result-address {
+    font-family:"Open Sans", sans-serif;
+    font-weight: 400;
+}
         
 .card.result-card {
   margin-bottom: 1rem;
