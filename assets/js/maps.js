@@ -196,6 +196,7 @@ function initMap() {
              </div>
         </div>
         `;
+            document.getElementById('binocular-logo').style.display = 'none';
             document.getElementById('results').innerHTML += resultCard;
             document.getElementById('results').style.display = 'block';
     }
