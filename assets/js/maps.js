@@ -192,7 +192,7 @@ function initMap() {
                     <span class="result-rating mb-1">${result.rating}  &#11088;</span>
                     <span class="result-address mb-1">${result.vicinity}</span>
                 </div>
-                <img class="result-img card-img-right d-md-block p-2 flex-auto" alt="Thumbnail [200x250]" src="${result.photos[0].getUrl()}" style="width: 150px; height: 150px;">
+                <img class="result-img card-img-right d-md-block p-4 flex-auto" alt="Thumbnail [210x210]" src="${result.photos[0].getUrl()}">
              </div>
         </div>
         `;

@@ -124,6 +124,12 @@ nav {
     font-family:"Open Sans", sans-serif;
     font-weight: 400;
 }
+
+.result-img {
+    width: 210px;
+    height: 210px;
+}
+ 
         
 .card.result-card {
   margin-bottom: 1rem;
