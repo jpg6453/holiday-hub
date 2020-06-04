@@ -94,6 +94,19 @@ nav {
         margin-bottom: 1rem;
        
 }
+
+.result-number {
+    height: 30px;
+    width: 30px;
+    font-size: 1rem;
+    font-family:"Open Sans", sans-serif;
+    border-radius:50%;
+    background-color:#f34646;
+    justify-content:center;
+    align-items: center;
+    display:flex;
+    margin-bottom:2rem;
+}
         
 .card.result-card {
   margin-bottom: 1rem;
