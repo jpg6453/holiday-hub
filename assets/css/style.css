@@ -91,8 +91,7 @@ nav {
         top:1rem;
         cursor: pointer;
         overflow-x: hidden;
-        margin-bottom: 1rem;
-       
+        display:none;
 }
 
 .result-number {
