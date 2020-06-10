@@ -45,6 +45,7 @@ nav {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     height: 50rem;
     display:flex;
