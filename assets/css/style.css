@@ -524,3 +524,26 @@ h2 {
     }
     
 }
+
+/*------------------------------Medium screens*/
+
+@media only screen and (max-width: 768px) {
+    #binocular-logo {   
+    padding-top:3rem;
+    padding-bottom:2rem;
+    }
+    .booking-form {   
+    padding-bottom:0;
+    }
+    .dest-section {   
+    padding-top:2rem;
+    padding-bottom:0;
+    }
+    .cards-row {
+        margin-bottom:0;
+    }
+    .wish {
+        font-size:2rem;
+        text-align:end;
+    }
+}
