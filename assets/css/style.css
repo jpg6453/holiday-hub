@@ -512,4 +512,12 @@ h2 {
     #autocomplete {
     padding:12px;
     }
+    .hero-text {
+        font-size: 2.5rem;
+        padding-bottom: 192px;
+    }
+    .search-container {
+        padding-top: 1rem;
+    }
+    
 }
