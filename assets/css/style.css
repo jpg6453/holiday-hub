@@ -500,3 +500,16 @@ h2 {
 #toTopBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
 }
+
+/*-------------------------------------------------------------------------Media Queries*/
+
+/*------------------------------Search Box on small screens*/
+
+@media only screen and (max-width: 576px) {
+    .search-row {   
+    border-radius:15px;
+    }
+    #autocomplete {
+    padding:12px;
+    }
+}
