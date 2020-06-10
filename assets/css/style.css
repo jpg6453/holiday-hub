@@ -42,6 +42,9 @@ nav {
 .hero-img {
     background:url('../../assets/img/hero.jpg') no-repeat fixed bottom;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-attachment: fixed;
     height: 50rem;
     display:flex;
