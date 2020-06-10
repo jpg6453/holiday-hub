@@ -519,5 +519,8 @@ h2 {
     .search-container {
         padding-top: 1rem;
     }
+    .navbar {
+        display:none;
+    }
     
 }
