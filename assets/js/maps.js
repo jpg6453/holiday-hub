@@ -125,6 +125,8 @@ function initMap() {
         if (place.geometry) {
           map.panTo(place.geometry.location);
           map.setZoom(15);
+          clearResults();
+          clearMarkers();
         } else {
           document.getElementById('autocomplete').placeholder = 'Enter a city';
         }
