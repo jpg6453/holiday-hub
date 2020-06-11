@@ -142,6 +142,16 @@ function initMap() {
       //Event listener for Hotels Button
       document.getElementById('hotel').addEventListener('click', findHotels);
 
+      // Perform a search for Restaurants when restaurants button is clicked
+      function findRestaurants() {
+          search.bounds = map.getBounds();
+          search.types.push('restaurant');
+          findPlaces();
+      }
+
+      //Event listener for Restaurants Button
+      document.getElementById('restaurant').addEventListener('click', findRestaurants);
+
       function findPlaces() {
         places.nearbySearch(search, function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
