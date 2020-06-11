@@ -200,7 +200,7 @@
 					<div class="row justify-content-center booking-row">
 						<div class="col-sm-10 col-md-8 mx-auto booking-form">
 							<h3 id="book-now" class="form-heading text-center">Book Now</h3>
-							<form onsubmit="showModal()" class="needs-validation">
+							<form id="contactForm" onsubmit="showModal()" class="needs-validation">
 								<div class="form-group">
 									<label class="form-label" for="name">Name</label>
 									<input type="text" class="form-control text-muted" id="name" oninput="checkForm()" aria-describedby="name" placeholder="Name" required>
@@ -241,7 +241,7 @@
 						<img src="assets/img/navlogo.png" height="40" alt="Sunrise logo" title="Sunrise logo">
 						<span class="brand-text">Holiday Hub</span>
 					</div>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button onclick="formReset()" value="Reset Form" type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 				</div>
@@ -251,7 +251,7 @@
 						<p><strong>The Holiday Hub Team</strong></p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary modal-close book-now-btn text-uppercase" data-dismiss="modal">Close</button>
+					<button onclick="formReset()" value="Reset Form" type="button" class="btn btn-primary modal-close book-now-btn text-uppercase" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>

@@ -29,14 +29,13 @@ function showModal() {
     modal.style.display = "block";
 }
 
-closeCross.onclick = function() {
-  location.reload(true);
-  return false;
+function formReset() {
+   document.getElementById('contactForm').reset();
+  
 }
 window.onclick = function(event) {
   if (event.target == modal) {
-    location.reload(true);
-    return false;
+    formReset();
   }
 }
 
