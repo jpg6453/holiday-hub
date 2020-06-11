@@ -134,6 +134,7 @@ function initMap() {
 
       // Perform a search for hotels when hotel button is clicked
       function findHotels() {
+          search.types = [];
           search.bounds = map.getBounds();
           search.types.push('lodging');
           findPlaces();
@@ -144,6 +145,7 @@ function initMap() {
 
       // Perform a search for Restaurants when restaurants button is clicked
       function findRestaurants() {
+          search.types = [];
           search.bounds = map.getBounds();
           search.types.push('restaurant');
           findPlaces();
