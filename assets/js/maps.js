@@ -123,19 +123,27 @@ function initMap() {
         if (place.geometry) {
           map.panTo(place.geometry.location);
           map.setZoom(15);
-          search();
         } else {
           document.getElementById('autocomplete').placeholder = 'Enter a city';
         }
       }
 
-       // Search for hotels in the selected city, within the viewport of the map.
-      function search() {
-        var search = {
-          bounds: map.getBounds(),
-          types: ['lodging']
+      let search = {
+          types: []
         };
 
+      // Perform a search for hotels when hotel button is clicked
+      function findHotels() {
+          search.bounds = map.getBounds();
+          search.types.push('lodging');
+          findPlaces();
+      }
+
+      document.getElementById('hotel').addEventListener('click', findHotels);
+
+
+
+      function findPlaces() {
         places.nearbySearch(search, function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
