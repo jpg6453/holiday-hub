@@ -154,6 +154,17 @@ function initMap() {
       //Event listener for Restaurants Button
       document.getElementById('restaurant').addEventListener('click', findRestaurants);
 
+      // Perform a search for Bars when Bars button is clicked
+      function findBars() {
+          search.types = [];
+          search.bounds = map.getBounds();
+          search.types.push('bar');
+          findPlaces();
+      }
+
+      //Event listener for Bars Button
+      document.getElementById('glass').addEventListener('click', findBars);
+
       function findPlaces() {
         places.nearbySearch(search, function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
