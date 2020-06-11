@@ -105,6 +105,8 @@ function initMap() {
           autocomplete.setComponentRestrictions({'country': country});
           map.setCenter(countries[country].center);
           map.setZoom(countries[country].zoom);
+          document.getElementById('autocomplete').value = '';
+
         }
         clearResults();
         clearMarkers();
@@ -138,6 +140,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('lodging');
           findPlaces();
+          showResults();
       }
 
       //Event listener for Hotels Button
@@ -149,6 +152,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('restaurant');
           findPlaces();
+          showResults();
       }
 
       //Event listener for Restaurants Button
@@ -160,6 +164,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('bar');
           findPlaces();
+          showResults();
       }
 
       //Event listener for Bars Button
@@ -171,6 +176,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('cafe');
           findPlaces();
+          showResults();
       }
 
       //Event listener for Coffee Button
@@ -182,6 +188,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('tourist_attraction');
           findPlaces();
+          showResults();
       }
 
       //Event listener for Attractions Button
@@ -213,6 +220,13 @@ function initMap() {
             }
           }
         });
+      }
+
+    // Show search results when place icons are clicked.
+
+      function showResults(){
+          document.getElementById('binocular-logo').style.display = 'none';
+          document.getElementById('results').style.display = 'block';
       }
 
       function clearMarkers() {
@@ -248,9 +262,7 @@ function initMap() {
              </div>
         </div>
         `;
-            document.getElementById('binocular-logo').style.display = 'none';
             document.getElementById('results').innerHTML += resultCard;
-            document.getElementById('results').style.display = 'block';
     }
 
         
