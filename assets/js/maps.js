@@ -165,6 +165,28 @@ function initMap() {
       //Event listener for Bars Button
       document.getElementById('glass').addEventListener('click', findBars);
 
+      // Perform a search for Cafes when Coffee button is clicked
+      function findCafe() {
+          search.types = [];
+          search.bounds = map.getBounds();
+          search.types.push('cafe');
+          findPlaces();
+      }
+
+      //Event listener for Coffee Button
+      document.getElementById('coffee').addEventListener('click', findCafe);
+
+      // Perform a search for Tourist Attractions when Attractions button is clicked
+      function findAttraction() {
+          search.types = [];
+          search.bounds = map.getBounds();
+          search.types.push('tourist_attraction');
+          findPlaces();
+      }
+
+      //Event listener for Attractions Button
+      document.getElementById('info').addEventListener('click', findAttraction);
+
       function findPlaces() {
         places.nearbySearch(search, function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
