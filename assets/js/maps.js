@@ -139,9 +139,8 @@ function initMap() {
           findPlaces();
       }
 
+      //Event listener for Hotels Button
       document.getElementById('hotel').addEventListener('click', findHotels);
-
-
 
       function findPlaces() {
         places.nearbySearch(search, function(results, status) {
