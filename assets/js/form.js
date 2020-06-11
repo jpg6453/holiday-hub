@@ -31,6 +31,7 @@ function showModal() {
 
 function formReset() {
    document.getElementById('contactForm').reset();
+   checkForm();
   
 }
 window.onclick = function(event) {
