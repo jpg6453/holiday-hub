@@ -40,7 +40,7 @@ nav {
 /*--------------------------------------------------------------------Hero image*/
 
 .hero-img {
-    background:url('../../assets/img/hero.jpg') no-repeat fixed bottom;
+    background:url('../../assets/img/hero.jpg');
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -553,5 +553,10 @@ h2 {
     .wish {
         font-size:2rem;
         text-align:end;
+    }
+
+    .hero-img {
+        background-position: center center;
+        background-attachment:unset;
     }
 }
