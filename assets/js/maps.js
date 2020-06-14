@@ -260,11 +260,18 @@ function initMap() {
         </div>
         `;
             document.getElementById('results').innerHTML += resultCard;
+            cardClickListener();
     }
-        tr.onclick = function() {
-          google.maps.event.trigger(markers[i], 'click');
-        };
-    
+
+    function cardClickListener() {
+            let cards = document.querySelectorAll('.result-list');
+            cards.forEach(function (elem, i) {
+            elem.addEventListener('click', function () {
+            new google.maps.event.trigger(markers[i], 'click')
+    })
+  })
+}
+       
       function clearResults() {
         var results = document.getElementById('results');
         while (results.childNodes[0]) {
