@@ -106,17 +106,11 @@ function initMap() {
           map.setCenter(countries[country].center);
           map.setZoom(countries[country].zoom);
           document.getElementById('autocomplete').value = '';
-
         }
         clearResults();
         clearMarkers();
         
       }
-
-
-
-
-
 
       // When the user selects a city, get the place details for the city and
       // zoom the map in on the city.
@@ -240,8 +234,6 @@ function initMap() {
         markers = [];
       }
 
-     
-
       function dropMarker(i) {
         return function() {
           markers[i].setMap(map);
@@ -251,6 +243,8 @@ function initMap() {
       //Populates results table with search results
 
     function addResult(result, i) {
+        let photo = result.photos;
+        let defaultPhoto = 'https://via.placeholder.com/210/626262/fff.jpg?text=NO+IMAGE+AVAILABLE';
         let resultCard = `
         <div class="result-list col col-md-9 mx-auto">
             <div class="result-card card flex-md-row mb-3">
@@ -260,23 +254,17 @@ function initMap() {
                     <span class="result-rating mb-1">${result.rating}  &#11088;</span>
                     <span class="result-address mb-1">${result.vicinity}</span>
                 </div>
-                <img class="result-img card-img-right d-none d-md-block p-4 flex-auto" alt="Thumbnail [210x210]" src="${result.photos[0].getUrl()}">
+                <img class="result-img card-img-right d-none d-md-block p-4 flex-auto" 
+                    alt="${result.name}" src="${photo && photo.length ? photo[0].getUrl() : defaultPhoto}">
              </div>
         </div>
         `;
             document.getElementById('results').innerHTML += resultCard;
     }
-
-        
-        
-
-       
         tr.onclick = function() {
           google.maps.event.trigger(markers[i], 'click');
         };
-
-        
-
+    
       function clearResults() {
         var results = document.getElementById('results');
         while (results.childNodes[0]) {
