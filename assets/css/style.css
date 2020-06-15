@@ -185,12 +185,16 @@ nav {
     background-color:transparent;
 }
 
+.country-selector:focus{
+    box-shadow: none;
+}
 
 #autocomplete {
  border:none;
  background-color:transparent;
  padding:6px;
  width:100%;
+ outline:none;
 }
 
 .gmap {
