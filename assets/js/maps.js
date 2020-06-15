@@ -243,6 +243,8 @@ function initMap() {
       //Populates results table with search results
 
     function addResult(result, i) {
+        let noRating = 'No ratings yet';
+        let rating = result.rating;
         let photo = result.photos;
         let defaultPhoto = 'https://via.placeholder.com/210/626262/fff.jpg?text=NO+IMAGE+AVAILABLE';
         let resultCard = `
@@ -251,7 +253,7 @@ function initMap() {
                 <div class="card-body d-flex flex-column align-items-start">
                     <span class="result-number">${i+1}</span>
                     <h6 class="result-name mb-1">${result.name}</h6>
-                    <span class="result-rating mb-1">${result.rating}  &#11088;</span>
+                    <span class="result-rating mb-1">${rating ? rating + ' &#11088' : noRating} </span>
                     <span class="result-address mb-1">${result.vicinity}</span>
                 </div>
                 <img class="result-img card-img-right d-none d-md-block p-4 flex-auto" 
