@@ -229,6 +229,11 @@ nav {
     
 }
 
+.btn-map:focus{
+    box-shadow: none;
+    outline:none;   
+}
+
 .icon-heading {
     padding-top: 3rem;
     font-family: "Open Sans", sans-serif;
