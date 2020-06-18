@@ -121,6 +121,31 @@ function initMap() {
           map.setZoom(15);
           clearResults();
           clearMarkers();
+          console.log(place);
+        let panel = `
+        
+        <img src="${place.photos[0].getUrl()}" width="200" height="150">
+        <h2>${place.address_components[0].long_name}</h2>
+        <span>${place.address_components[2].long_name}</span>
+        <hr>
+        <h3>Photos</h3>
+        <img src="${place.photos[1].getUrl()}" width="100" height="75">   
+        <img src="${place.photos[2].getUrl()}" width="100" height="75">
+        <img src="${place.photos[3].getUrl()}" width="100" height="75">
+        <img src="${place.photos[4].getUrl()}" width="100" height="75">
+        <img src="${place.photos[5].getUrl()}" width="100" height="75">
+        <img src="${place.photos[6].getUrl()}" width="100" height="75">
+        
+        `;
+        document.getElementById('map').className = 'col-lg-12 gmap';
+        document.getElementById('map').scrollIntoView();
+        document.getElementById('panel').innerHTML = panel;
+        document.getElementById('panel').style.width = "400px";
+        document.getElementById('icons').classList.remove('d-none');
+
+        showResults();
+
+
         } else {
           document.getElementById('autocomplete').placeholder = 'Enter a city';
         }
@@ -137,6 +162,10 @@ function initMap() {
           search.types.push('lodging');
           findPlaces();
           showResults();
+          document.getElementById('panel').style.width = "0";
+          setTimeout(function(){ window.scrollBy(0,100); }, 3000);
+   
+          
       }
 
       //Event listener for Hotels Button
@@ -222,7 +251,7 @@ function initMap() {
 
       function showResults(){
           document.getElementById('binocular-logo').style.display = 'none';
-          document.getElementById('results').style.display = 'block';
+          
       }
 
       function clearMarkers() {
@@ -246,27 +275,24 @@ function initMap() {
         let noRating = 'No ratings yet';
         let rating = result.rating;
         let photo = result.photos;
-        let defaultPhoto = 'https://via.placeholder.com/210/626262/fff.jpg?text=NO+IMAGE+AVAILABLE';
+        let defaultPhoto = 'https://via.placeholder.com/300x160/626262/fff.jpg?text=No+Image+Available';
         let resultCard = `
-        <div class="result-list col col-md-9 mx-auto">
-            <div class="result-card card flex-md-row mb-3">
-                <div class="card-body d-flex flex-column align-items-start">
-                    <span class="result-number">${i+1}</span>
-                    <h6 class="result-name mb-1">${result.name}</h6>
-                    <span class="result-rating mb-1">${rating ? rating + ' &#11088' : noRating} </span>
-                    <span class="result-address mb-1">${result.vicinity}</span>
-                </div>
-                <img class="result-img card-img-right d-none d-md-block p-4 flex-auto" 
-                    alt="${result.name}" src="${photo && photo.length ? photo[0].getUrl() : defaultPhoto}">
-             </div>
-        </div>
+        <div class="card result-card">
+			<img class="card-img-top flex-row result-img" src="${photo && photo.length ? photo[0].getUrl() : defaultPhoto}" alt="${result.name}">
+            <div class="card-body result-card-body d-flex flex-column">
+                <span class="result-number">${i+1}</span>
+                <h5 class="result-name horizontal">${result.name}</h5>
+                <span class="result-rating mb-1">${rating ? rating + ' &#11088' : noRating} </span>
+                <span class="result-address horizontal mb-1">${result.vicinity}</span>
+            </div>  
+		</div>
         `;
-            document.getElementById('results').innerHTML += resultCard;
+            document.getElementById('xscroll').innerHTML += resultCard;
             cardClickListener();
     }
 
     function cardClickListener() {
-            let cards = document.querySelectorAll('.result-list');
+            let cards = document.querySelectorAll('.result-card');
             cards.forEach(function (elem, i) {
             elem.addEventListener('click', function () {
             new google.maps.event.trigger(markers[i], 'click')
@@ -275,7 +301,7 @@ function initMap() {
 }
        
       function clearResults() {
-        var results = document.getElementById('results');
+        var results = document.getElementById('xscroll');
         while (results.childNodes[0]) {
           results.removeChild(results.childNodes[0]);
         }

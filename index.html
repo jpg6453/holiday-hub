@@ -22,7 +22,7 @@
 
 <body>
 	<!--START Navigation-->
-	<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+	<nav class="navbar navbar-expand-lg bg-light navbar-light">
 
 		<!--Logo-->
 		<a class="navbar-brand mr-1" href="index.html">
@@ -98,42 +98,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="row no-gutters justify-content-center">
-				<div class="col-xl-8 search-box">
-					<div class="row justify-content-center icon-row">
-						<div class="col icons text-center">
-							<ul class="list-inline map-icons">
-								<li class="list-inline-item">
-									<button id="hotel" class="btn btn-map"><i class="fas fa-bed"></i>
-                                    <span class="icon-label">Hotels</span>
-                                </button>
-								</li>
-								<li class="list-inline-item rest">
-									<button id="restaurant" class="btn btn-map"><i id="rest"class="fas fa-utensils"></i>
-					                <span class="icon-label">Restaurants</span>
-                                </button>
-								</li>
-								<li class="list-inline-item">
-									<button class="btn btn-map"><i id="glass" class="fas fa-glass-martini-alt"></i>
-                                    <span class="icon-label">Bars</span>
-                                </button>
-								</li>
-								<li class="list-inline-item">
-									<button class="btn btn-map"><i id="coffee" class="fas fa-coffee"></i>
-                                    <span class="icon-label">Coffee</span>
-                                </button>
-								</li>
-								<li class="list-inline-item">
-									<button type="submit" class="btn btn-map"><i id="info"  class="fas fa-info"></i>
-                                    <span class="icon-label">Attractions</span>
-                                </button>
-								</li>
-
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</section>
 
@@ -141,7 +105,8 @@
 	<section>
 		<div class="container-fluid">
 			<div class="row justify-content-center">
-				<div id="map" class="col-lg-6 gmap"></div>
+                <div id="panel" class="d-none d-md-block"></div>
+                <div id="map" class="col-lg-6 gmap"></div>
 				<!-- Search Results-->
 				<div id="binocular-logo" class="col-lg-6 my-auto">
 					<div class="row text-center justify-content-center">
@@ -157,10 +122,48 @@
 						</div>
 					</div>
 				</div>
-				<div id="results" class="col-lg-6"></div>
+				<div  class="col-lg-6"></div>
 			</div>
 		</div>
 	</section>
+    <div id="icons" class="row d-none icon-show no-gutters justify-content-center">
+				<div class="col-xl-8 search-box">
+					<div class="row justify-content-center icon-row">
+						<div class="col icons text-center">
+							<ul class="list-inline map-icons">
+								<li class="list-inline-item">
+									<button id="hotel" class="btn btn-map"><i class="fas fa-bed"></i>
+			                                    <span class="icon-label">Hotels</span>
+			                                </button>
+								</li>
+								<li class="list-inline-item rest">
+									<button id="restaurant" class="btn btn-map"><i id="rest"class="fas fa-utensils"></i>
+								                <span class="icon-label">Restaurants</span>
+			                                </button>
+								</li>
+								<li class="list-inline-item">
+									<button class="btn btn-map"><i id="glass" class="fas fa-glass-martini-alt"></i>
+			                                    <span class="icon-label">Bars</span>
+			                                </button>
+								</li>
+								<li class="list-inline-item">
+									<button class="btn btn-map"><i id="coffee" class="fas fa-coffee"></i>
+			                                    <span class="icon-label">Coffee</span>
+			                                </button>
+								</li>
+								<li class="list-inline-item">
+									<button type="submit" class="btn btn-map"><i id="info"  class="fas fa-info"></i>
+			                                    <span class="icon-label">Attractions</span>
+			                                </button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	<div id="xscroll" class="scrolling-wrapper"></div>
+		
 
 	<!-- Info Window Content-->
 	<div style="display: none">
