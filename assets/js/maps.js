@@ -67,7 +67,7 @@ function initMap() {
           center: countries['uk'].center,
           mapTypeControl: false,
           panControl: false,
-          zoomControl: false,
+          zoomControl: true,
           streetViewControl: false
         });
 
@@ -109,6 +109,7 @@ function initMap() {
         }
         clearResults();
         clearMarkers();
+        clearPanel();
         
       }
 
@@ -123,24 +124,24 @@ function initMap() {
           clearMarkers();
           console.log(place);
         let panel = `
-        
-        <img src="${place.photos[0].getUrl()}" width="200" height="150">
-        <h2>${place.address_components[0].long_name}</h2>
-        <span>${place.address_components[2].long_name}</span>
-        <hr>
-        <h3>Photos</h3>
-        <img src="${place.photos[1].getUrl()}" width="100" height="75">   
-        <img src="${place.photos[2].getUrl()}" width="100" height="75">
-        <img src="${place.photos[3].getUrl()}" width="100" height="75">
-        <img src="${place.photos[4].getUrl()}" width="100" height="75">
-        <img src="${place.photos[5].getUrl()}" width="100" height="75">
-        <img src="${place.photos[6].getUrl()}" width="100" height="75">
+			    <img class="col-md-4" src="${place.photos[0].getUrl()}">
+            <h2>${place.address_components[0].long_name}</h2>
+        <div class="row">
+            <img class="col-md-4" src="${place.photos[1].getUrl()}"   
+            <img class="col-md-4" src="${place.photos[2].getUrl()}" 
+            <img class="col-md-4" src="${place.photos[3].getUrl()}" 
+            <img class="col-md-4" src="${place.photos[4].getUrl()}"
+            <img class="col-md-4" src="${place.photos[5].getUrl()}" 
+            <img class="col-md-4" src="${place.photos[6].getUrl()}" 
+        </div>  
+		
         
         `;
+
         document.getElementById('map').className = 'col-lg-12 gmap';
         document.getElementById('map').scrollIntoView();
         document.getElementById('panel').innerHTML = panel;
-        document.getElementById('panel').style.width = "400px";
+        document.getElementById('panel').classList.add('col-md-4','col-xl-3');
         document.getElementById('icons').classList.remove('d-none');
 
         showResults();
@@ -162,7 +163,6 @@ function initMap() {
           search.types.push('lodging');
           findPlaces();
           showResults();
-          document.getElementById('panel').style.width = "0";
           setTimeout(function(){ window.scrollBy(0,100); }, 3000);
    
           
@@ -245,6 +245,7 @@ function initMap() {
             }
           }
         });
+        
       }
 
     // Show search results when place icons are clicked.
@@ -253,6 +254,12 @@ function initMap() {
           document.getElementById('binocular-logo').style.display = 'none';
           
       }
+
+      
+          
+          
+          
+      
 
       function clearMarkers() {
         for (var i = 0; i < markers.length; i++) {
@@ -304,6 +311,14 @@ function initMap() {
         var results = document.getElementById('xscroll');
         while (results.childNodes[0]) {
           results.removeChild(results.childNodes[0]);
+        }
+      }
+
+      function clearPanel() {
+        var panel = document.getElementById('panel');
+        while (panel.childNodes[0]) {
+          panel.removeChild(panel.childNodes[0]);
+         document.getElementById('panel').style.width = "0";
         }
       }
 

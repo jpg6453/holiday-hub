@@ -139,7 +139,7 @@ nav {
 .result-card {
   box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0,0,0,.35);
   border:none;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -150,18 +150,18 @@ nav {
 .result-card:hover {
     cursor:pointer;
     transform:scale(1.015); 
-    background-color: #d0d0d0;
+    box-shadow:none;
 }
 
 #panel {
-    width: 0;
+   
     position: absolute;
     z-index: 99;
     height: 30rem;
     left:0px;
     overflow-x: hidden;
     transition:.5s ease-in-out;
-    background-color: rgba(255, 255, 255,.85);
+    background-color: rgba(255, 255, 255,.75);
     overflow:auto;
 
       
@@ -171,6 +171,9 @@ nav {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  background-color:#d0d0d0;
+  overflow:auto;
+  cursor:pointer;
   
  
 }
@@ -178,9 +181,10 @@ nav {
     display: inline-block;
     width:300px;
     height:350px;
-    border-radius:8px;
+    border-radius:10px;
     margin: 1rem .5rem;
     border:none;
+   
      
 }
 
@@ -206,14 +210,14 @@ nav {
 
 /*-------------------------------------------------------------Single Search field*/
 .search-bar {
-    background-color: rgba(255, 255, 255,.35);
+    background-color: #f0f0f0;
     
 }
 
 
 .search-row {   
     border-radius:55px;
-    box-shadow: 1.5px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0px 0px 3px #626262;
     background-color: #ffffff;
     padding:6px;
     margin-bottom:3rem;
@@ -221,8 +225,8 @@ nav {
 }
 
 .search-container {
-    padding-top: 3rem;
-    padding-bottom:0;
+    padding-top: 2rem;
+    padding-bottom:2rem;
    
 }
 
@@ -279,7 +283,8 @@ nav {
 }
 
 .icon-row {
-    margin-top: 2rem;     
+    margin-top: 0
+    ;     
 }
 
 .btn-map:focus{
@@ -306,7 +311,8 @@ nav {
 }
 
 .map-icons {
-    margin-top: 0;  
+    margin-top: 10px;
+    margin-bottom: 10px;  
 } 
 
 
