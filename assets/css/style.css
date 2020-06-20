@@ -88,15 +88,6 @@ nav {
     height:36px;
     width:24px;
 }
-#results {
-        position: relative;
-        max-height: 470px;
-        overflow: auto;
-        top:1rem;
-        cursor: pointer;
-        overflow-x: hidden;
-        display:none;
-}
 
 .result-number {
     height: 30px;
@@ -108,11 +99,11 @@ nav {
     justify-content:center;
     align-items: center;
     display:flex;
-    margin-bottom:2rem;
+    margin-bottom:1rem;
 }
 
 .result-name {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family:"Open Sans", sans-serif;
     font-weight: 700;
 }
@@ -126,33 +117,50 @@ nav {
 .result-address {
     font-family:"Open Sans", sans-serif;
     font-weight: 400;
+    font-size: .8rem;
 }
 
 .result-img {
-    width: 210px;
-    height: 210px;
+    width: 300px;
+    height:160px;   
 }
- 
         
 .result-card {
-  box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0,0,0,.35);
-  border:none;
-  background-color: #f0f0f0;
-  transition: all 0.3s ease-in-out;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0,0,0,.35);
+    border:none;
+    border-radius:8px;
+    display: inline-block;
+    width:300px;
+    height:350px;
+    margin: 1rem .5rem;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
-
  } 
 
 .result-card:hover {
     cursor:pointer;
     transform:scale(1.015); 
-    background-color: #d0d0d0;
+    box-shadow:none;
 }
 
-     
+.result-card-body{
+    padding:10px 20px;
+}
 
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  background-color:#d0d0d0;
+}
+
+.horizontal {
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+}
 
 /*-------------------------------------------------------------Single Search field*/
 .search-bar {
