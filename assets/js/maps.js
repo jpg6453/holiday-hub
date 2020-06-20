@@ -125,6 +125,21 @@ function initMap() {
         // Resize map to full width on lg screens and scroll to top of window.
         document.getElementById('map').className = 'col-lg-12 gmap';
         document.getElementById('map').scrollIntoView();
+
+        //Open sliding panel
+        document.getElementById('panel').classList.add('d-md-block');
+
+        let panel = `
+            
+		<img class="card-img-top panel-img-top" src="${place.photos[0].getUrl()}" alt="${place.name}">
+        <div class="card-body flex-column panel-card-body">
+            <h4 class="panel-place-name">${place.name}</h4> 
+        </div>
+        
+        `;
+
+        document.getElementById('panel').innerHTML = panel;
+
         } else {
           document.getElementById('autocomplete').placeholder = 'Enter a city';
         }

@@ -162,6 +162,28 @@ nav {
     word-wrap: break-word; 
 }
 
+/*-------------------------------------------------------------Sliding Panel*/
+
+#panel {
+    position:absolute;
+    z-index:99;
+    left:0;
+    background-color:#fff; 
+    padding-left:0;
+    padding-right:0;
+    border:none;
+    border-radius:15px;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0,0,0,.35);   
+}
+
+.panel-img-top {
+    height: 250px;
+}
+
+.panel-place-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
 /*-------------------------------------------------------------Single Search field*/
 .search-bar {
     background-color: #f0f0f0;
