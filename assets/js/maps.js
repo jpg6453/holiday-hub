@@ -121,6 +121,10 @@ function initMap() {
           map.setZoom(15);
           clearResults();
           clearMarkers();
+        
+        // Resize map to full width on lg screens and scroll to top of window.
+        document.getElementById('map').className = 'col-lg-12 gmap';
+        document.getElementById('map').scrollIntoView();
         } else {
           document.getElementById('autocomplete').placeholder = 'Enter a city';
         }
