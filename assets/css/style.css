@@ -192,7 +192,7 @@ nav {
 
 .search-row {   
     border-radius:55px;
-    box-shadow: 1.5px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0px 0px 4px #626262;
     background-color: #ffffff;
     padding:6px;
     margin-bottom:3rem;
@@ -200,9 +200,8 @@ nav {
 }
 
 .search-container {
-    padding-top: 3rem;
-    padding-bottom:0;
-   
+    padding-top: 2rem;
+    padding-bottom: 2rem; 
 }
 
 .add-icons
@@ -218,6 +217,11 @@ nav {
 .country-selector:focus{
     box-shadow: none;
 }
+.country-selector {
+    font-family: "Open Sans", sans-serif;
+}
+
+
 
 #autocomplete {
  border:none;
@@ -225,6 +229,7 @@ nav {
  padding:6px;
  width:100%;
  outline:none;
+ font-family: "Open Sans", sans-serif;
 }
 
 .gmap {
