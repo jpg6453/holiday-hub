@@ -256,6 +256,10 @@ nav {
     background-color: #f0f0f0;
 }
 
+.btn-map {
+    width:106px;
+}
+
 .btn-map:focus{
     box-shadow: none;
     outline:none;   
@@ -308,10 +312,6 @@ nav {
 #near {
     background-color: #626262;
     color: #fafafa;
-}
-
-#clear {
-    padding-bottom:32px;
 }
 
 .fas.fa-times {
