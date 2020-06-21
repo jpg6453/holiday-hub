@@ -242,25 +242,18 @@ nav {
     text-align: center;
     color: #fafafa;
     background: rgb(255, 0, 0);
-    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.3);
-    transition: all 0.35s ease-in-out;
-    -moz-transition: all 0.35s ease-in-out;
-    -webkit-transition: all 0.35s ease-in-out;
-    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
 }
 
 .map-icons li button i:hover {
-    
-    
     transform:scale(1.05);
-    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.4);
-    
 }
 
-.icon-row {
-   
-    margin-top: 2rem;
-    
+.icons-row {
+    background-color: #f0f0f0;
 }
 
 .btn-map:focus{
@@ -287,7 +280,8 @@ nav {
 }
 
 .map-icons {
-    margin-bottom: 3rem;
+    margin-bottom: .75rem;
+    margin-top:.75rem;
 } 
 
 
@@ -314,6 +308,23 @@ nav {
 #near {
     background-color: #626262;
     color: #fafafa;
+}
+
+#clear {
+    padding-bottom:32px;
+}
+
+.fas.fa-times {
+    background-color: #626262;
+    color:#d0d0d0;
+    font-size:1.2rem;
+}
+
+.fas.fa-times:hover {
+    background-color: #d0d0d0;
+    color:#626262;
+    border:1px solid;
+    border-color: #626262;
 }
 
 /*--------------------------------------------------------------------Booking Section*/
