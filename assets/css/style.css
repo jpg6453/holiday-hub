@@ -599,6 +599,11 @@ h2 {
         width: 40px;
         height:40px;
     }
+    .btn-map {
+        padding-left: 2px;
+        padding-right:2px;
+        width: 56px;
+    }
     
 }
 
