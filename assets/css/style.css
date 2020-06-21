@@ -572,7 +572,14 @@ h2 {
 
 @media only screen and (max-width: 576px) {
     .search-row {   
-    border-radius:15px;
+        border-radius:15px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .search-bar{
+        position:sticky;
+        top:0;
+        z-index:10;
     }
     #autocomplete {
     padding:12px;
@@ -582,7 +589,7 @@ h2 {
         padding-bottom: 192px;
     }
     .search-container {
-        padding-top: 1rem;
+        padding: .5rem;
     }
     .navbar {
         display:none;
