@@ -109,6 +109,7 @@ function initMap() {
         }
         clearResults();
         clearMarkers();
+        clearPanel();
         
       }
 
@@ -129,6 +130,7 @@ function initMap() {
 
         //Open sliding panel
         document.getElementById('panel').classList.add('d-md-block');
+        document.getElementById('panel').style.width = '100%';
 
         let panel = `
             
@@ -290,6 +292,16 @@ function initMap() {
         var results = document.getElementById('results');
         while (results.childNodes[0]) {
           results.removeChild(results.childNodes[0]);
+        }
+      }
+
+      //Clear city panel when user changes country
+
+      function clearPanel() {
+        const panel = document.getElementById('panel');
+        while (panel.childNodes[0]) {
+          panel.removeChild(panel.childNodes[0]);
+        panel.style.width = "0";
         }
       }
 
