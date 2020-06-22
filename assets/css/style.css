@@ -287,6 +287,7 @@ nav {
 .icon-label {
     display:block;
     margin-top:5px;
+    font-family: "Open Sans", sans-serif;
     letter-spacing:0px;
     font-size: 14px;
     font-weight:500;
