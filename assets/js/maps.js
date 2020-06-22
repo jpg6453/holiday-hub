@@ -121,6 +121,7 @@ function initMap() {
           map.setZoom(15);
           clearResults();
           clearMarkers();
+          showIcons();
         
         // Resize map to full width on lg screens and scroll to top of window.
         document.getElementById('map').className = 'col-lg-12 gmap';
@@ -155,7 +156,6 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('lodging');
           findPlaces();
-          showResults();
       }
 
       //Event listener for Hotels Button
@@ -167,7 +167,6 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('restaurant');
           findPlaces();
-          showResults();
       }
 
       //Event listener for Restaurants Button
@@ -179,7 +178,6 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('bar');
           findPlaces();
-          showResults();
       }
 
       //Event listener for Bars Button
@@ -191,7 +189,6 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('cafe');
           findPlaces();
-          showResults();
       }
 
       //Event listener for Coffee Button
@@ -203,7 +200,6 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('tourist_attraction');
           findPlaces();
-          showResults();
       }
 
       //Event listener for Attractions Button
@@ -237,10 +233,11 @@ function initMap() {
         });
       }
 
-    // Show search results when place icons are clicked.
+    // After city selected by user, reveal icons and hide binocular logo
 
-      function showResults(){
-          document.getElementById('binocular-logo').style.display = 'none'; 
+      function showIcons(){
+            document.getElementById('binocular-logo').style.display = 'none';
+            document.getElementById('icons').classList.remove('d-none'); 
       }
 
       function clearMarkers() {
