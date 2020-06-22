@@ -601,9 +601,10 @@ h2 {
         height:40px;
     }
     .btn-map {
-        padding-left: 7px;
-        padding-right:7px;
+        border:0;
         width: 56px;
+        padding-left:0;
+        padding-right:0;
     }
     
 }
