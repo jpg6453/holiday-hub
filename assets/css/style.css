@@ -35,7 +35,11 @@ nav {
     font-size: 2rem;   
 }
 
-
+.destinations {
+    padding:1rem;
+    font-weight:400;
+    letter-spacing: 3px;
+}
 
 /*--------------------------------------------------------------------Hero image*/
 
