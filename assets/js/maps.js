@@ -235,6 +235,14 @@ function initMap() {
               google.maps.event.addListener(markers[i], 'click', showInfoWindow);
               setTimeout(dropMarker(i), i * 100);
               addResult(results[i], i);
+
+              //Display a search results total, along with  place type
+              
+              let total = `
+                <h5 class="total">${results.length} ${search.types} found</h5>
+            `;
+
+            document.getElementById('result-total').innerHTML = total;
             }
           }
         });
