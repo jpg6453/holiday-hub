@@ -316,6 +316,19 @@ function initMap() {
           newCity.style.visibility = 'visible';
       }
 
+      //Event listener for New City button
+      document.getElementById('new-city').addEventListener('click',scrollToSearch);
+
+      //Call clear functions, hide place icons and scroll search bar into view
+      function scrollToSearch(){
+        clearResults();
+        clearMarkers();
+        clearPanel();
+        document.getElementById('search').scrollIntoView();
+        document.getElementById('autocomplete').value = '';
+        document.getElementById('icons').classList.add('d-none');
+      }
+
       // Get the place details for a hotel. Show the information in an info window,
       // anchored on the marker for the hotel that the user selected.
       function showInfoWindow() {
