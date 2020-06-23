@@ -337,6 +337,10 @@ nav {
     border-color: #626262;
 }
 
+#new-city {
+    visibility: hidden;
+}
+
 /*--------------------------------------------------------------------Booking Section*/
 
 .contact {

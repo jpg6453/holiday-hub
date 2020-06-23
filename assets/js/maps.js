@@ -158,6 +158,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('lodging');
           findPlaces();
+          changeCity();
       }
 
       //Event listener for Hotels Button
@@ -303,6 +304,12 @@ function initMap() {
           panel.removeChild(panel.childNodes[0]);
         panel.style.width = "0";
         }
+      }
+
+      //Reveal New City button
+      function changeCity() {
+          let newCity = document.getElementById('new-city');
+          newCity.style.visibility = 'visible';
       }
 
       // Get the place details for a hotel. Show the information in an info window,
