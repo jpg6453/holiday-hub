@@ -170,6 +170,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('restaurant');
           findPlaces();
+          changeCity();
       }
 
       //Event listener for Restaurants Button
@@ -181,6 +182,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('bar');
           findPlaces();
+          changeCity();
       }
 
       //Event listener for Bars Button
@@ -192,6 +194,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('cafe');
           findPlaces();
+          changeCity();
       }
 
       //Event listener for Coffee Button
@@ -203,6 +206,7 @@ function initMap() {
           search.bounds = map.getBounds();
           search.types.push('tourist_attraction');
           findPlaces();
+          changeCity();
       }
 
       //Event listener for Attractions Button
