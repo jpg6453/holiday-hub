@@ -219,6 +219,7 @@ function initMap() {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
+            firstCard();
 
             // Iterate through serch results and add google default red marker
             // Add a number label to each marker
@@ -293,6 +294,15 @@ function initMap() {
             document.getElementById('results').innerHTML += resultCard;
             cardClickListener();
     }
+
+    //Scrolls result cards horizontally to left side of screen to display 1st result
+    //When another place icon is clicked
+    
+    function firstCard() {
+        let resultCards = document.getElementById('results');
+        resultCards.scrollTo(0,0);
+    }
+
 
     function cardClickListener() {
             let cards = document.querySelectorAll('.result-card');
