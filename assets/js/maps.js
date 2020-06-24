@@ -110,6 +110,7 @@ function initMap() {
         clearResults();
         clearMarkers();
         clearPanel();
+        clearTotal();
         
       }
 
@@ -122,6 +123,7 @@ function initMap() {
           map.setZoom(15);
           clearResults();
           clearMarkers();
+          clearTotal();
           showIcons();
         
         // Resize map to full width on lg screens and scroll to top of window.
@@ -318,6 +320,14 @@ function initMap() {
         }
       }
 
+
+      function clearTotal() {
+        const total = document.getElementById('result-total');
+        while (total.childNodes[0]) {
+          total.removeChild(total.childNodes[0]);
+        }
+      }
+
       //Reveal New City button
       function changeCity() {
           let newCity = document.getElementById('new-city');
@@ -332,6 +342,7 @@ function initMap() {
         clearResults();
         clearMarkers();
         clearPanel();
+        clearTotal();
         document.getElementById('search').scrollIntoView();
         document.getElementById('autocomplete').value = '';
         document.getElementById('icons').classList.add('d-none');
