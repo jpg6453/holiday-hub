@@ -245,6 +245,15 @@ function initMap() {
                 <h5 class="total">${results.length} ${search.types} found</h5>
             `;
 
+            let res = total;
+            let text = res
+                    .replace("lodging","Hotels")
+                    .replace("restaurant","Restaurants")
+                    .replace("bar","Bars")
+                    .replace("cafe","Cafes")
+                    .replace("tourist_attraction","Attractions");
+
+            total = text;
             document.getElementById('result-total').innerHTML = total;
             }
           }
