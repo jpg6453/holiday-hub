@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="/assets/img/navlogo.png" alt="Holiday Hub logo" width:"300px" height:"200px"/></a>
+  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="/assets/img/navlogo.png" alt="Holiday Hub logo" width:"300" height:"200"/></a>
 </h1>
 <h2 align="center">
 <a href="https://jpg6453.github.io/holiday-hub/" target="_blank">Holiday Hub</a>
