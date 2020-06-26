@@ -1,23 +1,15 @@
-# Code Institute
+<h1 align="center">
+  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="/assets/img/navlogo.png" alt="Holiday Hub logo"/></a>
+</h1>
+<h2 align="center">
+<a href="https://jpg6453.github.io/holiday-hub/" target="_blank">Holiday Hub</a>
+</h2>
 
-Welcome Jon Gill,
+<div align="center"> 
 
-We have preinstalled all of the tools you need to get started.
+[Holiday Hub]("https://jpg6453.github.io/holiday-hub/") is a valuable resource for all your travel needs. Blah blah.
 
-To run a frontend application in GitPod, in the terminal, type:
+<br>
 
-`python3 -m http.server`
+[Discover Holiday Hub here](jpg6453.github.io/holiday-hub/)
 
-A blue button should appear to click: *Expose*,
-
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend python file, type `python3 app.py`, if your python file is named `app.py` of course.
-
-A blue button should appear to click: *Expose*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons. 
-
-Happy coding!
