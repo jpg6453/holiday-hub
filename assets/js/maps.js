@@ -154,73 +154,24 @@ function initMap() {
           setTimeout(function(){ 
               alert("To search a different area of the city, drag the map around until it comes into view, then click the relevant icon."); }, 6000);
         }
-      
+        
+        // Perform a search for specified place types
+        // Event listeners for place icons
 
-      let search = {
-          types: []
-        };
+        document.getElementById('hotel').addEventListener('click', function(){placeSearch('lodging');});
+        document.getElementById('restaurant').addEventListener('click', function(){placeSearch('restaurant');});
+        document.getElementById('glass').addEventListener('click', function(){placeSearch('bar');});
+        document.getElementById('coffee').addEventListener('click', function(){placeSearch('cafe');});
+        document.getElementById('info').addEventListener('click', function(){placeSearch('tourist_attraction');});
+        
+        // Perform nearby search after city has been selected & a place icon is clicked
 
-      // Perform a search for hotels when hotel button is clicked
-      function findHotels() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('lodging');
-          findPlaces();
-          changeCity();
-      }
+        function placeSearch(type){
+            let search = {
+            bounds: map.getBounds(),
+            types: [type]  
+    };
 
-      //Event listener for Hotels Button
-      document.getElementById('hotel').addEventListener('click', findHotels);
-
-      // Perform a search for Restaurants when restaurants button is clicked
-      function findRestaurants() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('restaurant');
-          findPlaces();
-          changeCity();
-      }
-
-      //Event listener for Restaurants Button
-      document.getElementById('restaurant').addEventListener('click', findRestaurants);
-
-      // Perform a search for Bars when Bars button is clicked
-      function findBars() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('bar');
-          findPlaces();
-          changeCity();
-      }
-
-      //Event listener for Bars Button
-      document.getElementById('glass').addEventListener('click', findBars);
-
-      // Perform a search for Cafes when Coffee button is clicked
-      function findCafe() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('cafe');
-          findPlaces();
-          changeCity();
-      }
-
-      //Event listener for Coffee Button
-      document.getElementById('coffee').addEventListener('click', findCafe);
-
-      // Perform a search for Tourist Attractions when Attractions button is clicked
-      function findAttraction() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('tourist_attraction');
-          findPlaces();
-          changeCity();
-      }
-
-      //Event listener for Attractions Button
-      document.getElementById('info').addEventListener('click', findAttraction);
-
-      function findPlaces() {
         places.nearbySearch(search, function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
