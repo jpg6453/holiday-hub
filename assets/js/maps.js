@@ -253,7 +253,7 @@ function initMap() {
                 <span class="result-number">${i+1}</span>
                 <h5 class="result-name horizontal">${result.name}</h5>
                 <span class="result-rating mb-1">${rating ? rating + ' &#11088' : noRating} </span>
-                <span class="result-address horizontal mb-1">${result.vicinity}</span>
+                <span class="d-none d-md-block result-address horizontal mb-1">${result.vicinity}</span>
             </div>  
 		</div>
         `;
