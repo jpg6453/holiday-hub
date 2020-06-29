@@ -125,6 +125,7 @@ function initMap() {
           clearMarkers();
           clearTotal();
           showIcons();
+          userHint();
         
         // Resize map to full width on lg screens and scroll to top of window.
         document.getElementById('map').className = 'col-lg-12 gmap';
@@ -148,6 +149,12 @@ function initMap() {
           document.getElementById('autocomplete').placeholder = 'Enter a city';
         }
       }
+
+      function userHint(){
+          setTimeout(function(){ 
+              alert("To search a different area of the city, drag the map around until it comes into view, then click the relevant icon."); }, 6000);
+        }
+      
 
       let search = {
           types: []
