@@ -61,7 +61,7 @@ var countries = {
 
 //Function to render google map
 
-function initMap() {
+    function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: countries['uk'].zoom,
           center: countries['uk'].center,
@@ -69,7 +69,7 @@ function initMap() {
           panControl: false,
           zoomControl: false,
           streetViewControl: false
-        });
+    });
 
         infoWindow = new google.maps.InfoWindow({
           content: document.getElementById('info-content')
@@ -83,7 +83,7 @@ function initMap() {
                 document.getElementById('autocomplete')), {
               types: ['(cities)'],
               componentRestrictions: countryRestrict
-            });
+    });
         places = new google.maps.places.PlacesService(map);
 
         autocomplete.addListener('place_changed', onPlaceChanged);
@@ -91,11 +91,11 @@ function initMap() {
         // DOM event listener to react when the user selects a country.
         document.getElementById('country').addEventListener(
             'change', setAutocompleteCountry);
-      }
+    }
 
        // Set the country restriction based on user input.
       // Also center and zoom the map on the given country.
-      function setAutocompleteCountry() {
+    function setAutocompleteCountry() {
         var country = document.getElementById('country').value;
         if (country == 'all') {
           autocomplete.setComponentRestrictions({'country': []});
@@ -112,11 +112,11 @@ function initMap() {
         clearPanel();
         clearTotal();
         
-      }
+    }
 
       // When the user selects a city, get the place details for the city and
       // zoom the map in on the city.
-      function onPlaceChanged() {
+    function onPlaceChanged() {
         var place = autocomplete.getPlace();
         if (place.geometry) {
           map.panTo(place.geometry.location);
@@ -125,6 +125,7 @@ function initMap() {
           clearMarkers();
           clearTotal();
           showIcons();
+          
         
         // Resize map to full width on lg screens and scroll to top of window.
         document.getElementById('map').className = 'col-lg-12 gmap';
@@ -137,88 +138,47 @@ function initMap() {
         let panel = `   
 		<img class="card-img-top panel-img-top" src="" alt="${place.name}">
         <div class="card-body flex-column panel-card-body">
-            <h4 class="panel-place-name">${place.name}</h4> 
+            <h4 class="panel-place-name">${place.name}</h4>
         </div>
         
         `;
 
         document.getElementById('panel').innerHTML = panel;
+        
 
         } else {
           document.getElementById('autocomplete').placeholder = 'Enter a city';
         }
-      }
+    }
 
-      let search = {
-          types: []
-        };
+      // Perform a search for specified place types
+      // Event listeners for place icons
 
-      // Perform a search for hotels when hotel button is clicked
-      function findHotels() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('lodging');
-          findPlaces();
-          changeCity();
-      }
+      document.getElementById('hotel').addEventListener('click', function(){placeSearch('lodging'),setTimeout(function(){ alert("If the area of the city you want to search is not shown, drag the map around until it comes into view and click one of the icons below the map!"); }, 6000);});
+      document.getElementById('restaurant').addEventListener('click', function(){placeSearch('restaurant');});
+      document.getElementById('glass').addEventListener('click', function(){placeSearch('bar');});
+      document.getElementById('coffee').addEventListener('click', function(){placeSearch('cafe');});
+      document.getElementById('info').addEventListener('click', function(){placeSearch('tourist_attraction');});
 
-      //Event listener for Hotels Button
-      document.getElementById('hotel').addEventListener('click', findHotels);
+      function myFunction() {
+            setTimeout(function(){ alert("If the area of the city you want to search is not shown, drag the map around until it comes into view and click one of the icons below the map!"); }, 3000);
+        }
 
-      // Perform a search for Restaurants when restaurants button is clicked
-      function findRestaurants() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('restaurant');
-          findPlaces();
-          changeCity();
-      }
+      // Perform nearby search after city has been selected & a place icon is clicked
 
-      //Event listener for Restaurants Button
-      document.getElementById('restaurant').addEventListener('click', findRestaurants);
-
-      // Perform a search for Bars when Bars button is clicked
-      function findBars() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('bar');
-          findPlaces();
-          changeCity();
-      }
-
-      //Event listener for Bars Button
-      document.getElementById('glass').addEventListener('click', findBars);
-
-      // Perform a search for Cafes when Coffee button is clicked
-      function findCafe() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('cafe');
-          findPlaces();
-          changeCity();
-      }
-
-      //Event listener for Coffee Button
-      document.getElementById('coffee').addEventListener('click', findCafe);
-
-      // Perform a search for Tourist Attractions when Attractions button is clicked
-      function findAttraction() {
-          search.types = [];
-          search.bounds = map.getBounds();
-          search.types.push('tourist_attraction');
-          findPlaces();
-          changeCity();
-      }
-
-      //Event listener for Attractions Button
-      document.getElementById('info').addEventListener('click', findAttraction);
-
-      function findPlaces() {
+    function placeSearch(type){
+        let search = {
+          bounds: map.getBounds(),
+          types: [type]
+          
+    };
+    
         places.nearbySearch(search, function(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
             firstCard();
+            changeCity();
 
             // Iterate through serch results and add google default red marker
             // Add a number label to each marker
@@ -254,35 +214,38 @@ function initMap() {
 
             total = text;
             document.getElementById('result-total').innerHTML = total;
+
             }
           }
         });
-      }
+    }
 
-    // After city selected by user, reveal icons and hide binocular logo
+        // After city selected by user, reveal icons and hide binocular logo
 
-      function showIcons(){
-            document.getElementById('binocular-logo').style.display = 'none';
-            document.getElementById('icons').classList.remove('d-none'); 
-      }
+    function showIcons(){
+        document.getElementById('binocular-logo').style.display = 'none';
+        document.getElementById('icons').classList.remove('d-none'); 
+    }
 
-      function clearMarkers() {
+    function clearMarkers() {
         for (var i = 0; i < markers.length; i++) {
           if (markers[i]) {
             markers[i].setMap(null);
           }
         }
         markers = [];
-      }
+    }
 
-      function dropMarker(i) {
+    function dropMarker(i) {
         return function() {
           markers[i].setMap(map);
         };
-      }
+    }
 
-      //Populates results table with search results
-      //${photo && photo.length ? photo[0].getUrl() : defaultPhoto}
+   
+
+    //Populates results table with search results
+    //${photo && photo.length ? photo[0].getUrl() : defaultPhoto}
     function addResult(result, i) {
         let noRating = 'No ratings yet';
         let rating = result.rating;
@@ -293,15 +256,29 @@ function initMap() {
 			<img class="card-img-top flex-row result-img" src="${defaultPhoto}" alt="${result.name}">
             <div class="card-body result-card-body d-flex flex-column">
                 <span class="result-number">${i+1}</span>
+                
                 <h5 class="result-name horizontal">${result.name}</h5>
                 <span class="result-rating mb-1">${rating ? rating + ' &#11088' : noRating} </span>
-                <span class="result-address horizontal mb-1">${result.vicinity}</span>
+                <span class="d-none d-md-block result-address horizontal mb-1">${result.vicinity}</span>
             </div>  
 		</div>
         `;
             document.getElementById('results').innerHTML += resultCard;
+
+            if (document.getElementById('results').innerHTML) {
+                return true;
+            } else {
+                alert("oops!");
+            }
+             
             cardClickListener();
+
+            
+            
+           
+    
     }
+   
 
     //Scrolls result cards horizontally to left side of screen to display 1st result
     //When another place icon is clicked
@@ -311,52 +288,54 @@ function initMap() {
         resultCards.scrollTo(0,0);
     }
 
-
     function cardClickListener() {
             let cards = document.querySelectorAll('.result-card');
             cards.forEach(function (elem, i) {
             elem.addEventListener('click', function () {
             new google.maps.event.trigger(markers[i], 'click')
-    })
-  })
-}
+            })
+        })
+    }
+
+            
+    
        
-      function clearResults() {
+    function clearResults() {
         var results = document.getElementById('results');
         while (results.childNodes[0]) {
           results.removeChild(results.childNodes[0]);
         }
-      }
+    }
 
-      //Clear city panel when user changes country
+    //Clear city panel when user changes country
 
-      function clearPanel() {
+    function clearPanel() {
         const panel = document.getElementById('panel');
         while (panel.childNodes[0]) {
           panel.removeChild(panel.childNodes[0]);
         panel.style.width = "0";
         }
-      }
+    }
 
-
-      function clearTotal() {
+    function clearTotal() {
         const total = document.getElementById('result-total');
         while (total.childNodes[0]) {
           total.removeChild(total.childNodes[0]);
         }
-      }
+    }
 
-      //Reveal New City button
-      function changeCity() {
+    //Reveal New City button
+    function changeCity() {
           let newCity = document.getElementById('new-city');
           newCity.style.visibility = 'visible';
-      }
+          document.getElementById('hotel').style.visibility = 'visible';
+    }
 
-      //Event listener for New City button
-      document.getElementById('new-city').addEventListener('click',scrollToSearch);
+    //Event listener for New City button
+    document.getElementById('new-city').addEventListener('click',scrollToSearch);
 
-      //Call clear functions, hide place icons and scroll search bar into view
-      function scrollToSearch(){
+    //Call clear functions, hide place icons and scroll search bar into view
+    function scrollToSearch(){
         clearResults();
         clearMarkers();
         clearPanel();
@@ -364,11 +343,11 @@ function initMap() {
         document.getElementById('search').scrollIntoView();
         document.getElementById('autocomplete').value = '';
         document.getElementById('icons').classList.add('d-none');
-      }
+    }
 
-      // Get the place details for a hotel. Show the information in an info window,
-      // anchored on the marker for the hotel that the user selected.
-      function showInfoWindow() {
+    // Get the place details for a hotel. Show the information in an info window,
+    // anchored on the marker for the hotel that the user selected.
+    function showInfoWindow() {
         var marker = this;
         places.getDetails({placeId: marker.placeResult.place_id},
             function(place, status) {
@@ -378,23 +357,45 @@ function initMap() {
               infoWindow.open(map, marker);
               buildIWContent(place);
             });
-      }
+    }
 
       // Load the place information into the HTML elements used by the info window.
-      function buildIWContent(place) {
-        document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
-            'src="' + place.icon + '"/>';
-        document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
-            '">' + place.name + '</a></b>';
-        document.getElementById('iw-address').textContent = place.vicinity;
+    function buildIWContent(place) {
+        let infoContent =`
+        <table>
+				<tr id="iw-url-row" class="iw_table_row">
+					<td id="iw-icon" class="iw_table_icon"><img class="iw-placeicon" src="${place.icon}"></td>
+					<td id="iw-name">${place.name}</td>
+				</tr>
+				<tr id="iw-address-row" class="iw_table_row">
+					<td class="iw_attribute_name">Address:</td>
+					<td id="iw-address">${place.vicinity}</td>
+				</tr>
+				<tr id="iw-phone-row" class="iw_table_row">
+					<td class="iw_attribute_name">Telephone:</td>
+					<td id="iw-phone"></td>
+				</tr>
+				<tr id="iw-rating-row" class="iw_table_row">
+					<td class="iw_attribute_name">Rating:</td>
+					<td id="iw-rating"></td>
+				</tr>
+				<tr id="iw-website-row" class="iw_table_row">
+					<td class="iw_attribute_name">Website:</td>
+					<td id="iw-website"></td>
+				</tr>
+            </table>
+            `;
 
-        if (place.formatted_phone_number) {
-          document.getElementById('iw-phone-row').style.display = '';
-          document.getElementById('iw-phone').textContent =
+            document.getElementById('info-content').innerHTML = infoContent;
+        
+            if (place.formatted_phone_number) {
+                document.getElementById('iw-phone-row').style.display = '';
+                document.getElementById('iw-phone').textContent =
               place.formatted_phone_number;
-        } else {
+            } else {
           document.getElementById('iw-phone-row').style.display = 'none';
         }
+       
 
         // Assign a five-star rating to the hotel, using a black star ('&#10029;')
         // to indicate the rating the hotel has earned, and a white star ('&#10025;')
@@ -414,6 +415,10 @@ function initMap() {
           document.getElementById('iw-rating-row').style.display = 'none';
         }
 
+
+        
+        // The regexp isolates the first part of the URL (domain plus subdomain)
+        // to give a short URL for displaying in the info window.
         // The regexp isolates the first part of the URL (domain plus subdomain)
         // to give a short URL for displaying in the info window.
         if (place.website) {
@@ -428,4 +433,5 @@ function initMap() {
         } else {
           document.getElementById('iw-website-row').style.display = 'none';
         }
-      }
+
+    }

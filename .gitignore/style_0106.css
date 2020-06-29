@@ -8,7 +8,7 @@
 }
 
 nav {
-    min-height: 6rem;
+    height: 6rem;
 }
 .nav-item {
     font-family: "Open Sans", sans-serif;
@@ -35,21 +35,13 @@ nav {
     font-size: 2rem;   
 }
 
-.destinations {
-    padding:1rem;
-    font-weight:400;
-    letter-spacing: 3px;
-}
+
 
 /*--------------------------------------------------------------------Hero image*/
 
 .hero-img {
-    background:url('../../assets/img/hero.jpg');
+    background:url('../../assets/img/hero.jpg') no-repeat center;
     background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     height: 50rem;
     display:flex;
@@ -92,132 +84,36 @@ nav {
     height:36px;
     width:24px;
 }
-
-.result-number {
-    height: 30px;
-    width: 30px;
-    font-size: 1rem;
-    font-family:"Open Sans", sans-serif;
-    border-radius:50%;
-    background-color:#f34646;
-    justify-content:center;
-    align-items: center;
-    display:flex;
-    margin-bottom:1rem;
-}
-
-.result-name {
-    font-size: 1rem;
-    font-family:"Montserrat", sans-serif;
-    font-weight: 700;
-}
-
-.result-rating {
-    font-family:"Open Sans", sans-serif;
-    font-weight: 400;
-    color:#f34646;
-}
-
-.result-address {
-    font-family:"Open Sans", sans-serif;
-    font-weight: 400;
-    font-size: .8rem;
-}
-
-.result-img {
-    width: 300px;
-    height:160px;   
+#listing {
+        position: relative;
+        width:80%;
+        height:470px;
+        overflow:auto;
+        display: inline-block;
+        cursor: pointer;
+        overflow-x: hidden;
+        
+       
 }
         
-.result-card {
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0,0,0,.35);
-    border:none;
-    border-radius:8px;
-    display: inline-block;
-    width:300px;
-    height:350px;
-    margin: 1rem .5rem;
-    background-color: #ffffff;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
+.card.result-card {
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+  border:none;
+  background-color: hsl(0, 0%, 94%);
+  padding-top: 5px;
+  display:inline-block;
+  width: 50%;
  } 
 
-.result-card:hover {
-    cursor:pointer;
-    transform:scale(1.015); 
-    box-shadow:none;
-}
+ .card-img-top.result-img {
+     height:225px;
+ }
 
-.result-card-body{
-    padding:10px 20px;
-}
-
-.scrolling-wrapper {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  background-color:#d0d0d0;
-}
-
-.horizontal {
-    white-space: pre-wrap;
-    word-wrap: break-word; 
-}
-
-/*-------------------------------------------------------------Info Window Content*/
+     
 
 
-
-.iw_table_row {
-    height: 18px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-family: "Open Sans", sans-serif;
-}
-
-.iw_attribute_name {
-    font-weight: bold;
-    text-align: left;
-}
-
-#iw-icon {
-    text-align: left;   
-}
-
-#iw-name {
-    font-weight:bold;
-}
-
-.iw-placeicon {
-    width:50px;
-    height:50px;
-}
-
-
-/*-------------------------------------------------------------Sliding Panel*/
-
-#panel {
-    position:absolute;
-    z-index:99;
-    left:0;
-    background-color:#fff; 
-    padding-left:0;
-    padding-right:0;
-    border:none;
-    border-radius:15px;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0,0,0,.35);   
-}
-
-.panel-img-top {
-    height: 250px;
-}
-
-.panel-place-name {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-}
 /*-------------------------------------------------------------Single Search field*/
 .search-bar {
     background-color: #f0f0f0;
@@ -226,7 +122,7 @@ nav {
 
 .search-row {   
     border-radius:55px;
-    box-shadow: 0px 0px 4px #626262;
+    box-shadow: 1.5px 1px 1px 1px rgba(0,0,0,.2);
     background-color: #ffffff;
     padding:6px;
     margin-bottom:3rem;
@@ -234,8 +130,9 @@ nav {
 }
 
 .search-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem; 
+    padding-top: 3rem;
+    padding-bottom:0;
+   
 }
 
 .add-icons
@@ -248,29 +145,17 @@ nav {
     background-color:transparent;
 }
 
-.country-selector:focus{
-    box-shadow: none;
-}
-.country-selector {
-    font-family: "Open Sans", sans-serif;
-}
-
-
 
 #autocomplete {
  border:none;
  background-color:transparent;
  padding:6px;
- width:100%;
- outline:none;
- font-family: "Open Sans", sans-serif;
-
+ width:80%;
 }
 
 .gmap {
     background-color: #d0d0d0;
     min-height: 30rem;
-    transition: 2s ease-out;
 }
 
 .map-icons li button i {
@@ -283,27 +168,25 @@ nav {
     text-align: center;
     color: #fafafa;
     background: rgb(255, 0, 0);
-    transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.3);
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
 .map-icons li button i:hover {
+    
+    
     transform:scale(1.05);
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.4);
+    
 }
 
-.icons-row {
-    background-color: #f0f0f0;
-}
-
-.btn-map {
-    width:106px;
-}
-
-.btn-map:focus{
-    box-shadow: none;
-    outline:none;   
+.icon-row {
+   
+    margin-top: 2rem;
+    
 }
 
 .icon-heading {
@@ -319,15 +202,13 @@ nav {
 .icon-label {
     display:block;
     margin-top:5px;
-    font-family: "Open Sans", sans-serif;
     letter-spacing:0px;
     font-size: 14px;
     font-weight:500;
 }
 
 .map-icons {
-    margin-bottom: .75rem;
-    margin-top:.75rem;
+    margin-bottom: 3rem;
 } 
 
 
@@ -354,34 +235,6 @@ nav {
 #near {
     background-color: #626262;
     color: #fafafa;
-}
-
-.fas.fa-times {
-    background-color: #626262;
-    color:#d0d0d0;
-    font-size:1.2rem;
-}
-
-.fas.fa-times:hover {
-    background-color: #d0d0d0;
-    color:#626262;
-    border:1px solid;
-    border-color: #626262;
-}
-#hotel,
-#new-city {
-    visibility: hidden;
-}
-
-.total {
-    background-color: #ffffff;
-    box-shadow: 0px 0px 5px #626262;
-    border-radius: 55px;
-    height:2rem;
-    padding-top:.5rem;
-    padding-bottom: .5rem;
-    font-family: "Montserrat", sans-serif;
-    font-size:1rem;
 }
 
 /*--------------------------------------------------------------------Booking Section*/
@@ -421,15 +274,11 @@ img.bg-luggage {
 .booking-row {
     background-color: #f0f0f0;
     margin-right:0;
-    margin-left:0;
 }
 
 .form-heading {
     padding-bottom: 1.5rem;
     padding-left: 0;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 2.25rem;
 }
 
 #emailHelp,
@@ -443,22 +292,7 @@ img.bg-luggage {
     padding-left: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
-/*--------------------------------------------------------------------Modal*/
-.modal-body{
-    text-align: center;
-    line-height: 1.75;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    padding-top: 1.5rem;
-}
-
-.modal-close {
-    font-size: 12px;
-}
 
 /*--------------------------------------------------------------------Popular Destinations*/
 .dest-heading,
@@ -594,133 +428,26 @@ h2 {
 #toTopBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  bottom: 450px; /* Place the button at the bottom of the page */
+  bottom: 20px; /* Place the button at the bottom of the page */
   right: 20px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
-  outline:unset;
-  background-color:rgba(0,0,0,.1); /* Set a background color */
-  color: #000; /* Text color */
+  
+  background-color:rgba(0,0,0,.45); /* Set a background color */
+  color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 12px; /* Some padding */
-  border-radius: 50%; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
-  width:50px;
-  height: 50px;
+  border-radius: 40%; /* Rounded corners */
+  font-size: 20px; /* Increase font size */
 }
 
 #toTopBtn:hover {
-  background-color: #626262; /* Add a dark-grey background on hover */
+  background-color: #555; /* Add a dark-grey background on hover */
 }
 
-/*-------------------------------------------------------------------------Media Queries*/
-
-/*------------------------------Search Box on small screens*/
-
-@media only screen and (max-width: 576px) {
-    .search-row {   
-        border-radius:15px;
-        padding-top: 0;
-        padding-bottom: 0;
-        background-color: rgba(255,255,255,.9)
-    }
-    .search-bar{
-        position:sticky;
-        top:0;
-        z-index:10;
-        background-color: transparent;
-        transition: display 3s ease-out;
-    }
-    #autocomplete {
-    padding:12px;
-    }
-    .hero-text {
-        font-size: 2.5rem;
-        padding-bottom: 192px;
-    }
-    .search-container {
-        padding: .5rem;
-    }
-    .navbar {
-        display:none;
-    }
-    #toTopBtn {
-        padding:6px;
-        width: 40px;
-        height:40px;
-    }
-    .btn-map {
-        border:0;
-        width: 56px;
-        padding-left:0;
-        padding-right:0;
-    }
-    .result-card {
-        width:200px;
-        height: 252px;
-    }
-
-    .result-img{
-        width:200px;
-        height:120px;
-    }
-    .result-number{
-        font-size: 14px;
-        margin-bottom: 8px;
-        width:20px;
-        height:20px;
-    }
-
-    .result-name {
-        font-size:14px;
-        letter-spacing: normal;
-    }
-
-    .gmap {
-        position:sticky;
-        top:0;
-        z-index:3;
-    }
-
-    
-}
-
-/*------------------------------Medium screens*/
-
-@media only screen and (max-width: 768px) {
-    #binocular-logo {   
-    padding-top:3rem;
-    padding-bottom:2rem;
-    }
-    .booking-form {   
-    padding-bottom:0;
-    }
-    .dest-section {   
-    padding-top:2rem;
-    padding-bottom:0;
-    }
-    .cards-row {
-        margin-bottom:0;
-    }
-    .wish {
-        font-size:2rem;
-        text-align:end;
-    }
-
-    .hero-img {
-        background-position: center center;
-        background-attachment:unset;
-    }
-    #result-total {
-        padding-left:0;
-        padding-right:0;
-    }
-    .total {
-        margin-bottom:0;
-        border-radius:0px; 
-    }
-    .map-icons {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
+container, 
+container-fluid,
+row {
+    margin: 0;
+    padding: 0;
 }

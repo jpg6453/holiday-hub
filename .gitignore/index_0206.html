@@ -22,7 +22,7 @@
 
 <body>
 	<!--START Navigation-->
-	<nav class="navbar navbar-expand-lg bg-light navbar-light">
+	<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
 
 		<!--Logo-->
 		<a class="navbar-brand mr-1" href="index.html">
@@ -40,13 +40,10 @@
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav ml-auto text-uppercase">
 					<li class="nav-item">
-						<a class="nav-link" href="#search"><i class="fas fa-search-location"></i></a>
-					</li>
-                    <li class="nav-item">
-						<a class="nav-link destinations" href="#destination">Destinations</a>
+						<a class="nav-link" href="#"><i class="fas fa-search-location"></i></a>
 					</li>
 				</ul>
-				<a class="btn btn-primary book-now-btn text-uppercase ml-md-2" href="#book-now">Book Now</a>
+				<a class="btn btn-primary book-now-btn text-uppercase ml-md-2" href="#">Book Now</a>
 			</div>
 	</nav>
 
@@ -68,60 +65,72 @@
 
 
 	<!--Search-->
-	<section id="search" class="search-bar">
+	<section class="search-bar">
 		<div class="container search-container align-items-center">
-			<div class="row no-gutters justify-content-around">
-				<div class="col-md-8 col-xl-6">
+			<div class="row justify-content-around">
+				<div class="col-xl-6">
 					<div class="text center lg-left">
 						<form class="search">
 							<div class="row search-row mx-auto my-auto">
-								<div class="col-md-4 form-group mb-0">
-							        <select id="country" class="custom-select country-selector">
-                                        <option value="all">All</option>
-                                        <option value="au">Australia</option>
-                                        <option value="br">Brazil</option>
-                                        <option value="ca">Canada</option>
-                                        <option value="fr">France</option>
-                                        <option value="de">Germany</option>
-                                        <option value="mx">Mexico</option>
-                                        <option value="nz">New Zealand</option>
-                                        <option value="it">Italy</option>
-                                        <option value="za">South Africa</option>
-                                        <option value="es">Spain</option>
-                                        <option value="pt">Portugal</option>
-                                        <option value="us">U.S.A.</option>
-                                        <option value="uk" selected>UK</option>
-                                    </select>
+								<div class="col-xl-4 form-group mb-0">
+									<select id="country" class="custom-select">
+                                <option value="all">All</option>
+                                <option value="au">Australia</option>
+                                <option value="br">Brazil</option>
+                                <option value="ca">Canada</option>
+                                <option value="fr">France</option>
+                                <option value="de">Germany</option>
+                                <option value="mx">Mexico</option>
+                                <option value="nz">New Zealand</option>
+                                <option value="it">Italy</option>
+                                <option value="za">South Africa</option>
+                                <option value="es">Spain</option>
+                                <option value="pt">Portugal</option>
+                                <option value="us">U.S.A.</option>
+                                <option value="uk"selected>UK</option>
+                            </select>
 								</div>
-								<div id="locationField" class="col-md-8 align-items-center form-group mb-0">
-									<input id="autocomplete" placeholder="Enter a city" type="text" onfocus="this.value=''"/>
-                                </div>
+								<div id="locationField" class="col-xl-8 align-items-center form-group mb-0">
+									<input id="autocomplete" placeholder="Enter a city" type="text" />
+                            </div>
+								</div>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-        </div>   
-	</section>
+			<div class="row no-gutters justify-content-center">
+				<div class="col-xl-8 search-box">
+					<div class="row justify-content-center icon-row">
+						<div class="col icons text-center">
+							<ul class="list-inline map-icons">
+								<li class="list-inline-item">
+									<button id="hotel" class="btn btn-map"><i class="fas fa-bed"></i>
+                                    <span class="icon-label">Hotels</span>
+                                </button>
+								</li>
+								<li class="list-inline-item rest">
+									<button id="restaurant" class="btn btn-map"><i id="rest"class="fas fa-utensils"></i>
+					                <span class="icon-label">Restaurants</span>
+                                </button>
+								</li>
+								<li class="list-inline-item">
+									<button class="btn btn-map"><i id="glass" class="fas fa-glass-martini-alt"></i>
+                                    <span class="icon-label">Bars</span>
+                                </button>
+								</li>
+								<li class="list-inline-item">
+									<button class="btn btn-map"><i id="coffee" class="fas fa-coffee"></i>
+                                    <span class="icon-label">Coffee</span>
+                                </button>
+								</li>
+								<li class="list-inline-item">
+									<button type="submit" class="btn btn-map"><i id="info"  class="fas fa-info"></i>
+                                    <span class="icon-label">Attractions</span>
+                                </button>
+								</li>
 
-	<!--Map Section-->
-	<section>
-		<div class="container-fluid">
-			<div class="row justify-content-center">
-                <div id="panel" class="d-none col-md-4 col-xl-2 card panel-card"></div>
-				<div id="map" class="col-lg-6 gmap"></div>
-				<!-- Search Results-->
-				<div id="binocular-logo" class="col-lg-6 my-auto">
-					<div class="row text-center justify-content-center">
-						<div class="col-md-6">
-							<span class="fa-stack fa-4x">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-binoculars fa-stack-1x fa-inverse"></i>
-                            </span>
-							<h4>Search. Discover. Explore</h4>
-							<p class="text-muted">At Holiday Hub we have a dedicated team based in over 100 cities all
-								over the world. They work tirelessly to seek out those hidden gems so you can enjoy your
-								holiday to the max. </p>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -129,66 +138,60 @@
 		</div>
 	</section>
 
-    <!-- Place Type Search Icons-->
-
-    <div class="container-fluid">
-        <div id="icons" class="d-none row icons-row justify-content-start">
-                <div id="result-total" class="col-xl-2 my-auto text-center">
-    <!-- Search result total goes here, built in maps.js-->
-                </div>
-				<div class="col-xl-8">
-					<ul class="list-inline map-icons text-center ml-1">
-						<li class="list-inline-item">
-							<button id="hotel" class="btn btn-map">
-                                <i class="fas fa-bed"></i>
-				                <span class="d-none d-md-block icon-label">Hotels</span>
-				            </button>
-						</li>
-						<li class="list-inline-item rest">
-							<button id="restaurant" class="btn btn-map">
-                                <i id="rest"class="fas fa-utensils"></i>
-								<span class="d-none d-md-block icon-label">Restaurants</span>
-				            </button>
-						</li>
-						<li class="list-inline-item">
-							<button class="btn btn-map">
-                                <i id="glass" class="fas fa-glass-martini-alt"></i>
-				                <span class="d-none d-md-block icon-label">Bars</span>
-				            </button>
-						</li>
-						<li class="list-inline-item">
-							<button class="btn btn-map">
-                                <i id="coffee" class="fas fa-coffee"></i>
-				                <span class="d-none d-md-block icon-label">Coffee</span>
-				            </button>
-						</li>
-						<li class="list-inline-item mr-0">
-							<button type="submit" class="btn btn-map">
-                                <i id="info"  class="fas fa-info"></i>
-				                <span class="d-none d-md-block icon-label">Attractions</span>
-				            </button>
-						</li>
-						<li class="list-inline-item">
-							<button id="new-city" type="submit" class="d-none d-md-inline-block btn btn-map">
-                                <i class="fas fa-times" aria-hidden="true"></i>
-                                <span class="d-none d-md-block icon-label">New City</span>
-				            </button>
-						</li>
-					</ul>
+	<!--Map Section-->
+	<section>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div id="map" class="col-lg-6 gmap"></div>
+				<!-- Search Results-->
+				<div id="binocular-logo" class="col-lg-6 my-auto">
+					<div class="row text-center justify-content-center">
+						<div class="col-md-6">
+							<span class="fa-stack fa-4x">
+	                                <i class="fas fa-circle fa-stack-2x"></i>
+	                                <i class="fas fa-binoculars fa-stack-1x fa-inverse"></i>
+	                            </span>
+							<h4>Search. Discover. Explore</h4>
+							<p class="text-muted">At Holiday Hub we have a dedicated team based in over 100 cities all
+								over the world. They work tirelessly to seek out those hidden gems so you can enjoy your
+								holiday to the max. </p>
+						</div>
+					</div>
 				</div>
+				<div class="col-lg-6">
+					<div id="results"></div>
+				</div>
+			</div>
 		</div>
-	</div>
-
-    <!-- Horizontal Scrolling Results-->
-
-	<div id="results" class="scrolling-wrapper"></div>
+	</section>
 
 	<!-- Info Window Content-->
-	
+	<div style="display: none">
 		<div id="info-content">
-			
+			<table>
+				<tr id="iw-url-row" class="iw_table_row">
+					<td id="iw-icon" class="iw_table_icon"></td>
+					<td id="iw-url"></td>
+				</tr>
+				<tr id="iw-address-row" class="iw_table_row">
+					<td class="iw_attribute_name">Address:</td>
+					<td id="iw-address"></td>
+				</tr>
+				<tr id="iw-phone-row" class="iw_table_row">
+					<td class="iw_attribute_name">Telephone:</td>
+					<td id="iw-phone"></td>
+				</tr>
+				<tr id="iw-rating-row" class="iw_table_row">
+					<td class="iw_attribute_name">Rating:</td>
+					<td id="iw-rating"></td>
+				</tr>
+				<tr id="iw-website-row" class="iw_table_row">
+					<td class="iw_attribute_name">Website:</td>
+					<td id="iw-website"></td>
+				</tr>
+			</table>
 		</div>
-	
+	</div>
 
 	<!-- Booking Section-->
 
@@ -199,8 +202,8 @@
 				<div class="col-lg-6 order-lg-1">
 					<div class="row justify-content-center booking-row">
 						<div class="col-sm-10 col-md-8 mx-auto booking-form">
-							<h3 id="book-now" class="form-heading text-center">Book Now</h3>
-							<form id="contactForm" onsubmit="showModal()" class="needs-validation">
+							<h2 class="form-heading">Book Now</h2>
+							<form onsubmit="showModal()" class="needs-validation">
 								<div class="form-group">
 									<label class="form-label" for="name">Name</label>
 									<input type="text" class="form-control text-muted" id="name" oninput="checkForm()" aria-describedby="name" placeholder="Name" required>
@@ -218,8 +221,10 @@
 									<label class="form-label" for="textarea">Tell us More...</label>
 									<textarea class="form-control" id="textarea" oninput="checkForm()" rows="4" placeholder="Enter your message here" required></textarea>
 								</div>
-								<div class="container">
-									<button id="formBtn" type="button" data-toggle="modal" data-target="#bookingModal" class="btn btn-block btn-primary book-now-btn mb-2" disabled>SEND</button>
+								<div class="container text-right">
+									<div class="col">
+									<button id="formBtn" type="button" data-toggle="modal" data-target="#bookingModal" class="btn btn-primary book-now-btn text-right mb-2" disabled>SEND</button>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -232,33 +237,33 @@
     
     <!-- Modal to confirm form submission-->
 
-	<div class="modal fade rounded" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel"
+	<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
 				<div class="modal-header">
-					<div class="modal-title">
-						<img src="assets/img/navlogo.png" height="40" alt="Sunrise logo" title="Sunrise logo">
-						<span class="brand-text">Holiday Hub</span>
-					</div>
-					<button onclick="formReset()" value="Reset Form" type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
+					<h5 class="modal-title" id="bookingModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
 				</div>
 				<div class="modal-body">
-					<p>Thank you for your enquiry.<br> One of our Country Experts will contact you shortly.<br> You are one step closer to your dream holiday!
-	                    </p>
-						<p><strong>The Holiday Hub Team</strong></p>
+					...
 				</div>
 				<div class="modal-footer">
-					<button onclick="formReset()" value="Reset Form" type="button" class="btn btn-primary modal-close book-now-btn text-uppercase" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
+
+
+
+
+
 	<!--Popular Destinations-->
-	<section id="destination" class="dest-section">
+	<section class="dest-section">
 		<div class="container dest-container">
 			<p class="dest-para">Trending this Week</p>
 			<h3 class="dest-heading">Popular Destinations</h3>
@@ -305,7 +310,7 @@
 			</div>
             <div class="row text-right">
                 <div class="col">
-                    <a class="btn btn-light book-now-btn text-uppercase" href="#book-now">Book Now</a>
+                    <a class="btn btn-light book-now-btn text-uppercase" href="#">Book Now</a>
                 </div>
             </div>
         </div>    
@@ -370,7 +375,7 @@
 	<script src="assets/js/maps.js"></script>
 
 	<!--totop.js-->
-	<script src="assets/js/scroll.js"></script>
+	<script src="assets/js/totop.js"></script>
 
     <!--form.js--> 
     <script src="assets/js/form.js"></script>

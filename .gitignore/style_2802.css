@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Open+Sans:400,400i,700&display=swap');
+
+/*-------------------------------------------------------------------------Navbar*/
+
+.navbar-toggler {
+    border: none;
+}
+
+.nav-item {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.btn {
+    font-family: "Open Sans", sans-serif;
+    letter-spacing:3px;
+}
+
+
+/*--------------------------------------------------------------------Hero image*/
+
+.hero-img {
+background:url('../../assets/img/hero.jpg') no-repeat center;
+background-size: cover;
+background-attachment: fixed;
+height: 50rem;
+}
+
+/*--------------------------------------------------------------------Intro Section*/
+
+.intro {
+    text-align:center;
+    padding-top: 3rem;
+    font-family:"Open Sans", sans-serif; 
+    background-color: transparent;
+    margin-bottom: 0;
+    padding-bottom: 0;
+   
+}
+.intro h1 {
+    font-weight:700;
+    letter-spacing:3.5px;
+    font-size: 3.5rem;
+    color: #000000;
+}
+
+
+
+/*--------------------------------------------------------------------Map Section*/
+
+.hotelIcon {
+    height:50px;
+    width:80px;
+}
+
+.placephoto {
+    height:36px;
+    width:24px;
+}
+#listing {
+        position: relative;
+        width:75%;
+        max-height: 470px;
+        overflow: auto;
+        top:2rem;
+        cursor: pointer;
+        overflow-x: hidden;
+        margin-bottom:2rem;
+       
+}
+        
+.card.result-card {
+  margin-bottom: 1rem;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+  border:none;
+  background-color: hsl(0, 0%, 94%);
+  padding-top: 5px;
+ } 
+
+     
+
+
+/*-------------------------------------------------------------Single Search field*/
+
+.search-row {
+  
+   
+   
+    border-radius:55px;
+    box-shadow: 1.5px 1px 1px 1px rgba(0,0,0,.2);
+    background-color: #ffffff;
+    padding:6px;
+    margin-bottom:3rem;
+
+}
+
+.search-container {
+    padding-top: 3rem;
+    padding-bottom:0;
+   
+}
+
+.add-icons
+.search-bar {
+    background-color: #f0f0f0;
+}
+
+#country {
+    border:none;
+    background-color:transparent;
+}
+
+
+#autocomplete {
+ border:none;
+ background-color:transparent;
+ padding:6px;
+ width:80%;
+}
+
+.gmap {
+    background-color: #d0d0d0;
+    min-height: 30rem;
+    margin-top: 3rem;
+    
+   
+}
+
+.map-icons li button i {
+    width: 56px;
+    height: 56px;
+    padding: 24px 0;
+    border-radius: 50%;
+    font-size:30px;
+    line-height: 12px;
+    text-align: center;
+    color: #fafafa;
+    background: rgb(255, 0, 0);
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.3);
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.map-icons li button i:hover {
+    
+    
+    transform:scale(1.05);
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.4);
+    
+}
+
+.icon-row {
+   
+    margin-top: 2rem;
+    
+}
+
+.icon-heading {
+    padding-top: 3rem;
+    font-family: "Open Sans", sans-serif;
+    color: #626262;
+    
+}
+.icons {
+    padding:0;
+}
+
+.icon-label {
+    display:block;
+    margin-top:5px;
+    letter-spacing:0px;
+    font-size: 14px;
+    font-weight:500;
+}
+
+#rest {
+   background-color: #008000;
+   margin-right: 0;
+}
+
+#glass {
+   background-color: rgb(0, 110, 255);;
+}
+#info {
+   background-color: rgb(174, 0, 255);
+}
+#coffee {
+    background-color: #332900;
+}
+#atm {
+    background-color: #000000;
+}
+#taxi {
+    background-color: #e6b800;
+}
+#near {
+    background-color: #626262;
+    color: #fafafa;
+}
+
+/*--------------------------------------------------------------------Booking Section*/
+
+.contact {
+padding-right:7rem;
+padding-top:6rem;
+padding-bottom: 2rem;
+}
+
+.form-col {
+    background-color: #4285f4;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.45);
+    border-radius:10px;
+}
+
+#send {
+    background-color: #f0f0f0;
+}
+
+img.bg-luggage {
+   height:60%;
+   width:60%;
+}
+.booking-form{
+    padding:2rem;
+  
+   
+}
+
+.booking-img {
+    background:url('../../assets/img/book.jpg') no-repeat center;
+    background-size:cover;
+    min-height:30rem;
+}
+
+
+
+/*--------------------------------------------------------------------Popular Destinations*/
+
+.dest-section {
+    background-color: #f0f0f0;
+    padding:6rem 0;
+    
+}
+
+
+.dest-section h2,h5{
+    font-family:"Merriweather", serif;
+    letter-spacing: 1.5px;
+    color:#202124;
+}
+
+.cards-row {
+    margin: 3rem 0;
+    
+}
+
+.dest-card {
+    border:none;
+    border-radius: 10px;
+    margin-bottom:1.5rem;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.35);
+}
+
+/*-------------------------------------------------------------------------CTA*/
+.call-to-action {
+background-color:#2d2d30;
+background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url('../../assets/img/hero.jpg') no-repeat center  ;
+background-size: cover;
+height: 15rem;
+
+}
+
+
+h6 {
+    font-size: 3rem;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: "Open Sans", serif;
+    font-weight:400;
+    letter-spacing: 5px;
+    
+
+}
+
+/*-------------------------------------------------------------------------footer*/
+.list-inline {
+    margin-top: 14px;
+    
+}
+
+.social-links li a i {
+    width: 56px;
+    height: 56px;
+    padding: 24px 0;
+    margin: 20px;
+    border-radius: 50%;
+    font-size:30px;
+    line-height: 12px;
+    text-align: center;
+    color: #2d2d30;
+    background: #d0d0d0;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background-color: transparent;
+    color: #d0d0d0;
+    transform:scale(1.5);
+   
+    
+}
+
+/*-------------------------------------------------------------------------footer*/
+
+#toTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 20px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  
+  background-color:rgba(0,0,0,.45); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 12px; /* Some padding */
+  border-radius: 40%; /* Rounded corners */
+  font-size: 20px; /* Increase font size */
+}
+
+#toTopBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}

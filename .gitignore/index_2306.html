@@ -94,7 +94,7 @@
                                     </select>
 								</div>
 								<div id="locationField" class="col-md-8 align-items-center form-group mb-0">
-									<input id="autocomplete" placeholder="Enter a city" type="text" onfocus="this.value=''"/>
+									<input id="autocomplete" placeholder="Enter a city" type="text" />
                                 </div>
 							</div>
 						</form>
@@ -133,11 +133,12 @@
 
     <div class="container-fluid">
         <div id="icons" class="d-none row icons-row justify-content-start">
-                <div id="result-total" class="col-xl-2 my-auto text-center">
+                <div id="result-total" class="hidden col-lg-3 my-auto text-center">
+                <h5>20 Restaurants found</h5>
     <!-- Search result total goes here, built in maps.js-->
                 </div>
-				<div class="col-xl-8">
-					<ul class="list-inline map-icons text-center ml-1">
+				<div class="col-lg-6">
+					<ul class="list-inline map-icons text-center">
 						<li class="list-inline-item">
 							<button id="hotel" class="btn btn-map">
                                 <i class="fas fa-bed"></i>
@@ -162,14 +163,14 @@
 				                <span class="d-none d-md-block icon-label">Coffee</span>
 				            </button>
 						</li>
-						<li class="list-inline-item mr-0">
+						<li class="list-inline-item">
 							<button type="submit" class="btn btn-map">
                                 <i id="info"  class="fas fa-info"></i>
 				                <span class="d-none d-md-block icon-label">Attractions</span>
 				            </button>
 						</li>
 						<li class="list-inline-item">
-							<button id="new-city" type="submit" class="d-none d-md-inline-block btn btn-map">
+							<button id="clear" type="submit" class="d-none btn btn-map" href="#search">
                                 <i class="fas fa-times" aria-hidden="true"></i>
                                 <span class="d-none d-md-block icon-label">New City</span>
 				            </button>
@@ -184,11 +185,32 @@
 	<div id="results" class="scrolling-wrapper"></div>
 
 	<!-- Info Window Content-->
-	
+	<div style="display: none">
 		<div id="info-content">
-			
+			<table>
+				<tr id="iw-url-row" class="iw_table_row">
+					<td id="iw-icon" class="iw_table_icon"></td>
+					<td id="iw-url"></td>
+				</tr>
+				<tr id="iw-address-row" class="iw_table_row">
+					<td class="iw_attribute_name">Address:</td>
+					<td id="iw-address"></td>
+				</tr>
+				<tr id="iw-phone-row" class="iw_table_row">
+					<td class="iw_attribute_name">Telephone:</td>
+					<td id="iw-phone"></td>
+				</tr>
+				<tr id="iw-rating-row" class="iw_table_row">
+					<td class="iw_attribute_name">Rating:</td>
+					<td id="iw-rating"></td>
+				</tr>
+				<tr id="iw-website-row" class="iw_table_row">
+					<td class="iw_attribute_name">Website:</td>
+					<td id="iw-website"></td>
+				</tr>
+			</table>
 		</div>
-	
+	</div>
 
 	<!-- Booking Section-->
 
@@ -370,7 +392,7 @@
 	<script src="assets/js/maps.js"></script>
 
 	<!--totop.js-->
-	<script src="assets/js/scroll.js"></script>
+	<script src="assets/js/totop.js"></script>
 
     <!--form.js--> 
     <script src="assets/js/form.js"></script>
