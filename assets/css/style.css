@@ -699,6 +699,10 @@ h2 {
         margin-top: 0;
         margin-bottom: 0;
     }
+    .md-change {
+    text-align: center;
+    margin-bottom: 1rem;
+    }
 }
 
 /*------------------------------Large screens*/
