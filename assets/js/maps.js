@@ -245,7 +245,7 @@ function initMap() {
         let noRating = 'No ratings yet';
         let rating = result.rating;
         let photo = result.photos;
-        let defaultPhoto = 'https://via.placeholder.com/300x160/626262/fff.jpg?text=No+Image+Available';
+        let defaultPhoto = "/assets/img/placeholder.jpg";
         let resultCard = `
         <div class="card result-card">
 			<img class="card-img-top flex-row result-img" src="${defaultPhoto}" alt="${result.name}">
