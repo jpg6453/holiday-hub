@@ -177,6 +177,7 @@ function initMap() {
             clearResults();
             clearMarkers();
             firstCard();
+            changeCity();
 
             // Iterate through serch results and add google default red marker
             // Add a number label to each marker
