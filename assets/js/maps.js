@@ -340,16 +340,39 @@ function initMap() {
 
       // Load the place information into the HTML elements used by the info window.
       function buildIWContent(place) {
-        document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
-            'src="' + place.icon + '"/>';
-        document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
-            '">' + place.name + '</a></b>';
-        document.getElementById('iw-address').textContent = place.vicinity;
+        
+        let infoContent =`
+        <table>
+			<tr id="iw-url-row" class="iw_table_row">
+				<td id="iw-icon" class="iw_table_icon"><img class="iw-placeicon" src="${place.icon}"></td>
+				<td id="iw-name">${place.name}</td>
+			</tr>
+			<tr id="iw-address-row" class="iw_table_row">
+				<td class="iw_attribute_name">Address:</td>
+				<td id="iw-address">${place.vicinity}</td>
+			</tr>
+			<tr id="iw-phone-row" class="iw_table_row">
+				<td class="iw_attribute_name">Telephone:</td>
+				<td id="iw-phone"></td>
+			</tr>
+			<tr id="iw-rating-row" class="iw_table_row">
+				<td class="iw_attribute_name">Rating:</td>
+				<td id="iw-rating"></td>
+			</tr>
+			<tr id="iw-website-row" class="iw_table_row">
+				<td class="iw_attribute_name">Website:</td>
+				<td id="iw-website"></td>
+			</tr>
+        </table>
+        
+        `;
+
+        document.getElementById('info-content').innerHTML = infoContent;
 
         if (place.formatted_phone_number) {
           document.getElementById('iw-phone-row').style.display = '';
           document.getElementById('iw-phone').textContent =
-              place.formatted_phone_number;
+            place.formatted_phone_number;
         } else {
           document.getElementById('iw-phone-row').style.display = 'none';
         }
@@ -386,4 +409,4 @@ function initMap() {
         } else {
           document.getElementById('iw-website-row').style.display = 'none';
         }
-      }
+    }
