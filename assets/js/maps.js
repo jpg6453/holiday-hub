@@ -262,7 +262,7 @@ function initMap() {
         let noRating = 'No ratings yet';
         let rating = result.rating;
         let photo = result.photos;
-        let defaultPhoto = "/assets/img/placeholder.jpg";
+        let defaultPhoto = "assets/img/placeholder.jpg";
         let resultCard = `
         <div class="card result-card">
 			<img class="card-img-top flex-row result-img" src="${defaultPhoto}" alt="${result.name}">
