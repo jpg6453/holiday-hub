@@ -56,6 +56,22 @@ var countries = {
     'uk': {
         center: { lat: 54.8, lng: -4.6 },
         zoom: 5
+    },
+    'hr': {
+        center: { lat: 45.56, lng: 17},
+        zoom: 8
+    },
+    'ie': {
+        center: { lat: 52.86, lng: -7.97 },
+        zoom: 6
+    },
+    'ng': {
+        center: { lat:9.6 , lng: 7.99 },
+        zoom: 5.8
+    },
+    'in': {
+        center: { lat: 22.35, lng: 78.66 },
+        zoom: 4
     }
 };
 
