@@ -740,4 +740,7 @@ h2 {
         background-position: center center;
         background-attachment:unset;
     }
+    .ny-lg {
+        padding-bottom:44px;
+    }
 }
