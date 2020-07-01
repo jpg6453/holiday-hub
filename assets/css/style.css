@@ -70,7 +70,7 @@ nav {
 /*--------------------------------------------------------------------Hero Text*/
 
 .hero-text-row {
-    padding-top:20rem;
+    padding-top:15rem;
 }
 
 .hero-text{
@@ -647,7 +647,12 @@ h2 {
     }
     .hero-text {
         font-size: 2.5rem;
-        padding-bottom: 192px;
+    }
+    .hero-text-row {
+        padding-top:10rem;
+    }
+    .hero-img{
+        height:400px;
     }
     .search-container {
         padding: .5rem;
