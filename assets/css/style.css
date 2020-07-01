@@ -167,6 +167,10 @@ nav {
     word-wrap: break-word; 
 }
 
+.bin-logo-heading {
+    padding: 1rem 0;
+}
+
 /*-------------------------------------------------------------Info Window Content*/
 
 .iw_table_row {
