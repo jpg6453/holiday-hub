@@ -169,7 +169,14 @@ nav {
 
 .bin-logo-heading {
     padding: 1rem 0;
+    font-family:"Montserrat", sans-serif;
 }
+.bin-logo-text {
+    font-family: "Open Sans", sans-serif;
+    font-size:18px;
+    letter-spacing: 1px;
+}
+
 
 /*-------------------------------------------------------------Info Window Content*/
 
