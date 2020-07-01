@@ -429,7 +429,7 @@ img.bg-luggage {
     padding-bottom: 1.5rem;
     padding-left: 0;
     font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 2.25rem;
 }
 
@@ -468,7 +468,7 @@ html {
     padding-left:15px;
 }
 .dest-heading {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 2.25rem;
 }
 
