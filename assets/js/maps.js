@@ -210,7 +210,7 @@ function initMap() {
               //Display a search results total, along with  place type
               
               let total = `
-                <h5 class="total">${results.length} ${search.types} found</h5>
+                <div class="total">${results.length} ${search.types} found</div>
             `;
 
             let res = total;
