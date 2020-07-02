@@ -223,7 +223,25 @@ function initMap() {
 
             total = text;
             document.getElementById('result-total').innerHTML = total;
-            }
+                }
+            } else if (status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS) { 
+                clearResults();
+                clearMarkers();
+                
+                let noResults = `
+                <div class="total error">NO RESULTS FOUND</div>
+                `;
+                    document.getElementById('result-total').innerHTML = noResults;
+                     
+            } else {
+                clearResults();
+                clearMarkers();
+
+                let otherStatus = `
+                <div class="total error">AN ERROR OCCURRED</div>
+                `;
+                    document.getElementById('result-total').innerHTML = otherStatus;
+            
           }
         });
       }
