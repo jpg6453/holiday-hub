@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Open+Sans:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
@@ -496,13 +496,6 @@ html {
 .dest-section {
 	background-color: #f0f0f0;
 	padding: 6rem 0;
-}
-
-.dest-section h2,
-h5 {
-	font-family: "Merriweather", serif;
-	letter-spacing: 1.5px;
-	color: #202124;
 }
 
 .cards-row {
