@@ -94,16 +94,6 @@ nav {
 
 /*--------------------------------------------------------------------Map Section*/
 
-.hotelIcon {
-	height: 50px;
-	width: 80px;
-}
-
-.placephoto {
-	height: 36px;
-	width: 24px;
-}
-
 .result-number {
 	height: 30px;
 	width: 30px;
@@ -273,10 +263,6 @@ nav {
 	padding-bottom: 2rem;
 }
 
-.add-icons .search-bar {
-	background-color: #f0f0f0;
-}
-
 #country {
 	border: none;
 	background-color: transparent;
@@ -348,16 +334,6 @@ nav {
 	outline: none;
 }
 
-.icon-heading {
-	padding-top: 3rem;
-	font-family: "Open Sans", sans-serif;
-	color: #626262;
-}
-
-.icons {
-	padding: 0;
-}
-
 .icon-label {
 	display: block;
 	margin-top: 5px;
@@ -388,19 +364,6 @@ nav {
 
 #coffee {
 	background-color: #332900;
-}
-
-#atm {
-	background-color: #000000;
-}
-
-#taxi {
-	background-color: #e6b800;
-}
-
-#near {
-	background-color: #626262;
-	color: #fafafa;
 }
 
 .fas.fa-times {
@@ -437,28 +400,6 @@ nav {
 
 
 /*--------------------------------------------------------------------Booking Section*/
-
-.contact {
-	padding-right: 7rem;
-	padding-top: 6rem;
-	padding-bottom: 2rem;
-}
-
-.form-col {
-	background-color: #4285f4;
-	-webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .45);
-	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .45);
-	border-radius: 10px;
-}
-
-#send {
-	background-color: #f0f0f0;
-}
-
-img.bg-luggage {
-	height: 60%;
-	width: 60%;
-}
 
 .booking-form {
 	padding: 2rem;
