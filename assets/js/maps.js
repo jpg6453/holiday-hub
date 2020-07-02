@@ -144,8 +144,8 @@ function initMap() {
         content: document.getElementById('info-content')
     });
 
-    // Creates autocomplete object and associates it with the Search box controls
-    // Restricts the search to the selected country and to place type "cities".
+    /* Creates autocomplete object and associates it with the Search box controls.
+    Restricts the search to the selected country and to place type "cities".*/
 
     autocomplete = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */
@@ -163,8 +163,8 @@ function initMap() {
         'change', setAutocompleteCountry);
 }
 
-// Set the country restriction based on user input.
-// Also center and zoom the map on the given country.
+/* Set the country restriction based on user input.
+Also center and zoom the map on the given country.*/
 function setAutocompleteCountry() {
     let country = document.getElementById('country').value;
     if (country == 'all') {
@@ -191,8 +191,8 @@ function setAutocompleteCountry() {
 
 }
 
-// When the user selects a city, get the place details for the city and
-// zoom the map in on the city.
+/* When the user selects a city, get the place details for the city and
+zoom the map in on the city.*/
 function onPlaceChanged() {
     let place = autocomplete.getPlace();
     if (place.geometry) {
@@ -226,8 +226,8 @@ function onPlaceChanged() {
     }
 }
 
-// Perform a search for specified place types
-// Event listeners for place icons
+/* Perform a search for specified place types.
+Event listeners for place icons*/
 
 document.getElementById('hotel').addEventListener('click', () => {
     placeSearch('lodging');
@@ -260,8 +260,8 @@ function placeSearch(type) {
             firstCard();
             changeCity();
 
-            // Iterate through serch results and add google default red marker
-            // Add a number label to each marker
+            /* Iterate through search results and add google default red marker
+            Add a number label to each marker*/
 
             for (let i = 0; i < results.length; i++) {
 
@@ -271,8 +271,8 @@ function placeSearch(type) {
                     animation: google.maps.Animation.DROP,
                     label: [i + 1].toString()
                 });
-                // If the user clicks a hotel marker, show the details of that hotel
-                // in an info window.
+                /* If the user clicks a hotel marker, show the details of that hotel
+                in an info window.*/
                 markers[i].placeResult = results[i];
                 google.maps.event.addListener(markers[i], 'click', showInfoWindow);
                 setTimeout(dropMarker(i), i * 100);
@@ -361,8 +361,8 @@ function addResult(result, i) {
     cardClickListener();
 }
 
-//Scrolls result cards horizontally to left side of screen to display 1st result
-//When another place icon is clicked
+/*Scrolls result cards horizontally to left side of screen to display 1st result
+when another place icon is clicked*/
 
 function firstCard() {
     const resultCards = document.getElementById('results');
@@ -423,8 +423,8 @@ function scrollToSearch() {
     document.getElementById('icons').classList.add('d-none');
 }
 
-// Get the place details for a hotel. Show the information in an info window,
-// anchored on the marker for the hotel that the user selected.
+/* Get the place details for a hotel. Show the information in an info window,
+anchored on the marker for the hotel that the user selected.*/
 function showInfoWindow() {
     let marker = this;
     places.getDetails({
@@ -480,9 +480,9 @@ function buildIWContent(place) {
         document.getElementById('iw-phone-row').style.display = 'none';
     }
 
-    // Assign a five-star rating to the hotel, using a black star ('&#10029;')
-    // to indicate the rating the hotel has earned, and a white star ('&#10025;')
-    // for the rating points not achieved.
+    /*Assign a five-star rating to the hotel, using a black star ('&#10029;')
+    to indicate the rating the hotel has earned, and a white star ('&#10025;')
+    for the rating points not achieved.*/
     if (place.rating) {
         let ratingHtml = '';
         for (let i = 0; i < 5; i++) {
@@ -498,8 +498,8 @@ function buildIWContent(place) {
         document.getElementById('iw-rating-row').style.display = 'none';
     }
 
-    // The regexp isolates the first part of the URL (domain plus subdomain)
-    // to give a short URL for displaying in the info window.
+    /*The regexp isolates the first part of the URL (domain plus subdomain)
+    to give a short URL for displaying in the info window.*/
     if (place.website) {
         let website = hostnameRegexp.exec(place.website);
         if (website === null) {
