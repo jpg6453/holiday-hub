@@ -390,10 +390,12 @@ nav {
 
 #iw-icon {
 	text-align: left;
+    width:50px;
 }
 
 #iw-name {
 	font-weight: bold;
+    color:rgb(0, 110, 255);
 }
 
 .iw-placeicon {
