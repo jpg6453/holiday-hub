@@ -89,9 +89,13 @@ This has 2 components:
     ```
     - When the user starts typing the name of a city the autocomplete offers suggestions based on what has been typed.
     
+
+
     <div align="center">
     <img src="/assets/img/autocomplete.png" alt="Place Icons Screenshot" >
     </div>
+
+
 
     - The user then selects the desired city.
     - The map zooms in to that city.
@@ -102,6 +106,8 @@ This has 2 components:
 <div align="center">
 <img src="/assets/img/placeicons.png" alt="Place Icons Screenshot" >
 </div>
+
+
 
 
 - The icons are made available after the user selects a city in the ```autocomplete``` element.
@@ -119,3 +125,26 @@ let search = {
 **Map**
 
 
+
+## Technologies Used
+
+
+- This project was built with HTML, CSS and JavaScript programming languages.
+- [jQuery](https://jquery.com/)
+    - Used for responsive navbar and template literals to build search result elements.
+- [Popper.js](https://popper.js.org/)
+    - Also used for the responsive, collapsible navbar & form modal.
+- [Google Maps Platform](https://cloud.google.com/maps-platform/products)
+    - Used to render the map, plot markers and retrieve place data.
+- [Gitpod](https://www.gitpod.io/)
+    - The developer chose this IDE to compile all code for this project.
+- [GitHub](https://github.com/)
+    - Used for version control and to host the site on **Github Pages**.
+- [Bootstrap](https://getbootstrap.com/)
+    - This was used to provide a structured layout and ease of make the site responsive.
+- [Google Fonts](https://fonts.google.com)
+    - Text elements were styled using **Google fonts**.
+- [Fontawesome](https://fontawesome.com/)
+    - The source for all iconography.
+- [Autoprefixer](https://autoprefixer.github.io/)
+    - The CSS file was passed through **Autoprefixer** to ensure browser pre-fixes were the most upto date.
