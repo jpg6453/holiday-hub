@@ -141,10 +141,49 @@ let search = {
 - [GitHub](https://github.com/)
     - Used for version control and to host the site on **Github Pages**.
 - [Bootstrap](https://getbootstrap.com/)
-    - This was used to provide a structured layout and ease of make the site responsive.
+    - This was used to provide a structured layout and ease of making the site responsive.
 - [Google Fonts](https://fonts.google.com)
     - Text elements were styled using **Google fonts**.
 - [Fontawesome](https://fontawesome.com/)
     - The source for all iconography.
 - [Autoprefixer](https://autoprefixer.github.io/)
     - The CSS file was passed through **Autoprefixer** to ensure browser pre-fixes were the most upto date.
+
+## Testing
+
+**(To Do)**
+
+
+## Deployment
+
+**Hosting On GitHub Pages**
+
+This website was committed to git and pushed to GitHub via the terminal built into the **Gitpod** IDE.
+The project was deployed to GitHub Pages from this [GitHub](https://github.com/jpg6453/holiday-hub) repository by doing the following:
+
+1.	Log into GitHub.
+2.	From the list of repositories on the left side of the screen, select **jpg6453/holiday-hub**
+3.	From the toolbar at the top of the page, select **Settings**.
+4.	Scroll down to **GitHub Pages**.
+5.	Under Source change the drop down menu from **None** to **Master Branch**
+6.	On selecting Master Branch the website is now deployed and the page refreshes.
+7.  Scroll back down to the **GitHub Pages** section to find the link to the deployed site.
+
+The site is published at **https://jpg6453.github.io/holiday-hub/**
+
+At the time of submission there is no difference between the master branch and the deployed version of the project.
+
+**To run the project locally**
+
+The website can be cloned from GitHub as follows:
+    
+1. Follow this link to the [Holiday Hub repository](https://github.com/jpg6453/holiday-hub/). 
+2.	Click the green **Code** button.
+3.	A Clone with HTTPs modal appears on screen, copy the clone URL for the repository.
+4.	Within your chosen IDE launch a terminal session
+5.	Ensure the current working directory is the location where you want the cloned directory to be made. Change this if necessary.
+6.	Type ```git clone```, and then paste the URL copied in Step 3.
+```
+git clone https://github.com/jpg6453/holiday-hub
+```
+7.	Press **Enter** and a clone will be created locally. This could take a few minutes.
