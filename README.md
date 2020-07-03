@@ -187,3 +187,21 @@ The website can be cloned from GitHub as follows:
 git clone https://github.com/jpg6453/holiday-hub
 ```
 7.	Press **Enter** and a clone will be created locally. This could take a few minutes.
+
+
+
+
+**Google Maps API Key**
+
+- For your own project you will need a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key) 
+
+
+You will then need to replace ```YOUR_API_KEY``` with your **own API key** in the following script at the bottom of the index.html file. 
+
+```
+<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap">
+</script>
+```
+
+Please pay particular attention to the **Restrict the Api key** section as this is **STRONGLY** recommended.
