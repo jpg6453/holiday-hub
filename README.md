@@ -75,3 +75,47 @@ This has 2 components:
     ```
     - Zoom levels are in the range 1-16, the higher number = closer zoom.
     - lat lng values can be found [here](https://www.mapcoordinates.net/en)
+
+- **Autocomplete**
+    - Once the user selects a country an autocomplete object is created, restricting the search to that country, with ```types``` set to ```cities```.
+    ```
+    autocomplete = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */
+        (
+            document.getElementById('autocomplete')), {
+            types: ['(cities)'],
+            componentRestrictions: countryRestrict
+        });
+    ```
+    - When the user starts typing the name of a city the autocomplete offers suggestions based on what has been typed.
+    
+    <div align="center">
+    <img src="/assets/img/autocomplete.png" alt="Place Icons Screenshot" >
+    </div>
+
+    - The user then selects the desired city.
+    - The map zooms in to that city.
+    - Onfocus is set to ```' '``` so that any previous value in this field is cleared when clicked by the user, which is great UX.
+
+**Place Type Icons**
+
+<div align="center">
+<img src="/assets/img/placeicons.png" alt="Place Icons Screenshot" >
+</div>
+
+
+- The icons are made available after the user selects a city in the ```autocomplete``` element.
+- Click the appropriate icon to search for upto 20 places of that type within the map’s viewport. 
+- The user is able to drag the map around until the desired area of the city they are searching is in the map viewport.
+- Clicking an icon again will perform a search within this revised map viewport because the search object has ```bounds``` as a key. See below:
+
+```
+let search = {
+        bounds: map.getBounds(),
+        types: [type]
+```
+- Supported place types categories can be found in the [Google Maps Documentation](https://developers.google.com/places/supported_types)
+
+**Map**
+
+
