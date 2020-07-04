@@ -125,6 +125,27 @@ let search = {
 **Map**
 
 
+<div align="center">
+<img src="assets/img/map.png" alt="Map Screenshot" >
+</div>
+
+- The map ```<div>``` has class ```col-lg-6``` and is resized to full width when the user selects a city for the first time.
+- For medium screens and mobile the map takes up the full screen width at all times.
+- The map controls are configured in the ```initMap``` function and can be set to suit your particular application.
+```
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: countries['uk'].zoom,
+        center: countries['uk'].center,
+        mapTypeControl: false,
+        panControl: true,
+        zoomControl: true,
+        streetViewControl: false
+    });
+```
+- More information can be found in the [Google Maps Docs](https://developers.google.com/maps/documentation/javascript/interaction#pan)
+
+
 
 ## Technologies Used
 
@@ -243,7 +264,7 @@ All featured images sourced from [Pixabay](https://pixabay.com/)
 
 ## Acknowledgements
 
-A big thank you to my Code Institute, Mentor Maranatha Ilesanmi, for demonstrating concepts which helped me overcome problems in the functionality of the site.
+A big thank you to my Code Institute Mentor, Maranatha Ilesanmi, for demonstrating concepts which helped me overcome problems in the functionality of the site.
 
 
 
