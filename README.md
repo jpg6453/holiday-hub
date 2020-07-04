@@ -204,4 +204,50 @@ You will then need to replace ```YOUR_API_KEY``` with your **own API key** in th
 </script>
 ```
 
-Please pay particular attention to the **Restrict the Api key** section as this is **STRONGLY** recommended.
+Please pay particular attention to the **Restrict the ApI key** section as this is **STRONGLY** recommended.
+
+
+## Credits
+
+**Content**
+
+- All text was written by the developer except:
+
+    - Destination cards:
+        - **New York** taken from [nycgo](https://www.nycgo.com/)
+        - **Africa** taken from [go2africa](https://discover.go2africa.com/africa-safari-tours/?gclid=Cj0KCQjwoub3BRC6ARIsABGhnya9OICxdqW4LF4ClLxHmS9imYjSEmUkjxPHPQMYcXL3ONcvp1TGX58aAsGWEALw_wcB)
+        - **Sydney** taken from [lonely planet](https://www.lonelyplanet.com/australia/sydney)
+	
+
+**Media**
+
+**Images**
+
+All featured images sourced from [Pixabay](https://pixabay.com/)
+- [Brand logo](https://pixabay.com/vectors/sun-water-yellow-sunset-dawn-309821/)
+- [Hero & CTA](https://pixabay.com/photos/beach-sandy-beach-paradise-1824855/)
+- [Booking Section](https://pixabay.com/photos/vacation-holidays-equipment-travel-691364/)
+- Destinations Cards:
+    - [New York](https://pixabay.com/photos/taxi-cab-traffic-cab-new-york-381233/)
+    - [African Safari](https://pixabay.com/photos/giraffe-sunset-yellow-sky-2233366/)
+    - [Sydney](https://pixabay.com/photos/sydney-opera-house-night-harbor-1169155/)
+
+
+-  Panel and result card images – [Google Maps Places Library](https://cloud.google.com/maps-platform/places). **Charges may apply**
+
+**Code**
+
+- Floating to top button – [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
+- Form submit button inactive until all inputs valid - [Academind](https://www.youtube.com/watch?v=8cb4auJt1TA)
+- Horizontal scrolling container – [Colin Lord](https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6)
+
+## Acknowledgements
+
+A big thank you to my Code Institute, Mentor Maranatha Ilesanmi, for demonstrating concepts which helped me overcome problems in the functionality of the site.
+
+
+
+## Disclaimer
+
+This project was developed for educational purposes and all images are licence free.
+
