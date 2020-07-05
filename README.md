@@ -126,7 +126,7 @@ let search = {
 
 
 <div align="center">
-<img src="assets/img/map.png" alt="Map Screenshot" >
+<img src="/assets/img/map.png" alt="Map Screenshot" >
 </div>
 
 - The map ```<div>``` has class ```col-lg-6``` and is resized to full width when the user selects a city for the first time.
@@ -145,7 +145,77 @@ function initMap() {
 ```
 - More information can be found in the [Google Maps Docs](https://developers.google.com/maps/documentation/javascript/interaction#pan)
 
+- When the user clicks a **Place Icon** a search is carried out.
+- If results are found, numbered markers are plotted on the map which show an info window when clicked.
 
+<div align="center">
+<img src="/assets/img/infowindow.png" alt="Map Screenshot" >
+</div>
+
+**Search Results**
+
+- Search results are displayed in upto 20 horizontally scrolling cards.
+
+<div align="center">
+<img src="/assets/img/resultcard.png" alt="Result Card Screenshot" >
+</div>
+
+- If a place image is not available a default **placeholder** is displayed instead.
+- Clicking a result card opens the info window above it's marker on the map. 
+
+**Booking Form**
+- Each field has a label and placeholder to guide the user.
+- All fields have the ```required``` attribute and ```html validation``` is used.
+- There is an additional layer of validation in that the ```Send``` button is ```disabled``` by default.
+- ```checkForm function``` checks if all fields have ```valid``` input before the send button becomes ```active```. 
+    - The ```.trim()``` method removes white space, so preventing a user just entering spaces.
+- As this is a front end project the button ```type``` is set to ```button```. 
+- Future dev could be to handle this as a true submit event to either popultae a data base or connect up to emailJS.
+
+**Booking Modal**
+
+- When the user clicks the ```send``` button a user modal appears confirming that the form has been submitted (this is simulated for this project).
+
+<div align="center">
+<img src="/assets/img/modal.png" alt="Modal Screenshot" >
+</div>
+
+On closing the modal the form fields are cleared using the ```reset()``` function.
+
+**Popular Destinations**
+
+- 3 ```cards``` showing popular destinations with a mix of city/ exotic/longhaul to showcase the range of destinations being booked by Holiday Hub clients.
+- The cards have ```opacity:0.75``` which increases to 1 on hover and the the card scales by ```5%``` to make it stand out.
+
+**Call to Action**
+
+- This is located above the footer and serves as a final attempt to convert the browsing user into an enquiry.
+- The ```book now``` button takes the user to the booking form.
+
+**Floating Back to Top Button**
+
+- A floating scroll to top button appears after the window is scrolled down ```500px```. 
+- It has a hover effect and takes the user to the top of the window when clicked.
+
+**Footer**
+
+- Features social media icons. 
+- The links have the ```target=_blank``` property to open these platforms in a new window. 
+- The links point to the homepage of each platform at this time.
+
+**Features left to implement**
+
+- Rank results by rating
+- Show additional information for search results, such as **opening hours** and **customer reviews**.
+
+**Features for the future**
+
+- Provide the ability to conduct a search around a single marker.
+- **User profiles** to enable users to save previous searches.
+- Use the [Routes](https://cloud.google.com/maps-platform/routes/?utm_source=google&utm_medium=cpc&utm_campaign=FY18-Q2-global-demandgen-paidsearchonnetworkhouseads-cs-maps_contactsal_saf&utm_content=text-ad-none-none-DEV_c-CRE_397052992496-ADGP_Hybrid+%7C+AW+SEM+%7C+SKWS+~+Routes+%7C+BMM+%7C+Directions+API-KWID_43700049595992169-kwd-445998650286-userloc_9040164&utm_term=KW_%2Bdirections%20%2Bapi-ST_%2Bdirections+%2Bapi&gclid=Cj0KCQjw9IX4BRCcARIsAOD2OB2z9Zy61IndjJ0LBKIvLo0-_WDMUsj4lOfTMJhLHuf3A9gH4Y6aR1MaAg3dEALw_wcB) service to help users plan trips more effectively.
+- Include a ```Book Now``` button on result cards which populates the form with ```Place Name/City ``` to help route the enquiry.
+- Provide access to more **place types**.
+- Expand the number of **countries** that can be searched.
 
 ## Technologies Used
 
