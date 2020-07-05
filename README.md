@@ -1,8 +1,8 @@
 <div align="center">
-  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="assets/img/navlogo.png" alt="Holiday Hub logo" width:"300" height:"200"/></a>
+  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="assets/img/hhlogo.png" alt="Holiday Hub logo" width:"300" height:"200"/></a>
 </div>
 
-<div align="center">
+<h1 align="center">
 <a href="https://jpg6453.github.io/holiday-hub/" target="_blank">Holiday Hub</a>
 
 [Holiday Hub]("https://jpg6453.github.io/holiday-hub/") is a valuable resource for all your travel needs. Etc...
@@ -10,7 +10,7 @@
 <br>
 
 [Discover Holiday Hub here]("https://jpg6453.github.io/holiday-hub/")
-</div>
+</h1>
 
 
 
