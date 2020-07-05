@@ -1,16 +1,20 @@
-<div align="center">
-  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="assets/img/hhlogo.png" alt="Holiday Hub logo" width:"300" height:"200"/></a>
-</div>
-
 <h1 align="center">
-<a href="https://jpg6453.github.io/holiday-hub/" target="_blank">Holiday Hub</a>
+  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="assets/img/hhlogo.png" alt="Holiday Hub logo" width:"300" height:"200"/></a>
+</h1>
 
-[Holiday Hub]("https://jpg6453.github.io/holiday-hub/") is a valuable resource for all your travel needs. Etc...
+<h2 align="center">
+
+<a href="https://jpg6453.github.io/holiday-hub/" target="_blank">Holiday Hub</a>
+</h2>
+
+<div align="center">
+
+[Holiday Hub](https://jpg6453.github.io/holiday-hub/) is a valuable resource for all your travel needs. Etc...
 
 <br>
 
 [Discover Holiday Hub here]("https://jpg6453.github.io/holiday-hub/")
-</h1>
+</div>
 
 
 
@@ -242,7 +246,68 @@ On closing the modal the form fields are cleared using the ```reset()``` functio
 
 ## Testing
 
-**(To Do)**
+***Testing of User Stories goes here***
+
+### Manual Functionality Testing
+
+**Navigation**
+
+- On desktop, go to the landing page.
+- Reduce the browser size down to tablet to verify that the navbar is responsive and switches from the expanded, inline menu to burger menu at this screen size.
+- Verify that the logo alt text (brand logo) appears on hover.
+- Click on the logo in the top left of the navbar and confirm that it links to the home page **(page will reload when clicked)**.
+- Click on each navigation menu element and confirm that it links to the correct section.
+- Confirm that there is a subtle colour change when hovering over the navbar links.
+- Reduce the screen down to small and confirm the burger menu drops down when clicked.
+- All above functionality and checks carried out on tablet and mobile.
+
+**Search Bar**
+
+**Country Dropdown**
+- Verify the value on loading is UK and the map is centred on UK.
+- Click on selector arrows and confirm a list of countries to select from is displayed.
+- Select a country and confirm the map changes and zooms in on that country.
+- All functionality checked on all screen sizes.
+
+**Autocomplete**
+- Verify the value on loading is ```Enter a City``` placeholder text.
+- Commence typing into the field and confirm suggestions appear in a dropdown.
+- Select a city and confirm the map resizes to full width **(desktop only)**.
+- Confirm the map scrolls to the top of the window on all screens.
+- Verify that a panel with image and city name overlays the map in the top left corner **(not on mobile)**.
+- Confirm the 5 place type icons have appeared under the map.
+
+**General**
+
+- The search bar becomes ```sticky``` when scrolling the page on **mobile only** and becomes hidden when the booking section is reached.
+- All functionality checked on all screen sizes, noting the **special cases** above.
+
+**Place Search**
+- Click the **Hotels** icon and confirm that:
+    - Numbered red markers are plotted on the map.
+    - ```"X" Hotels found``` appears in the "lozenge" to the left of the icons **(desktop)** and above on all other screen sizes.**(X = number of results)**.
+    - Horizontal scrolling result "cards" are displayed below the icons.
+        - Card anatomy:
+            - Place image at the top. If no image available from Google, a greyscale **placeholder** is displayed.
+            - A number corresponding to its marker on the map.
+            - Place Name.
+            - Customer rating.
+            - Address **(not displayed on mobile)**.
+    
+    - The **New City** icon appears to the right of the **Attractions** icon. This remains hidden on **mobile** as the **sticky** searchbar is always available when viewing the map.
+
+- Click the **New City** icon on available screen sizes and confirm that:
+    - The markers and image panel(if present) are cleared from the map.
+    - The result cards are cleared.
+    - The page scrolls up to make the searchbar available.
+    - The ```autocomplete``` displays the **Enter a city** placeholder text.
+    - The map remains on the city just searched.
+    - The place icons are hidden to prevent another search of the same city.
+    
+- Manually scroll to the search bar (or use **sticky** search bar on mobile) and verify that the markers and result cards remain in place until either a city or country are selected.
+- Confirm that the autocomplete value becomes empty when clicked leaving **Enter a city** placeholder text.
+- Reload the page and repeat the above for the **4 remaining** place icons.
+- Repeat the above on all screen sizes.
 
 
 ## Deployment
