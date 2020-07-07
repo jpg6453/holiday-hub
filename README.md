@@ -261,6 +261,10 @@ On closing the modal the form fields are cleared using the ```reset()``` functio
 - Reduce the screen down to small and confirm the burger menu drops down when clicked.
 - All above functionality and checks carried out on tablet and mobile.
 
+**Hero Image and Text**
+
+- Check all screen sizes and confirm that the background image and text font size look good.
+
 **Search Bar**
 
 **Country Dropdown**
@@ -308,6 +312,46 @@ On closing the modal the form fields are cleared using the ```reset()``` functio
 - Confirm that the autocomplete value becomes empty when clicked leaving **Enter a city** placeholder text.
 - Reload the page and repeat the above for the **4 remaining** place icons.
 - Repeat the above on all screen sizes.
+
+**Map**
+
+- Click a marker and confirm that the info window appears above it.
+- Click a result card and confirm that this also opens the corresponding marker.
+- Check across all place types.
+- Verify for each screen size.
+- Click on the map controls and confirm zoom and full screen function correctly **(Desktop only)**
+
+**Contact Form**
+
+- Try to submit the form empty and verify that the send button does not become active.
+- Try to enter text or special characters in the phone number field and verify that this is not possible.
+- Enter valid inputs for 3 fields and just enter spaces into the remianing field. Verify that the send button does not become active.
+- Resize the browser and check that the form is responsive and looks good on all screen sizes.
+
+**Popular Destinations**
+
+- Hover on each card in turn and confirm that their opacity increases to 1 and the card scales up slightly.
+- Confirm the scale and opacity are reduced to the start point when the hover is removed.
+- Resize the browser and verify the section looks good on all screen sizes.
+
+**Call to Action**
+
+- Click the **Book Now** button and confirm the page scrolls to the contact form.
+- Resize the browser and check the font size and alignment look good on all screen sizes.
+
+**Footer**
+
+- Check each social media icon in turn and verify that the icon and background colours reverse out on hover.
+- Click each icon and verify it links to the correct social media site in a separate tab.
+- Check the responsiveness of the footer across all screen sizes and check that the layout looks good.
+
+**Floating To Top Button**
+
+- Scroll down and confirm the floating button appears on the right hand side of the page.
+- Hover on the button and verify that the background colour becomes dark grey.
+- Click the button and confirm the window scrolls to the top.
+- Scroll down again until the button appears then scroll back up and confirm it becomes hidden.
+- Check all screen sizes and verfiy that the size and position of the button look good.
 
 
 ## Deployment
