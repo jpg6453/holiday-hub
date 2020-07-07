@@ -20,19 +20,48 @@
 
 ## UX
 
-Project Goals, business goals and dev goals.
+### Project Goal
 
-User Stories
-- User story 1
-- User story 2
-- User story 3
-- User story 4
-- User story 5
-- User story 6
-- User story 7
-- User story 8
-- User story 9
-- User story 10
+To create a single page site that calls upon the Google Maps & Google Places API to allow visitors to:
+- search for their next holiday destination
+- find information for a business trip
+- find out about cities they want to visit
+
+#### User goals
+- The ability to select a country
+- Search for cities in the chosen country
+- Clickable icons to search for different place categories
+- View a map
+- Visually see where search results are located on the map
+- Presentation of information relating to the places found.
+- The ability to make an enquiry to book a holiday.
+
+#### Business goals
+
+- The user makes a booking enquiry to book a stay at a given destination.
+
+#### User Groups
+ There are 3 main user groups that have been identified:
+ - People planning a holiday
+ - Business travellers
+ - New residents of a city (or country)
+
+#### User Stories
+
+As a user visiting the site, I would like:
+
+- The ability to select a country, so that I can search for places within it.
+- To be able to start typing a city and be offered suggestions, so thats its quick and easy.
+- To click a button, so that I can search for different place categories.
+- Place locations to be plotted on a map, so that I can see where they are in relation to other landmarks.
+- The ability to control the map so that I can tailor my search.
+- To be able to view search results, so I can see what options there are in a given city
+- More details about a place when I click on it, so that I can learn a bit more about it.
+- To change the city and/or country, so that I can search again.
+- To make an enquiry, to book venues during my stay.
+- Link to social media platforms, to find out more about the company.
+- To see which destinations other people are booking on the site, for inspiration.
+- To view the site on all my devices, so that I can view it anywhere.
 
 ### Design Choices
 
