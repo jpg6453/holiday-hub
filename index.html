@@ -143,38 +143,44 @@
 					<ul class="list-inline map-icons text-center ml-1">
 						<li class="list-inline-item">
 							<button id="hotel" class="btn btn-map">
-                                <i class="fas fa-bed"></i>
+                                <i class="fas fa-bed" aria-hidden="true"></i>
 				                <span class="d-none d-md-block icon-label">Hotels</span>
+                                <span class="sr-only">Hotels</span>
 				            </button>
 						</li>
 						<li class="list-inline-item rest">
 							<button id="restaurant" class="btn btn-map">
-                                <i id="rest" class="fas fa-utensils"></i>
+                                <i id="rest" class="fas fa-utensils" aria-hidden="true"></i>
 								<span class="d-none d-md-block icon-label">Restaurants</span>
+                                <span class="sr-only">Restaurants</span>
 				            </button>
 						</li>
 						<li class="list-inline-item">
 							<button class="btn btn-map">
-                                <i id="glass" class="fas fa-glass-martini-alt"></i>
+                                <i id="glass" class="fas fa-glass-martini-alt" aria-hidden="true"></i>
 				                <span class="d-none d-md-block icon-label">Bars</span>
+                                <span class="sr-only">Bars</span>
 				            </button>
 						</li>
 						<li class="list-inline-item">
 							<button class="btn btn-map">
-                                <i id="coffee" class="fas fa-coffee"></i>
+                                <i id="coffee" class="fas fa-coffee" aria-hidden="true"></i>
 				                <span class="d-none d-md-block icon-label">Coffee</span>
+                                <span class="sr-only">Coffee</span>
 				            </button>
 						</li>
 						<li class="list-inline-item mr-0">
 							<button type="submit" class="btn btn-map">
-                                <i id="info"  class="fas fa-info"></i>
+                                <i id="info"  class="fas fa-info" aria-hidden="true"></i>
 				                <span class="d-none d-md-block icon-label">Attractions</span>
+                                <span class="sr-only">Attractions</span>
 				            </button>
 						</li>
 						<li class="list-inline-item">
 							<button id="new-city" type="submit" class="d-none d-md-inline-block btn btn-map">
                                 <i class="fas fa-times" aria-hidden="true"></i>
                                 <span class="d-none d-md-block icon-label">New City</span>
+                                <span class="sr-only">New City</span>
 				            </button>
 						</li>
 					</ul>
@@ -243,6 +249,7 @@
 					</div>
 					<button onclick="formReset()" value="Reset Form" type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
+                  <span class="sr-only">Close</span>
 		        </button>
 				</div>
 				<div class="modal-body">
