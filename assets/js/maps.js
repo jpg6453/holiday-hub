@@ -1,3 +1,8 @@
+/* Building Upon "Place Autocomplete Hotel Search" - Google Maps API Docs
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch*/
+
+//Variable declarations changed to ES6 by developer
+
 let map, places, infoWindow;
 let markers = [];
 let autocomplete;
@@ -136,7 +141,7 @@ function initMap() {
         center: countries['uk'].center,
         mapTypeControl: false,
         panControl: false,
-        zoomControl: false,
+        zoomControl: true,
         streetViewControl: false
     });
 
@@ -182,10 +187,14 @@ function setAutocompleteCountry() {
         });
         map.setCenter(countries[country].center);
         map.setZoom(countries[country].zoom);
+
+        // Code added by developer
         document.getElementById('autocomplete').value = '';
     }
     clearResults();
     clearMarkers();
+
+    //Code added by developer
     clearPanel();
     clearTotal();
 
@@ -198,16 +207,20 @@ function onPlaceChanged() {
     if (place.geometry) {
         map.panTo(place.geometry.location);
         map.setZoom(15);
+
+        //Code added by develeoper
         clearResults();
         clearMarkers();
         clearTotal();
         showIcons();
 
+        //Code added by developer
         // Resize map to full width on lg screens and scroll to top of window.
         document.getElementById('map').className = 'col-lg-12 gmap';
         document.getElementById('map').scrollIntoView();
 
-        //Open sliding panel
+        //Code added by developer
+        //Open panel
         document.getElementById('panel').classList.add('d-md-block');
         document.getElementById('panel').style.width = '100%';
         //<img class="card-img-top panel-img-top" src="${place.photos[0].getUrl()}" alt="${place.name}">
@@ -226,6 +239,7 @@ function onPlaceChanged() {
     }
 }
 
+//Code added by developer
 /* Perform a search for specified place types.
 Event listeners for place icons*/
 
@@ -247,6 +261,8 @@ document.getElementById('info').addEventListener('click', () => {
 
 // Perform nearby search after city has been selected & a place icon is clicked
 
+//Function modified by developer to accept type parameter
+
 function placeSearch(type) {
     let search = {
         bounds: map.getBounds(),
@@ -257,6 +273,8 @@ function placeSearch(type) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
             clearMarkers();
+
+            //Code added by developer
             firstCard();
             changeCity();
 
@@ -269,6 +287,8 @@ function placeSearch(type) {
                 markers[i] = new google.maps.Marker({
                     position: results[i].geometry.location,
                     animation: google.maps.Animation.DROP,
+
+                    //Added by developer
                     label: [i + 1].toString()
                 });
                 /* If the user clicks a hotel marker, show the details of that hotel
@@ -278,6 +298,7 @@ function placeSearch(type) {
                 setTimeout(dropMarker(i), i * 100);
                 addResult(results[i], i);
 
+                //Code below here added by developer
                 //Display a search results total, along with  place type
 
                 let total = `
@@ -317,6 +338,7 @@ function placeSearch(type) {
     });
 }
 
+// Code added by developer
 // After city selected by user, reveal icons and hide binocular logo
 
 function showIcons() {
@@ -338,7 +360,7 @@ function dropMarker(i) {
         markers[i].setMap(map);
     };
 }
-
+//Code inside function added by developer
 //Populates results table with search results
 //${photo && photo.length ? photo[0].getUrl() : defaultPhoto}
 function addResult(result, i) {
@@ -361,6 +383,7 @@ function addResult(result, i) {
     cardClickListener();
 }
 
+//Code added by developer
 /*Scrolls result cards horizontally to left side of screen to display 1st result
 when another place icon is clicked*/
 
@@ -369,7 +392,7 @@ function firstCard() {
     resultCards.scrollTo(0, 0);
 }
 
-
+//Code amended by developer
 function cardClickListener() {
     const cards = document.querySelectorAll('.result-card');
     cards.forEach(function(elem, i) {
@@ -386,6 +409,7 @@ function clearResults() {
     }
 }
 
+//Code added by developer
 //Clear city panel when user changes country
 
 function clearPanel() {
@@ -396,6 +420,7 @@ function clearPanel() {
     }
 }
 
+//Code added by developer
 function clearTotal() {
     const total = document.getElementById('result-total');
     while (total.childNodes[0]) {
@@ -403,15 +428,18 @@ function clearTotal() {
     }
 }
 
+//Code added by developer
 //Reveal New City button
 function changeCity() {
     const newCity = document.getElementById('new-city');
     newCity.style.visibility = 'visible';
 }
 
+//Code added by developer
 //Event listener for New City button
 document.getElementById('new-city').addEventListener('click', scrollToSearch);
 
+//Code added by developer
 //Call clear functions, hide place icons and scroll search bar into view
 function scrollToSearch() {
     clearResults();
@@ -439,6 +467,7 @@ function showInfoWindow() {
         });
 }
 
+//Code amended by developer
 // Load the place information into the HTML elements used by the info window.
 function buildIWContent(place) {
 
@@ -503,7 +532,7 @@ function buildIWContent(place) {
     if (place.website) {
         let website = hostnameRegexp.exec(place.website);
         if (website === null) {
-            website = 'http://' + place.website + '/';
+            website = `<a target="_blank" href="http://${place.website}/"></a>`;
         }
         document.getElementById('iw-website-row').style.display = '';
         document.getElementById('iw-website').textContent = website;
