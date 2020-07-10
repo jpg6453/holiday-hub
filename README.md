@@ -56,7 +56,7 @@ As a user visiting the site, I would like:
 - Place locations to be plotted on a map, so that I can see where they are in relation to other landmarks.
 - The ability to control the map so that I can tailor my search.
 - To be able to view search results, so I can see what options there are in a given city
-- More details about a place when I click on it, so that I can learn a bit more about it.
+- More details about a place when I click on it, so that I can learn a more about it.
 - To change the city and/or country, so that I can search again.
 - To make an enquiry, to book venues during my stay.
 - Link to social media platforms, to find out more about the company.
@@ -275,7 +275,75 @@ On closing the modal the form fields are cleared using the ```reset()``` functio
 
 ## Testing
 
-***Testing of User Stories goes here***
+### Code Validation
+
+Validation tools were used to check that the website code was valid:
+    - [W3C Mark Up Validation](https://validator.w3.org) for HTML.
+    - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) for CSS.
+    - [JSHint](https://jshint.com/) for JavaScript.
+
+### User Stories Testing
+
+**The ability to select a country, so that I can search for places within it.**
+
+- Navigate to the country section of the search bar.
+- Click the country selector and verify a list of countries are displayed.
+- Select a country and confirm that the map zooms in on that country.
+- Repeat for all countries in the list.
+
+**To be able to start typing a city and be offered suggestions, so thats its quick and easy.**
+
+- After selecting a country, click **Enter a City** in the search bar and begin typing the name of a city. 
+- Select an autocomplete suggestion and confirm the map zooms in on that city.
+- A **panel** with an image and anme of the city will overlay the map on **medium** screens upwards.
+- Repeat for all coutries listed.
+
+**To click a button, so that I can search for different place categories.**
+
+- Click on a place icon and a search for that place **type** will be carried out.
+- Repeat for all icons.
+- Confirm that previous search results are cleared.
+
+
+**Place locations to be plotted on a map, so that I can see where they are in relation to other landmarks.**
+- After clicking a place icon, numbered red markers are plotted on the map.
+
+**The ability to control the map so that I can tailor my search.**
+- The map can be zoomed in and out and dragged around in the viewport to change the area that will be searched.
+
+**To be able to view search results, so I can see what options there are in a given city.**
+- A search result total is displayed in the **lozenge** (to the left of the icons on dektop and above the icons on all other screens).
+- Result **cards** are displayed under the place icons and can be scrolled horizontally.
+
+**More details about a place when I click on it, so that I can learn a more about it.**
+- Click on a marker to display an info-window above that marker. 
+- Clicking a result card also opens the info window for the corresponding marker.
+
+**To change the city and/or country, so that I can search again.**
+
+- Click the **New City** icon to clear the existing search results and markers.
+- Amend either the city or country or **both** and perform an new search as before.
+- Access to the search bar can also be acieved by simply scrolling up.
+- On mobile the **New City** icon is not available. However the search fields are always avilable via the **sticky** search bar.
+
+**To make an enquiry, to book venues during my stay.**
+- Fill out the contact farm and click send.
+- All feilds must have valid input before the send button becomes avtive.
+
+**Link to social media platforms, to find out more about the company.**
+
+- Click on the social media links located in the footer.
+- Confirm that the homepage for each platform opens up in a new window.
+- These links would redirect to real profiles in the future.
+
+
+**To see which destinations other people are booking on the site, for inspiration.**
+- Navigate to the **Popular Destinations** sections by clicking the **Destinations** link in the nav bar.
+- The latest trending destinations will be displayed.
+
+**To view the site on all my devices, so that I can view it anywhere.**
+
+- View Holiday Hub on all your devices so that you can keep searching wherever you are.
 
 ### Manual Functionality Testing
 
@@ -382,6 +450,53 @@ On closing the modal the form fields are cleared using the ```reset()``` functio
 - Scroll down again until the button appears then scroll back up and confirm it becomes hidden.
 - Check all screen sizes and verfiy that the size and position of the button look good.
 
+## Bugs Fixed
+
+- If, during a search, there was no ```result.photo``` available from Google for a given place, the marker would be plotted on the map but a result card would not be built for that search result.
+    - This was fixed by creating a fall back to a default placeholder image with the following code:
+        ```javascript
+        ${photo && photo.length ? photo[0].getUrl() : defaultPhoto}
+        ```
+
+- If there were no results to return for a search, no markers would be plotted on the map and of course no result cards would be built.
+    - The following code informs the user that there are no results for that particular search:
+        ```javascript
+        } else if (status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+            clearResults();
+            clearMarkers();
+
+            const noResults = `
+                <div class="total error">NO RESULTS FOUND</div>
+                `;
+            document.getElementById('result-total').innerHTML = noResults;
+        ```
+    - Zero results can be achieved for the following search:
+        ```
+            Country - South Africa
+            City - Lydenburg
+            Place type - bars
+        ```
+
+- While remaining in the same city, if a second place icon is clicked following a previous search and the result cards have been scrolled to the right, the results for the second search will be displayed from the same index in the results arrray (i.e scrolled to the **right**).
+    - This was fixed with the following function:
+        ```javascript
+        function firstCard() {
+            const resultCards = document.getElementById('results');
+            resultCards.scrollTo(0, 0);
+        } 
+        ```   
+## Bugs Left to Fixed
+
+- **IE 11**
+    - A user reported that:
+        -  the ```hero-text``` was pushed over to the **right**
+        - 2 small arrows appear at either end of the horizontal ```scrolling-wrapper```.
+
+- **Microsoft Edge**
+    - A user reported that:
+        - 2 small arrows appear at either end of the horizontal ```scrolling-wrapper```.
+
+The developer does not have access to any machines running windows and attempts to replicate the errors within **Safari Dev tools** failed.
 
 ## Deployment
 
