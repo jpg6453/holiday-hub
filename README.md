@@ -9,7 +9,7 @@
 
 <div align="center">
 
-Search. Discover. Explore
+**Search. Discover. Explore**
 
 <br>
 
