@@ -583,6 +583,7 @@ All featured images sourced from [Pixabay](https://pixabay.com/)
 
 **Code**
 
+- Place Autocomplete Hotel Search - [Google Map API Docs](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch)
 - Floating to top button – [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
 - Form submit button inactive until all inputs valid - [Academind](https://www.youtube.com/watch?v=8cb4auJt1TA)
 - Horizontal scrolling container – [Colin Lord](https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6)
