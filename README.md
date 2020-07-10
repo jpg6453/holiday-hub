@@ -9,11 +9,13 @@
 
 <div align="center">
 
-[Holiday Hub](https://jpg6453.github.io/holiday-hub/) is a valuable resource for all your travel needs. Etc...
+Search. Discover. Explore
 
 <br>
 
-[Discover Holiday Hub here]("https://jpg6453.github.io/holiday-hub/")
+[Holiday Hub](https://jpg6453.github.io/holiday-hub/) allows you to search cities all over the world for Hotels, Restaurants and Tourist attractions. 
+Whether its for your next holiday, business trip or just to get to know a city a little better, Holiday Hub has everything. 
+Contact one of our team and let them do the rest.
 </div>
 
 
