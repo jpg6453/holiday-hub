@@ -3,7 +3,7 @@
 window.onscroll = function() {
   scrollToTop();
   hideSearchBar();
-}
+};
 
 
 // When the user scrolls down 500px from the top of the document, show totop btn
