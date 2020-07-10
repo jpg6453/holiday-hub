@@ -10,7 +10,6 @@ let btn = document.getElementById("formBtn");
 // Get Modal elements
 let modal = document.getElementById("bookingModal");
 
-
 // Function to check that form fields have not been left blank
 // If so, send button remains disabled
 function checkForm(){
@@ -20,10 +19,6 @@ function checkForm(){
         btn.disabled = true;
     }
 }
-
-///btn.onclick = function() {
-  ////modal.style.display = "block";
-//}
 
 function showModal() {
     modal.style.display = "block";
