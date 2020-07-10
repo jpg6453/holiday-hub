@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="assets/img/hhlogo.png" alt="Holiday Hub logo" width:"300" height:"200"/></a>
+  <a href="https://jpg6453.github.io/holiday-hub/" target="_blank"><img src="assets/readme-img/hhlogo.png" alt="Holiday Hub logo" width:"300" height:"200"/></a>
 </h1>
 
 <h2 align="center">
@@ -94,7 +94,7 @@ As a user visiting the site, I would like:
 
 **Search Bar**
 <div align="center">
-<img src="/assets/img/searchbar.png" alt="Searchbar Screenshot" >
+<img src="assets/readme-img/searchbar.png" alt="Searchbar Screenshot" >
 </div>
 
 This has 2 components:
@@ -127,7 +127,7 @@ This has 2 components:
 
 
     <div align="center">
-    <img src="/assets/img/autocomplete.png" alt="Place Icons Screenshot" >
+    <img src="assets/readme-img/autocomplete.png" alt="Place Icons Screenshot" >
     </div>
 
 
@@ -139,7 +139,7 @@ This has 2 components:
 **Place Type Icons**
 
 <div align="center">
-<img src="/assets/img/placeicons.png" alt="Place Icons Screenshot" >
+<img src="assets/readme-img/placeicons.png" alt="Place Icons Screenshot" >
 </div>
 
 
@@ -161,7 +161,7 @@ let search = {
 
 
 <div align="center">
-<img src="/assets/img/map.png" alt="Map Screenshot" >
+<img src="assets/readme-img/map.png" alt="Map Screenshot" >
 </div>
 
 - The map ```<div>``` has class ```col-lg-6``` and is resized to full width when the user selects a city for the first time.
@@ -184,7 +184,7 @@ function initMap() {
 - If results are found, numbered markers are plotted on the map which show an info window when clicked.
 
 <div align="center">
-<img src="/assets/img/infowindow.png" alt="Map Screenshot" >
+<img src="assets/readme-img/infowindow.png" alt="Map Screenshot" >
 </div>
 
 **Search Results**
@@ -192,7 +192,7 @@ function initMap() {
 - Search results are displayed in upto 20 horizontally scrolling cards.
 
 <div align="center">
-<img src="/assets/img/resultcard.png" alt="Result Card Screenshot" >
+<img src="assets/readme-img/resultcard.png" alt="Result Card Screenshot" >
 </div>
 
 - If a place image is not available a default **placeholder** is displayed instead.
@@ -212,7 +212,7 @@ function initMap() {
 - When the user clicks the ```send``` button a user modal appears confirming that the form has been submitted (this is simulated for this project).
 
 <div align="center">
-<img src="/assets/img/modal.png" alt="Modal Screenshot" >
+<img src="assets/readme-img/modal.png" alt="Modal Screenshot" >
 </div>
 
 On closing the modal the form fields are cleared using the ```reset()``` function.
@@ -583,7 +583,7 @@ All featured images sourced from [Pixabay](https://pixabay.com/)
 
 **Code**
 
-- Place Autocomplete Hotel Search - [Google Map API Docs](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch)
+- Place Autocomplete Hotel Search - [Google Maps API Docs](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch)
 - Floating to top button – [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
 - Form submit button inactive until all inputs valid - [Academind](https://www.youtube.com/watch?v=8cb4auJt1TA)
 - Horizontal scrolling container – [Colin Lord](https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6)
