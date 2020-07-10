@@ -9,7 +9,7 @@ let btn = document.getElementById("formBtn");
 
 // Get Modal elements
 let modal = document.getElementById("bookingModal");
-let closeCross = document.getElementsByClassName("close")[0];
+
 
 // Function to check that form fields have not been left blank
 // If so, send button remains disabled
@@ -38,5 +38,5 @@ window.onclick = function(event) {
   if (event.target == modal) {
     formReset();
   }
-}
+};
 
