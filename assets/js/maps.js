@@ -141,7 +141,7 @@ function initMap() {
         center: countries['uk'].center,
         mapTypeControl: false,
         panControl: false,
-        zoomControl: true,
+        zoomControl: false,
         streetViewControl: false
     });
 
@@ -397,9 +397,9 @@ function cardClickListener() {
     const cards = document.querySelectorAll('.result-card');
     cards.forEach(function(elem, i) {
         elem.addEventListener('click', function() {
-            new google.maps.event.trigger(markers[i], 'click')
-        })
-    })
+            new google.maps.event.trigger(markers[i], 'click');
+        });
+    });
 }
 
 function clearResults() {
