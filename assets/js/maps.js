@@ -223,9 +223,9 @@ function onPlaceChanged() {
         //Open panel
         document.getElementById('panel').classList.add('d-md-block');
         document.getElementById('panel').style.width = '100%';
-        //<img class="card-img-top panel-img-top" src="${place.photos[0].getUrl()}" alt="${place.name}">
+
         const panel = `   
-		<img class="card-img-top panel-img-top" src="" alt="${place.name}">
+		<img class="card-img-top panel-img-top" src="${place.photos[0].getUrl()}" alt="${place.name}">
         <div class="card-body flex-column panel-card-body">
             <h4 class="panel-place-name">${place.name}</h4> 
         </div>
@@ -362,7 +362,7 @@ function dropMarker(i) {
 }
 //Code inside function added by developer
 //Populates results table with search results
-//${photo && photo.length ? photo[0].getUrl() : defaultPhoto}
+
 function addResult(result, i) {
     const noRating = 'No ratings yet';
     const rating = result.rating;
@@ -370,7 +370,7 @@ function addResult(result, i) {
     const defaultPhoto = "assets/img/placeholder.jpg";
     const resultCard = `
         <div class="card result-card">
-			<img class="card-img-top flex-row result-img" src="${defaultPhoto}" alt="${result.name}">
+			<img class="card-img-top flex-row result-img" src="${photo && photo.length ? photo[0].getUrl() : defaultPhoto}" alt="${result.name}">
             <div class="card-body result-card-body d-flex flex-column">
                 <span class="result-number">${i+1}</span>
                 <h5 class="result-name horizontal">${result.name}</h5>
