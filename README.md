@@ -82,6 +82,13 @@ As a user visiting the site, I would like:
 **Styling**
 - All buttons and card elements have rounded corners to fit with Google maps styling.
 
+### Wireframes
+
+[Figma](https://www.figma.com/) was used to produce the wireframes for the desktop and mobile layouts of the site.
+
+- [Desktop](assets/wireframes/desktop.png)
+- [Mobile](assets/wireframes/mobile.png)
+
 ## Existing Features 
 
 **Navbar**
@@ -145,7 +152,7 @@ This has 2 components:
 
 
 
-- The icons are made available after the user selects a city in the ```autocomplete``` element.
+- The icons are made available after the user selects a city in the ```autocomplete``` element. During the design process the icons were placed directly under the search bar. However, during development it was felt that it would be confusing to present all interactive elements to the user at the same time and it was more intuitive to introduce them as they passed through the search process.
 - Click the appropriate icon to search for upto 20 places of that type within the map’s viewport. 
 - The user is able to drag the map around until the desired area of the city they are searching is in the map viewport.
 - Clicking an icon again will perform a search within this revised map viewport because the search object has ```bounds``` as a key. See below:
@@ -348,6 +355,17 @@ Validation tools were used to check that the website code was valid:
 - View Holiday Hub on all your devices so that you can keep searching wherever you are.
 
 ### Manual Functionality Testing
+
+**Browsers**
+
+The site was tested on the following browsers: Chrome, Firefox, Safari, Internet Explorer & Edge on desktop and laptop devices.
+
+**Mobile Devices**
+
+- The devices used for testing were:
+    - iPhone 6s, XR
+    - iPad Air 
+    - Samsung S10
 
 **Navigation**
 
