@@ -212,7 +212,7 @@ function initMap() {
 - ```checkForm function``` checks if all fields have ```valid``` input before the send button becomes ```active```. 
     - The ```.trim()``` method removes white space, so preventing a user just entering spaces.
 - As this is a front end project the button ```type``` is set to ```button```. 
-- Future dev could be to handle this as a true submit event to either popultae a data base or connect up to emailJS.
+- Future dev could be to handle this as a true submit event to either populate a data base or connect up to emailJS.
 
 **Booking Modal**
 
@@ -287,9 +287,10 @@ On closing the modal the form fields are cleared using the ```reset()``` functio
 ### Code Validation
 
 Validation tools were used to check that the website code was valid:
-    - [W3C Mark Up Validation](https://validator.w3.org) for HTML.
-    - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) for CSS.
-    - [JSHint](https://jshint.com/) for JavaScript.
+
+- [W3C Mark Up Validation](https://validator.w3.org) for HTML.
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) for CSS.
+- [JSHint](https://jshint.com/) for JavaScript.
 
 ### User Stories Testing
 
@@ -304,7 +305,7 @@ Validation tools were used to check that the website code was valid:
 
 - After selecting a country, click **Enter a City** in the search bar and begin typing the name of a city. 
 - Select an autocomplete suggestion and confirm the map zooms in on that city.
-- A **panel** with an image and anme of the city will overlay the map on **medium** screens upwards.
+- A **panel** with an image and name of the city will overlay the map on **medium** screens upwards.
 - Repeat for all coutries listed.
 
 **To click a button, so that I can search for different place categories.**
@@ -321,7 +322,7 @@ Validation tools were used to check that the website code was valid:
 - The map can be zoomed in and out and dragged around in the viewport to change the area that will be searched.
 
 **To be able to view search results, so I can see what options there are in a given city.**
-- A search result total is displayed in the **lozenge** (to the left of the icons on dektop and above the icons on all other screens).
+- A search result total is displayed in the **lozenge** (to the left of the icons on desktop and above the icons on all other screens).
 - Result **cards** are displayed under the place icons and can be scrolled horizontally.
 
 **More details about a place when I click on it, so that I can learn a more about it.**
@@ -333,11 +334,11 @@ Validation tools were used to check that the website code was valid:
 - Click the **New City** icon to clear the existing search results and markers.
 - Amend either the city or country or **both** and perform an new search as before.
 - Access to the search bar can also be acieved by simply scrolling up.
-- On mobile the **New City** icon is not available. However the search fields are always avilable via the **sticky** search bar.
+- On mobile the **New City** icon is not available. However the search fields are always available via the **sticky** search bar.
 
 **To make an enquiry, to book venues during my stay.**
-- Fill out the contact farm and click send.
-- All feilds must have valid input before the send button becomes avtive.
+- Fill out the contact form and click send.
+- All feilds must have valid input before the send button becomes active.
 
 **Link to social media platforms, to find out more about the company.**
 
