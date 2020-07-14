@@ -141,7 +141,7 @@ function initMap() {
         center: countries['uk'].center,
         mapTypeControl: false,
         panControl: false,
-        zoomControl: false,
+        zoomControl: true,
         streetViewControl: false
     });
 
